@@ -1,0 +1,124 @@
+@import '../settings/setting.variables.scss';
+@import '../settings/setting.functions.scss';
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 84px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 16px;
+  transition: ease all 0.2s;
+  text-decoration: none;
+  padding: 15px 24px;
+  background-color: transparent;
+  height: 32px;
+  line-height: 14px;
+  border: 1px solid transparent;
+  position: relative;
+  &:disabled {
+    background-color: color(background-500);
+    color: color(text-400);
+    pointer-events: none !important;
+    cursor: default !important;
+  }
+  &:focus-visible {
+    outline: max(1px, 1px) solid currentColor;
+    outline-offset: max(1px, 1px);
+    border: 1px solid transparent;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &--primary {
+    background-color: transparent;
+    border-color: white;
+    color: color(text-500);
+    &:hover {
+      background-color: color(background-300);
+      color: color(text-700);
+      border: none;
+    }
+    &:focus {
+      background-color: color(background-100);
+    }
+    &:focus-visible {
+      border: 1px solid color(primary-100);
+      background-color: color(background-100);
+      outline: max(1px, 1px) solid color(primary-100);
+      outline-offset: max(1px, 1px);
+    }
+  }
+  &--secondary {
+    background-color: map-get($colors, background-1300);
+    color: color(text-900);
+    &:hover {
+      background-color: color(background-900);
+      color: color(background-1300);
+      border: 1px solid color(background-1300)
+    }
+    &:focus {
+      background-color: color(background-100);
+      color: color(text-500);
+    }
+    &:focus-visible {
+      outline: max(1px, 1px) solid color(primary-100);
+      outline-offset: max(1px, 1px);
+      background-color: color(background-800);
+      color: color(text-100);
+    }
+  }
+  &--tertiary {
+    background-color: transparent;
+    border-color: color(background-800);
+    color: color(text-default);
+    &:hover {
+      background-color: color(background-1300);
+      color: color(background-500);
+      border: 1px solid color(background-1300)
+    }
+    &:focus {
+      background-color: color(background-100);
+    }
+    &:focus-visible {
+      border: 1px solid color(primary-100);
+      background-color: color(background-100);
+      outline: max(1px, 1px) solid color(primary-100);
+      outline-offset: max(1px, 1px);
+    }
+  }
+  &--outlined {
+    background-color: color(background-300);
+    color: color(text-100);
+    border: 1px solid color(primary-100);
+    &:hover {
+      background-color: color(background-500);
+      border: 1px solid color(background-100);
+    }
+    &:focus {
+      background-color: color(background-100);
+      color: color(text-500);
+    }
+    &:focus-visible {
+      background-color: color(background-500);
+      color: color(text-100);
+    }
+    &:disabled {
+      border: 1px solid transparent !important;
+    }
+  }
+  &--circle {
+    min-width: 60px;
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 1000px;
+    &::before {
+      border-radius: 1000px;
+    }
+  }
+  &--link{
+    text-decoration: none;
+  }
+}

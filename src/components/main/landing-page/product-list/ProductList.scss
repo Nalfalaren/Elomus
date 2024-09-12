@@ -1,0 +1,173 @@
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+
+hr{
+    width: 80%;
+    margin-inline: auto;
+}
+.products-list {
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    margin-block: 3rem;
+    position: relative;
+
+    .products-list__wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .products-list__inner {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .products-list__item {
+        position: relative;
+        flex: 0 0 20%;
+        padding: 0 10px;
+        box-sizing: border-box;
+
+    }
+
+    .products-list__card {
+        border: none;
+        border-radius: 30px;
+
+        &__img {
+            position: relative;
+
+            &__discount {
+                position: absolute;
+                background-color: map-get($colors, status-300);
+                color: #fff;
+                font-weight: 600;
+                border-radius: 12px;
+                width: 20%;
+                top: 5%;
+                right: 5%;
+
+                p {
+                    text-align: center;
+                }
+            }
+
+            &__icons{
+                position: absolute;
+                right: 5%;
+                bottom: 2%;
+                display: flex;
+                flex-direction: column;
+                width: 20%;
+                border: 1px solid;
+                border-color: map-get($colors, background-1100);
+                box-shadow: 3px 2px 4px map-get($colors, background-1000);
+                border-radius: 12px;
+                background-color: #fff;
+
+               &__detailed{
+                margin-top: 1rem;
+                color: map-get($colors, text-1300);
+                text-align: center;
+                &:hover{
+                    color: map-get($colors, text-primary);
+                    transition: 0.3s ease-in;
+                }
+               } 
+            }
+        }
+
+        img {
+            box-shadow: 1px 1px 1px map-get($colors, background-1000);
+            border-radius: 15px;
+        }
+
+        &:hover {
+            border: 1px solid;
+            border-color: map-get($colors, background-1100);
+            box-shadow: 3px 2px 4px map-get($colors, background-1000);
+            border-radius: 1.5rem;
+        }
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+
+            &__star {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+
+                &--filled {
+                    color: map-get($colors, status-200);
+                }
+
+                &--unfilled {
+                    color: map-get($colors, text-7C);
+                }
+            }
+
+            &__name {
+                text-align: center;
+                font-size: 16px;
+            }
+
+            &__price {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+
+                &--new {
+                    color: map-get($colors, text-primary);
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-right: 10px;
+                    text-align: center;
+                }
+
+                &--old {
+                    color: map-get($colors, text-1300);
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-decoration: line-through;
+                }
+            }
+        }
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: white;
+        border-radius: 100%;
+        box-shadow: 2px 2px 2px map-get($colors, background-1000);
+        color: map-get($colors, text-1200);
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        z-index: 1;
+
+        &:hover {
+            background-color: map-get($colors, background-1300);
+            color: #fff;
+        }
+    }
+
+    .carousel-control-prev {
+        left: 0;
+    }
+
+    .carousel-control-next {
+        right: 0;
+    }
+}

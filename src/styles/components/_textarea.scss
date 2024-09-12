@@ -1,0 +1,23 @@
+.textarea {
+  display: flex;
+  align-items: center;
+  border: 1px solid color(line-400);
+  border-radius: radius(default);
+  background-color: color(background-300);
+  position: relative;
+  padding: 6px 12px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  color: color(text-default);
+  width: 100%;
+  min-height: 124px;
+  resize: none;
+  font-family: 'Poppins', sans-serif;
+  &:disabled {
+    background-color: color(background-500);
+  }
+  @include input-placeholder {
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,145 @@
+/* ==========================================================================
+   # START VARIABLE SETTING
+   ==========================================================================
+*/
+
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1280px,
+  xl: 1400px,
+);
+
+$colors: (
+  // Primary
+  primary-100: #000000,
+  primary-200: #24272a,
+  primary-300: #282828,
+  primary-400: #1877f2,
+  //Secondary
+  secondary-100: #42472a,
+  secondary-200: #707070,
+  secondary-300: #b4b7ba,
+  secondary-400: #dfd205,
+  secondary-500: #f0f0f6,
+  secondary-600: #ffffff,
+
+  // Text
+  text-primary:#21b3f1,
+  text-100: #000000,
+  text-200: #42472a,
+  text-300: #707070,
+  text-400: #b4b7ba,
+  text-500: #ffffff,
+  text-600: #ff0000,
+  text-700: #1872f2,
+  text-800: #f0f0f6,
+  text-900: #ffffff,
+  text-B2: #b2b2b2,
+  text-D8: #d8dbde,
+  text-7C: #7c7f82,
+  text-CF: #cfd2d5,
+  text-1000: #ced1d4,
+  text-default: #24272a,
+  text-1100: #70767c,
+  text-1200: #454545,
+  text-1300: #7e7e7e,
+
+  // Status
+  status-100: #52c41a,
+  status-200: #faad14,
+  status-300: #ff1e00,
+
+  // Background
+  background-100: #000000,
+  background-200: #f7f7fa,
+  background-300: #ffffff,
+  background-400: #f6f7fa,
+  background-500: #f0f3f6,
+  background-600: #333333,
+  background-700: #333639,
+  background-800: #d8dbde,
+  background-900: #fff5f3,
+  background-1000: #e5e8eb,
+  background-1100: #b4b7ba,
+  background-1200: #e7e7e733,
+  background-1300: #21b3f1,
+  background-1400: #f8f8f8,
+  background-1500: #454545,
+  // Line
+  line-100: #42472a,
+  line-200: #d6d9df,
+  line-300: #eaedf0,
+  line-400: #cfd2d5,
+  line-500: #ffffff,
+  line-600: #f0f3f6
+);
+
+$fontSizes: (
+  heading-block: (
+    xs: 20px,
+    sm: 20px,
+    lg: 24px,
+    xl: 24px,
+  ),
+  number-primary: (
+    xs: 18px,
+    sm: 18px,
+    lg: 24px,
+    xl: 24px,
+  ),
+);
+
+$colors-dark: (
+  primary: #ffc900,
+  background-primary: #252525,
+  background-secondary: #1d1d1d,
+);
+
+$radius: (
+  default: '6px',
+);
+
+:root {
+  /*Begin color*/
+  @each $name, $color in $colors {
+    --color-#{$name}: #{$color};
+  }
+  /*Begin color*/
+  @each $name, $size in $radius {
+    --radius-#{$name}: #{$size};
+  }
+  /*End color*/
+
+  /*Begin padding*/
+  @each $name, $font-size in $fontSizes {
+    // maps require a second loop
+    @if type-of($font-size) == 'map' {
+      // each item in sub map
+      @each $subname, $sub-font-size in $font-size {
+        // --z-index-viewport-md
+        --font-size-#{$name}-#{$subname}: #{$sub-font-size};
+      }
+
+      // top-level z-indexs
+    } @else if type-of($font-size) == 'number' {
+      // --z-index-background
+      --font-size-#{$name}: #{$font-size};
+    }
+  }
+
+  /*End padding*/
+}
+
+[data-theme='dark'] {
+  @each $name, $color in $colors-dark {
+    --color-#{$name}: #{$color};
+  }
+}
+
+//End variable root
+/* ==========================================================================
+   # END VARIABLE SETTING
+   ==========================================================================
+*/

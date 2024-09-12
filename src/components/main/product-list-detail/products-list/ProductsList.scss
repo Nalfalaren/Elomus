@@ -1,0 +1,44 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+@import '../../landing-page/product-list/ProductList.scss';
+
+.products{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    &__result{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    &__filter{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: map-get($colors, background-1200);
+        padding: 1.5rem;
+
+        &__img{
+            display: flex;
+            gap: 1rem;
+        }
+
+        &__result{
+            font-size: 13px;
+            color: map-get($colors, text-1100)
+        }
+
+        &__options{
+            select{      
+                border-radius: 6px;
+                border: 1px solid map-get($colors, background-1100);
+            }
+        }
+    }
+}

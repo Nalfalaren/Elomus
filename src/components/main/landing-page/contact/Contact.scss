@@ -1,0 +1,93 @@
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.breakpoint';
+@import '../../../../styles/settings/setting.mixins';
+
+.contact {
+    margin-top: 2rem;
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-block: 2rem;
+
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1180px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1320px;
+    }
+
+    &__title {
+        text-align: center;
+        p{
+            font-style: italic;
+            color: map-get($colors, 'text-400');
+            font-family: georgia;
+            font-size: 20px;
+        }
+        h2{
+            font-size: 36px;
+            color: map-get($colors, 'text-1200');
+            font-weight: 600;
+            margin-bottom: 2rem;
+
+            &::after, &::before{
+                content: "";
+                display: block;
+                width: 40px;
+                height: 1px;
+                background-color: map-get($colors, 'primary-400');
+                position: absolute;
+                left: 50%;
+                margin-left: -10px;
+            }
+
+            &::before{
+                margin-left: -30px;
+            }
+        }
+    }
+
+    &__form{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: 100%;
+
+        @include respond-up('md'){
+            max-width: 800px;
+        }
+
+        &__input{
+            padding: 1rem;
+            border-radius: 2rem;
+            background-color: map-get($colors , background-1400);
+        }
+
+        &__link{
+            position: absolute;
+            top: 8%;
+            left: 87%;
+            padding-block: 1.5rem;
+            font-size: 10px;
+
+            @include respond-down('md'){
+                font-size: 8px;
+            }
+            
+        }
+
+    }
+}

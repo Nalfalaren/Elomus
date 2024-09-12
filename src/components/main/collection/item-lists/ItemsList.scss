@@ -1,0 +1,83 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+// $breakpoints: (
+//   xs: 576px,
+//   sm: 768px,
+//   md: 992px,
+//   lg: 1280px,
+//   xl: 1400px,
+// );
+
+.title {
+    text-align: center;
+    margin-block: 2rem;
+
+    &::after,
+    &::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 1px;
+        background-color: map-get($colors, 'primary-400');
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+    }
+
+    &::before {
+        margin-left: -30px;
+    }
+}
+
+.items {
+    max-width: 1320px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+
+    a{
+        text-decoration: none;
+    }
+
+    @include respond-down('md') {
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+
+    @include respond-down('sm') {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+
+    
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1180px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1320px;
+    }
+
+    &__card {
+        &__title {
+            text-align: center;
+            background-color: map-get($colors, background-1000);
+        }
+
+    }
+}

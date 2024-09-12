@@ -1,0 +1,153 @@
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.breakpoint';
+@import '../../../../styles/settings/setting.mixins';
+
+.feedback {
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    margin-block: 3rem;
+
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1180px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1320px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        margin-bottom: 3rem;
+
+        p {
+            font-size: 14px;
+            font-family: var(--header_family);
+            color: map-get($colors, text-1300);
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+            text-align: center;
+
+            span {
+                color: map-get($colors, text-primary);
+            }
+
+            &::after,
+            &::before {
+                content: "";
+                display: block;
+                width: 40px;
+                height: 1px;
+                background-color: map-get($colors, text-primary);
+                position: absolute;
+                left: 50%;
+                margin-left: -10px;
+            }
+
+            &::before {
+                margin-left: -30px;
+            }
+        }
+    }
+
+    &__carousel {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: flex-start;
+
+        &__wrapper {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        &__inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 300%;
+        }
+
+        &__item {
+            flex: 0 0 33%;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+
+        &__card {
+            border-radius: 30px;
+
+            &__body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+
+                &__icon {
+                    color: map-get($colors, text-1300);
+                }
+
+                p {
+                    text-align: center;
+                    line-height: 2rem;
+                    color: map-get($colors, text-1300);
+                }
+
+                &__customer {
+                    font-weight: 600;
+                    color: map-get($colors, text-100);
+                }
+            }
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            border-radius: 100%;
+            box-shadow: 2px 2px 2px map-get($colors, background-1000);
+            color: map-get($colors, text-1200);
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 1;
+
+            &:hover {
+                background-color: map-get($colors, background-1300);
+                color: #fff;
+            }
+        }
+
+        .carousel-control-prev {
+            left: 0;
+        }
+
+        .carousel-control-next {
+            right: 0;
+        }
+    }
+}

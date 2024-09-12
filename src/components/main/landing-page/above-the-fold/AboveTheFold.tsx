@@ -1,0 +1,63 @@
+import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
+
+import drone1 from '@/assets/images/drone1.jpg';
+import drone2 from '@/assets/images/drone2.jpg';
+import Button from '@/components/base/Button';
+
+import '@/styles/components/_button.scss';
+
+import './AboveTheFold.scss';
+
+function AboutTheFold() {
+  return (
+    <div>
+      <Carousel>
+        <Carousel.Item>
+          <img src={drone1} alt="drone1" className="d-block w-100"></img>
+          <Carousel.Caption className="carousel-caption--first">
+            <p className="carousel-caption__title">
+              ---- The world’s Smallest Quadcopter
+            </p>
+            <h1 className="carousel-caption__name">Elomus F18 Drone 3 Auto</h1>
+            <p className="carousel-caption__content">
+              Newest hover function, Elomus F18 Drone 3 Auto Quadcopter UFO with
+              2Mp Wifi Camera
+            </p>
+            <div>
+              <Link
+                to="/a"
+                className="button button--primary carousel-caption__link"
+              >
+                Shop now
+              </Link>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={drone2} alt="drone2" className="d-block w-100"></img>
+          <Carousel.Caption>
+            <p className="carousel-caption__title">
+              ---- The world’s Smallest Quadcopter
+            </p>
+            <h1 className="carousel-caption__name">BuzzBee Nano Drone</h1>
+            <p className="carousel-caption__content">
+              Ideal for indoor usage & ultra portable. 3 User modes, junior,
+              intermediate & healess.
+            </p>
+            <div>
+              <Link
+                to="/a"
+                className="button button--primary carousel-caption__link"
+              >
+                Shop now
+              </Link>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    </div>
+  );
+}
+
+export default AboutTheFold;

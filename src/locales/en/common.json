@@ -1,0 +1,12 @@
+{
+  "common": {
+    "actions": "Actions",
+    "description": "Description",
+    "form": {
+      "btnSubmit": "Submit",
+      "btnCancel": "Cancel",
+      "btnDelete": "Delete",
+      "descriptionField": "$t(common.description)"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../../../styles/settings/setting.variables';
+
+.banner {
+    background-color: map-get($colors, 'background-1300');
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    p {
+        font-family: georgia;
+        font-style: italic;
+        text-align: center;
+        color: map-get($colors, 'background-500');
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,73 @@
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.breakpoint';
+
+// $breakpoints: (
+//   xs: 576px,
+//   sm: 768px,
+//   md: 992px,
+//   lg: 1280px,
+//   xl: 1400px,
+// );
+
+
+.carousel {
+    position: relative;
+
+    &-control-prev{
+        span{
+            background-color: map-get($colors, 'secondary-600');
+            border: 1px solid black;
+            border-radius: 100%;
+
+            &:hover{
+                background-color: map-get($colors, background-1300);
+            }
+        }
+    }
+
+    &-control-next{
+        @extend .carousel-control-prev;
+    }
+
+    &-caption {
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        width: 55%;
+        height: fit-content;
+        background-color: map-get($colors, 'background-1200');
+        &--first{
+            background-color: transparent;
+        }
+
+        &__title{
+            font-style: italic;
+            font-size: calc(0.36607143rem + 0.98214286vw);
+            padding-top: 1rem;
+            padding-left: 1rem;           
+        }
+
+        &__name{
+            font-size: calc(-0.22321429rem + 5.80357143vw);
+            font-weight: bold;
+            padding-inline: 1rem;
+        }
+        &__content{
+            text-transform: capitalize;
+            font-size: calc(0.29464286rem + 0.71428571vw);
+            padding-bottom: 1rem;
+            padding-left: 1rem;  
+        }
+
+        &__link{
+            padding-left: 1.5rem;
+            font-size: calc(0.15178571rem + 0.80357143vw);
+            @include respond-down('lg'){
+                padding: 0;
+            }
+        }
+    }
+}

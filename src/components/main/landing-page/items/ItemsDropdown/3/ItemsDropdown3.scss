@@ -1,0 +1,43 @@
+@import '../../../../../../styles/settings/setting.variables';
+
+.product-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    &__image{
+        max-width: 250px;
+        max-height: 300px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__info{
+        h3{
+            font-size: 14px;
+            text-align: center;
+            margin-block: 1rem;
+        }
+
+        p{
+            color: map-get($colors, text-primary);
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        &__old-price{
+            color: map-get($colors, text-1300);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: line-through;
+        }
+    }
+}

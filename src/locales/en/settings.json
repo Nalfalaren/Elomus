@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "actions": "Actions",
+    "description": "Description",
+    "form": {
+      "btnSubmit": "Submit",
+      "btnCancel": "Cancel",
+      "btnDelete": "Delete"
+    }
+  }
+}

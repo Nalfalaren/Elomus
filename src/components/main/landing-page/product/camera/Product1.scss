@@ -1,0 +1,129 @@
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+
+.product {
+    max-width: 1320px;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include respond-down('sm'){
+        flex-direction: column;
+    }
+
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 800px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1180px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1320px;
+    }
+
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        h3 {
+            width: 70%;
+            font-size: 34px;
+            color: map-get($colors, 'text-1100');
+
+            @include respond-down('sm'){
+                width: 80%;
+            }
+        }
+
+        p {
+            font-size: 13px;
+            color: map-get($colors, 'text-1100')
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__img{
+                width: 100%;
+
+                @include respond-down('sm'){
+                    width: 90%;
+                }
+
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+
+            &__info {
+                display: flex;
+                gap: 1rem;
+
+                @include respond-down('xs'){
+                    flex-direction: column;
+                }
+
+                &__img{
+                    
+                @include respond-down('md'){
+                    max-width: 40px;
+                    max-height: 40px;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                }
+
+            }
+
+            &__data {
+                display: flex;
+                flex-direction: column;
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    h2 {
+                        font-size: 40px;
+
+                        @include respond-down('sm'){
+                            font-size: 30px;
+                        }
+                        span{
+                            font-size: 1rem;
+                            color: map-get($colors , 'text-1100');
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+
+}

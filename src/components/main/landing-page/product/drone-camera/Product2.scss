@@ -1,0 +1,123 @@
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+
+.product2 {
+   max-width: 1320px;
+   padding-inline: 2rem;
+   margin-left: auto;
+   margin-right: auto;
+   position: relative;
+
+   @include respond-down('xs') {
+      padding-block: 3rem;
+   }
+   
+
+   &__img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include respond-down('md') {
+         width: 90%;
+
+         img {
+            width: 100%;
+            height: auto;
+         }
+      }
+   }
+
+   &__text1 {
+      position: absolute;
+      left: 5%;
+      text-align: right;
+      top: 27%;
+      max-width: 220px;
+
+      @include respond-down('sm') {
+         top: 20%;
+         max-width: 150px;
+      }
+
+      @include respond-down('xs') {
+         top: 0;
+         max-width: 110px;
+      }
+   }
+
+   &__text2 {
+      position: absolute;
+      right: 5%;
+      padding-left: 10px;
+      top: 20%;
+      max-width: 220px;
+
+      @include respond-down('sm') {
+         top: 12%;
+         max-width: 150px;
+      }
+
+      @include respond-down('xs') {
+         top: 0;
+         max-width: 110px;
+      }
+   }
+
+   &__text3 {
+      position: absolute;
+      left: 8%;
+      text-align: right;
+      padding-right: 10px;
+      bottom: 7%;
+      max-width: 220px;
+
+      @include respond-down('sm') {
+         bottom: 5%;
+         max-width: 150px;
+      }
+
+      @include respond-down('xs') {
+         bottom: 0%;
+         max-width: 110px;
+      }
+   }
+
+   &__text4 {
+      position: absolute;
+      right: 5%;
+      padding-right: 10px;
+      bottom: 23%;
+      max-width: 250px;
+
+      @include respond-down('sm') {
+         bottom: 23%;
+         max-width: 150px;
+      }
+
+      @include respond-down('xs') {
+         bottom: 0%;
+         max-width: 110px;
+      }
+   }
+
+   h3 {
+      color: map-get($colors, 'text-1100');
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: .5rem;
+
+      @include respond-down('xs') {
+         font-size: 14px;
+      }
+   }
+
+   p {
+      color: map-get($colors, 'text-1100');
+
+      @include respond-down('xs') {
+         font-size: 12px;
+      }
+   }
+}

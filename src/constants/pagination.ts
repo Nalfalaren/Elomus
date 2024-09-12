@@ -1,0 +1,6 @@
+export enum InitPagination {
+  DEFAULT_PAGE = 1,
+  DEFAULT_PAGE_SIZE_MINI = 5,
+  DEFAULT_PAGE_SIZE = 10,
+  DEFAULT_PAGE_SIZE_LARGE = 20,
+}

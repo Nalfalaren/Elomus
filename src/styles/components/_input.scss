@@ -1,0 +1,21 @@
+.input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: radius(default);
+  background-color: white;
+  padding: 6px 12px;
+  border: 1px solid color(line-400);
+  font-family: 'Poppins', sans-serif;
+  height: 32px;
+  box-sizing: border-box;
+  &:hover {
+    cursor: text;
+  }
+  &:disabled {
+    background-color: color(background-500);
+  }
+  @include input-placeholder {
+    font-weight: 400;
+  }
+}
