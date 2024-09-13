@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { Form } from 'react-bootstrap';
-import './ProductList.scss';
+import '../../ProductList.scss'
 import Drone from '@/assets/images/sidebar-drone.jpg';
+
 const CategorySidebar = () => {
   const categoriesList = [
     {

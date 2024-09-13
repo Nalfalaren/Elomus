@@ -9,14 +9,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card } from 'react-bootstrap';
 import '../landing-page/product-list/ProductList.scss';
 
-// Define the interface for product
 interface Product {
   rates: boolean[];
   newPrice: number;
   oldPrice: number;
 }
 
-// Define the interface for the props
 interface ProductCardProps {
   hoverImg: boolean;
   imgPrev: string;
@@ -49,7 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   formatCurrency,
 }) => {
   return (
-    <Card className="products-list__card" style={{ width: '21rem' }}>
+    <Card className="products-list__card">
       <div
         className="products-list__card__img"
         onMouseOver={handleImgHoverTrue}

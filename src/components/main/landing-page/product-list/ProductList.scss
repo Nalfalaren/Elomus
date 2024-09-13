@@ -1,6 +1,6 @@
 @import '../../../../styles/settings/setting.variables';
 @import '../../../../styles/settings/setting.mixins';
-
+@import '../../../../styles/settings/setting.breakpoint';
 hr{
     width: 80%;
     margin-inline: auto;
@@ -8,7 +8,6 @@ hr{
 .products-list {
     max-width: 1320px;
     margin-inline: auto;
-    padding-inline: 2rem;
     margin-block: 3rem;
     position: relative;
 
@@ -33,6 +32,16 @@ hr{
     .products-list__card {
         border: none;
         border-radius: 30px;
+        width: 18rem;
+    
+        @include respond-down('lg') {
+            width: 12rem;
+        }
+
+        @include respond-down('md') {
+            width: 13rem;
+        }
+    
 
         &__img {
             position: relative;
@@ -122,6 +131,7 @@ hr{
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
+                font-family: 'Oswald';
 
                 &--new {
                     color: map-get($colors, text-primary);

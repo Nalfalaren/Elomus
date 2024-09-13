@@ -6,7 +6,7 @@ import '@/styles/layouts/_product-list.scss';
 import '@/index.scss';
 import { Outlet } from 'react-router-dom';
 
-import CategorySidebar from '@/components/main/product-list-detail/sidebar/CategorySidebar';
+import CategorySidebar from '@/components/main/product-list-detail/sidebar/items/web/CategorySidebar';
 import Breadcumbs from '@/components/main/collection/breadcumbs/Breadcumbs';
 
 interface IPropsMainLayout {
@@ -24,7 +24,7 @@ export const ProductListLayout: React.FC<IPropsMainLayout> = () => {
           <Breadcumbs title={''}></Breadcumbs>
           <div className="layout__content__context">
             <aside>
-              <CategorySidebar />
+              <CategorySidebar></CategorySidebar>
             </aside>
             <Suspense fallback={<></>}>
               <Outlet></Outlet>

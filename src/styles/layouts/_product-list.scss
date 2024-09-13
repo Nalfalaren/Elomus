@@ -1,3 +1,8 @@
+
+@import '../../index.scss';
+@import '../../styles/settings/setting.variables';
+@import '../../styles/settings/setting.mixins';
+@import '../../styles/settings/setting.breakpoint';
 .main {
     height: 100vh;
     .layout {
@@ -31,8 +36,29 @@
             padding-block: 2rem;
             gap: 2rem;
 
-            div{
+            @include respond-up('xs') {
+                max-width: 540px;
+            }
+        
+            @include respond-up('sm') {
+                max-width: 720px;
+            }
+        
+            @include respond-up('md') {
+                max-width: 960px;
+            }
+        
+            @include respond-up('lg') {
+                max-width: 1180px;
+            }
+        
+            @include respond-up('xl') {
+                max-width: 1320px;
+            }
+
+            &__container{
                 width: 100%;
+                
             }
         }
       }

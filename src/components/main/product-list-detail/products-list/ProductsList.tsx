@@ -15,10 +15,14 @@ import {
   faCircleInfo,
   faHeart,
   faEye,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ProductCard from '../../items/ProductCard';
+
+import Sidebar from '@/components/Sidebar';
+import { Link } from 'react-router-dom';
 
 const ProductsList = () => {
   const imgOptions = [
@@ -133,13 +137,25 @@ const ProductsList = () => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
   const [imgHover, setImgHover] = useState<boolean[]>(
     Array(productList.length).fill(false),
   );
   const [optionsHover, setOptionsHover] = useState<boolean[]>(
     Array(productList.length).fill(false),
   );
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const itemsToShow = 1;
+  const totalItems = productList.length;
+
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % totalItems);
+  };
 
   const handleImgHover = (index: number, isHovering: boolean) => {
     if (!optionsHover[index]) {
@@ -166,15 +182,25 @@ const ProductsList = () => {
     }).format(amount);
   };
 
+  const handleSidebar = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <div className="products">
-      <div className="products__filter">
-        <div className="products__filter__img">
+    <div className="products-list">
+      <div className="products-list__mb" onClick={handleSidebar}>
+        <FontAwesomeIcon icon={faBars} />
+        <span>View sidebar filter</span>
+      </div>
+      <div className="products-list__filter">
+        <div className="products-list__filter__img">
           {imgOptions.map((option, index) => (
-            <img src={option} alt={option} key={index}></img>
+            <div key={index}>
+              <img src={option} alt={option}></img>
+            </div>
           ))}
         </div>
-        <div className="products__filter__result">
+        <div className="products-list__filter__result">
           <span>Showing 1 to 8 of 8 items</span>
         </div>
         <div className="products__filter__options">
@@ -190,26 +216,38 @@ const ProductsList = () => {
           </select>
         </div>
       </div>
-      <div className="products-list">
+      <div className="products-list__result">
         {productList.map((product, index) => (
-          <ProductCard
-            hoverImg={imgHover[index]}
-            imgPrev={product.imgPrev}
-            imgAfter={product.imgAfter}
-            name={product.name}
-            discount={product.discount}
-            product={product}
-            index={index}
-            listIcon={listIcon}
-            handleImgHoverTrue={() => handleImgHover(index, true)}
-            handleImgHoverFalse={() => handleImgHover(index, false)}
-            handleOptionsHoverTrue={() => handleOptionsHover(index, true)}
-            handleOptionsHoverFalse={() => handleOptionsHover(index, false)}
-            formatCurrency={formatCurrency}
-            className="products-list__card"
-          />
+          <Link
+            key={product.id}
+            to={`/product/${product.name}`}
+            className="products-list__result__link"
+          >
+            <ProductCard
+              hoverImg={imgHover[index]}
+              imgPrev={product.imgPrev}
+              imgAfter={product.imgAfter}
+              name={product.name}
+              discount={product.discount}
+              product={product}
+              index={index}
+              listIcon={listIcon}
+              handleImgHoverTrue={() => handleImgHover(index, true)}
+              handleImgHoverFalse={() => handleImgHover(index, false)}
+              handleOptionsHoverTrue={() => handleOptionsHover(index, true)}
+              handleOptionsHoverFalse={() => handleOptionsHover(index, false)}
+              formatCurrency={formatCurrency}
+              className="products__result__card"
+            />
+          </Link>
         ))}
       </div>
+      <Button className="carousel-control-prev" onClick={handlePrev}>
+        &lt;
+      </Button>
+      <Button className="carousel-control-next" onClick={handleNext}>
+        &gt;
+      </Button>
     </div>
   );
 };

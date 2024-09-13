@@ -1,0 +1,42 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+@import '../../landing-page/product-list/ProductList.scss';
+
+.products-list{
+    padding-inline: 2rem;
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1140px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1200px;
+    }
+
+    h2{
+        padding-block: 2rem;
+        &::after, &::before{
+            content: "";
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: map-get($colors, 'text-primary');
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+        }
+
+        &::before{
+            margin-left: -30px;
+        }
+    }
+}

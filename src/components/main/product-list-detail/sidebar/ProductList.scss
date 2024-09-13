@@ -13,6 +13,10 @@
     justify-content: space-between;
     gap: 1.5rem;
 
+    @include respond-down('md'){
+       display: none;
+    }
+
     &__categories{
         display: flex;
         flex-direction: column;

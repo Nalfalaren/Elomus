@@ -1,0 +1,56 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+.blogs {
+  
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1180px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1320px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-block: 2rem;
+        font-weight: 600;
+        font-size: 36px;
+
+        &::after,
+        &::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: map-get($colors, 'background-1300');
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+        }
+
+        &::before {
+            margin-left: -30px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

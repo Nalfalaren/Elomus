@@ -1,0 +1,65 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+
+.blog {
+    .blog__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+
+        @include respond-down('sm') {
+            display: flex;
+            flex-direction: column;
+         }
+
+        &__img {
+            width: 33%;
+
+            @include respond-down('md') {
+                width: 100%;
+             }
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 6px;
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &__link {
+                text-decoration: none;
+                border: 1px solid gray;
+                width: 15%;
+                padding: 1rem;
+                border-radius: 24px;
+                background-color: map-get($colors, background-1300);
+                color: white;
+                font-weight: 600;
+                text-align: center;
+
+                @include respond-down('lg') {
+                   width: 20%;
+                }
+
+                @include respond-down('md') {
+                    width: 30%;
+                 }
+
+                 @include respond-down('xs') {
+                    width: 50%;
+                 }
+            }
+        }
+    }
+}
