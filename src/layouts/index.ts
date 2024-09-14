@@ -6,3 +6,5 @@ export * from './blogs';
 export * from './contact-us';
 export * from './faq';
 export * from './about-us';
+export * from './service';
+export * from './blog-detail';

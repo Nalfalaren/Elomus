@@ -23,7 +23,7 @@ const BlogItem = ({ imgName, id, title, date, content }: BlogItem) => {
             <h3>{title}</h3>
             <p>{date}</p>
             <p>{content}</p>
-            <Link to={`blogs/${title}`} className="blog__body__content__link">Read more</Link>
+            <Link to={`/blogs/${title}`} className="blog__body__content__link">Read more</Link>
           </div>
         </Card.Body>
       </Card>
