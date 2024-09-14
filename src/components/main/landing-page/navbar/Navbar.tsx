@@ -31,17 +31,17 @@ const Navbar = () => {
     {
       title: 'Shop',
       content: ItemsDropdown2,
-      linkTo: '/',
+      linkTo: '/collections',
     },
     {
       title: 'Top Products',
       content: ItemsDrop3,
-      linkTo: '/',
+      linkTo: '/collections/:name',
     },
     {
       title: 'Product Pages',
       content: ItemsDropdown4,
-      linkTo: '/',
+      linkTo: '/product/:name',
     },
     {
       title: 'Pages / Layouts',

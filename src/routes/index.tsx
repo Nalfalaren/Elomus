@@ -8,6 +8,9 @@ import {
   ProductDetailLayout,
   ProductListLayout,
   BlogListLayout,
+  ContactUsLayout,
+  FAQLayout,
+  AboutUsLayout,
 } from '@/layouts';
 
 // Auth page
@@ -19,6 +22,9 @@ const CollectionComponent = React.lazy(() => import('@/pages/collections'));
 const ProductListComponent = React.lazy(() => import('@/pages/product-list'));
 const ProductDetailComponent = React.lazy(() => import('@/pages/detail'));
 const BlogComponent = React.lazy(() => import('@/pages/blogs'));
+const ContactUsComponent = React.lazy(() => import('@/pages/contact-us'));
+const FAQComponent = React.lazy(() => import('@/pages/faq'));
+const AboutUsComponent = React.lazy(() => import('@/pages/about-us'));
 // Other page
 const PageNotFound = React.lazy(
   () => import('@/pages/error-page/PageNotFound'),
@@ -89,6 +95,54 @@ export const router = createBrowserRouter([
       {
         path: '/blogs',
         element: <BlogComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ContactUsLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/contact-us',
+        element: <ContactUsComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <FAQLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/faqs',
+        element: <FAQComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <AboutUsLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/about-us',
+        element: <AboutUsComponent />,
       },
       { path: '*', element: <PageNotFound /> },
     ],
