@@ -1,0 +1,43 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+.extra{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &__block{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: 1px solid map-get($colors, background-1000);
+        box-shadow: 2px 2px 2px map-get($colors, background-1000) ;
+        padding: 1rem;
+        transition: width 0.5s ease-in;
+
+        &__title{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+
+            h3{
+                font-size: 20px;
+                transition: color 0.3s ease-in;
+                color: map-get($colors, text-1100);
+                &:hover{
+                    color: map-get($colors, text-primary);
+                }
+            }
+        }
+
+        button{
+            border-radius: 24px;
+            background-color: map-get($colors, background-1300);
+            border: none;
+            padding: .8rem;
+        }
+    }
+}

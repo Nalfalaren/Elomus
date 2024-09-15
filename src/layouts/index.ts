@@ -8,3 +8,5 @@ export * from './faq';
 export * from './about-us';
 export * from './service';
 export * from './blog-detail';
+export * from './gallery';
+export * from './cart';
