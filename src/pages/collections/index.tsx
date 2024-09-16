@@ -4,7 +4,7 @@ import ItemsList from '@/components/main/collection/item-lists/ItemsList';
 const CollectionComponent = () => {
   return (
     <div>
-      <Breadcumbs title="Collections"></Breadcumbs>
+      <Breadcumbs title="Collections" position="Collections"></Breadcumbs>
       <ItemsList></ItemsList>
     </div>
   );

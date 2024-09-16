@@ -13,10 +13,16 @@
 .carousel {
     position: relative;
 
+    img{
+        @include respond-down('sm'){
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+
     &-control-prev{
         span{
-            background-color: map-get($colors, 'secondary-600');
-            border: 1px solid black;
+            border: 1px solid white;
             border-radius: 100%;
 
             &:hover{
@@ -39,21 +45,39 @@
         width: 55%;
         height: fit-content;
         background-color: map-get($colors, 'background-1200');
+
+        @include respond-down('sm'){
+            top: 30%;
+        }
+
         &--first{
             background-color: transparent;
         }
 
         &__title{
             font-style: italic;
+            font-family: 'Oswald';
             font-size: calc(0.36607143rem + 0.98214286vw);
             padding-top: 1rem;
-            padding-left: 1rem;           
+            padding-left: 1rem;   
+            
+            @include respond-down('sm'){
+                font-size: 12px;
+            }
         }
 
         &__name{
             font-size: calc(-0.22321429rem + 5.80357143vw);
             font-weight: bold;
             padding-inline: 1rem;
+
+            @include respond-down('sm'){
+                font-size: 22px;
+            }
+
+            @include respond-down('xs'){
+                font-size: 16px;
+            }
         }
         &__content{
             text-transform: capitalize;
@@ -63,10 +87,15 @@
         }
 
         &__link{
-            padding-left: 1.5rem;
+            padding: 2rem;
             font-size: calc(0.15178571rem + 0.80357143vw);
-            @include respond-down('lg'){
+            border-radius: 24px;
+            @include respond-down('md'){
                 padding: 0;
+            }
+
+            @include respond-down('sm'){
+                width: fit-content;
             }
         }
     }

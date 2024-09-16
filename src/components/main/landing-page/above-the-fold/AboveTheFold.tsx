@@ -24,11 +24,8 @@ function AboutTheFold() {
               Newest hover function, Elomus F18 Drone 3 Auto Quadcopter UFO with
               2Mp Wifi Camera
             </p>
-            <div>
-              <Link
-                to="/a"
-                className="button button--primary carousel-caption__link"
-              >
+            <div className="carousel-caption__link">
+              <Link to="/collections" className="button button--primary">
                 Shop now
               </Link>
             </div>
@@ -45,11 +42,8 @@ function AboutTheFold() {
               Ideal for indoor usage & ultra portable. 3 User modes, junior,
               intermediate & healess.
             </p>
-            <div>
-              <Link
-                to="/a"
-                className="button button--primary carousel-caption__link"
-              >
+            <div className="carousel-caption__link">
+              <Link to="/collections" className="button button--primary">
                 Shop now
               </Link>
             </div>

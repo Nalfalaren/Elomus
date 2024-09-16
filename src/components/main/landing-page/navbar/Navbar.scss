@@ -23,8 +23,13 @@
     align-items: center;
     gap: 1rem;
     padding-inline: 1rem;
-    margin-block: 1rem;
     margin-inline: auto;
+
+    @include respond-down('xs') {
+        max-width: 450px;
+        padding-inline: 0;
+        margin-block: 0;
+    }
 
     @include respond-up('xs') {
         max-width: 540px;
@@ -35,7 +40,9 @@
     }
 
     @include respond-up('md') {
-        max-width: 960px;
+        max-width: 1000px;
+        gap: 0;
+        padding: 0;
     }
 
     @include respond-up('lg') {
@@ -52,6 +59,12 @@
         @include respond-down('md') {
             order: 2;
         }
+
+        img{
+            @include respond-down('sm'){
+                width: 80%;
+            }
+        }
     }
 
     &__middle {
@@ -64,18 +77,20 @@
            display: none;
            border: 1px solid map-get($colors, background-300);
            padding: .7rem;
-
-            color: white;
+           color: white;
             @include respond-down('md') {
                display: block;
             }
+            @include respond-down('xs') {
+                width: 50%;
+             }
         }
 
         &__list {
-            @include flexBox(row, space-between, 2rem, start);
+            @include flexBox(row, space-between, 1rem, start);
 
             @include respond-down('md') {
-                @include flexBox(column, space-between, 2rem, start);
+                @include flexBox(column, space-between, 1rem, start);
                 background-color: #fff;
                 border-radius: 12px;
                 padding: 1rem;

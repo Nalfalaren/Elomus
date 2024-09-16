@@ -51,6 +51,7 @@
             position: sticky;
             top: 3.5rem;
             height: fit-content;
+            
 
             @include respond-down('sm') {
                 display: flex;
@@ -98,7 +99,7 @@
             }
 
             &--other {
-                width: 30%;
+                width: 40%;
 
                 @include respond-down('sm'){
                     display: flex;
@@ -126,7 +127,7 @@
     }
 
     &__right {
-
+        width: 100%;
         hr {
             width: 100%;
         }
