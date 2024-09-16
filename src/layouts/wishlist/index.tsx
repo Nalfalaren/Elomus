@@ -13,7 +13,7 @@ interface IPropsMainLayout {
   settingPage?: boolean;
 }
 
-export const ServiceLayout: React.FC<IPropsMainLayout> = () => {
+export const WishListLayout: React.FC<IPropsMainLayout> = () => {
   return (
     <div className="main">
       <div className="layout">
@@ -21,7 +21,7 @@ export const ServiceLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs title={'Services'} position="Services"></Breadcumbs>
+          <Breadcumbs title={'Wishlist'}></Breadcumbs>
           <div className="layout__content__context">
             <Suspense fallback={<></>}>
               <Outlet></Outlet>

@@ -5,16 +5,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface BreadcumbsProps {
   title: string;
+  position: string;
 }
 
-const Breadcumbs: React.FC<BreadcumbsProps> = ({ title }) => {
+const Breadcumbs: React.FC<BreadcumbsProps> = ({ title, position }) => {
   return (
     <div className="breadcumb">
       <div className="breadcumb__title">{title}</div>
       <div className="breadcumb__direction">
         <p>Home</p>
         <FontAwesomeIcon icon={faChevronRight} />
-        <p>Collections</p>
+        <p>{position}</p>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const DropdownList = {
     'CHECKOUT',
     'WISHLIST',
     'LOGIN',
-    'LOG OUT',
+    'REGISTER',
   ],
   sub_content: [],
   linkTo: '/',

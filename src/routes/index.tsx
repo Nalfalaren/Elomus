@@ -14,8 +14,11 @@ import {
   ServiceLayout,
   GalleryLayout,
   CartLayout,
+  WishListLayout,
+  LoginLayout,
+  RegisterLayout,
+  BlogDetailLayout,
 } from '@/layouts';
-import { BlogDetailLayout } from '@/layouts/blog-detail';
 // Auth page
 const SignIn = React.lazy(() => import('@/pages/auth/sign-in'));
 
@@ -32,6 +35,9 @@ const ServiceComponent = React.lazy(() => import('@/pages/service'));
 const BlogDetailComponent = React.lazy(() => import('@/pages/blog-detail'));
 const GalleryComponent = React.lazy(() => import('@/pages/gallery'));
 const CartComponent = React.lazy(() => import('@/pages/cart'));
+const WishlistComponent = React.lazy(() => import('@/pages/wishlist'));
+const LoginComponent = React.lazy(() => import('@/pages/login'));
+const RegisterComponent = React.lazy(() => import('@/pages/register'));
 // Other page
 const PageNotFound = React.lazy(
   () => import('@/pages/error-page/PageNotFound'),
@@ -214,6 +220,54 @@ export const router = createBrowserRouter([
       {
         path: '/cart',
         element: <CartComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <WishListLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/wishlist',
+        element: <WishlistComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <LoginLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/account/login',
+        element: <LoginComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <RegisterLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/account/register',
+        element: <RegisterComponent />,
       },
       { path: '*', element: <PageNotFound /> },
     ],

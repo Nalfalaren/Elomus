@@ -21,7 +21,7 @@ export const ProductListLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs title={''}></Breadcumbs>
+          <Breadcumbs title={'Products'} position='Products'></Breadcumbs>
           <div className="layout__content__context">
             <aside>
               <CategorySidebar></CategorySidebar>

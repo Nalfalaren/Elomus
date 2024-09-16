@@ -10,3 +10,6 @@ export * from './service';
 export * from './blog-detail';
 export * from './gallery';
 export * from './cart';
+export * from './wishlist';
+export * from './login';
+export * from './register';
