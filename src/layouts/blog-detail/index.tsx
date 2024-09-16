@@ -22,7 +22,7 @@ export const BlogDetailLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs title={'Detail'}></Breadcumbs>
+          <Breadcumbs title={'Detail'} position={'Detail'}></Breadcumbs>
           <div className="layout__content__context">
             <aside>
               <Sidebar></Sidebar>

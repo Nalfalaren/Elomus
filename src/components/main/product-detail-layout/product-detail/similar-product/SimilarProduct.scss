@@ -1,8 +1,8 @@
-@import '../../../../index.scss';
-@import '../../../../styles/settings/setting.variables';
-@import '../../../../styles/settings/setting.mixins';
-@import '../../../../styles/settings/setting.breakpoint';
-@import '../../landing-page/product-list/ProductList.scss';
+@import '../../../../../index.scss';
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+@import '../../../landing-page/product-list/ProductList.scss';
 
 .products-list{
     max-width: 1200px;

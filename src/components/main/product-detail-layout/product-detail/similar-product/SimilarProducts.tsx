@@ -7,13 +7,13 @@ import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
 import shaverModelAfter1 from '@/assets/images/shaver-model1-after.webp';
 import shaverModelBefore1 from '@/assets/images/shaver-model1-before.webp';
-import ProductCard from '../../items/ProductCard';
+import ProductCard from '../../../items/ProductCard';
 import {
   faCircleInfo,
   faEye,
   faHeart,
 } from '@fortawesome/free-solid-svg-icons';
-import '../../landing-page/product-list/ProductList.scss';
+import '../../../landing-page/product-list/ProductList.scss';
 import './SimilarProduct.scss';
 const SimilarProducts = () => {
   const similarList = [

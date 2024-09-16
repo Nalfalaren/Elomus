@@ -3,32 +3,67 @@ import { Link } from 'react-router-dom';
 
 import './ItemsDropdown5.scss';
 
-const DropdownList = {
-  content: [
-    'COLLECTION',
-    'BLOG',
-    'BLOG POSTS',
-    'CONTACT US',
-    'FAQs',
-    'ABOUT US',
-    'SERVICES',
-    'GALLERY',
-    'CART',
-    'CHECKOUT',
-    'WISHLIST',
-    'LOGIN',
-    'REGISTER',
-  ],
-  sub_content: [],
-  linkTo: '/',
-};
+const DropdownList = [
+  {
+    name: 'COLLECTION',
+    linkTo: '/collections',
+  },
+  {
+    name: 'BLOG',
+    linkTo: '/blogs/news',
+  },
+  {
+    name: 'BLOG POSTS',
+    linkTo: '/blogs/news/:name',
+  },
+  {
+    name: 'CONTACT US',
+    linkTo: '/pages/contact-us',
+  },
+  {
+    name: 'FAQS',
+    linkTo: 'pages/faqs',
+  },
+  {
+    name: 'ABOUT US',
+    linkTo: '/pages/about-us',
+  },
+  {
+    name: 'SERVICES',
+    linkTo: '/pages/services',
+  },
+  {
+    name: 'GALLERY',
+    linkTo: '/pages/gallery',
+  },
+  {
+    name: 'CART',
+    linkTo: '/cart',
+  },
+  {
+    name: 'CHECKOUT',
+    linkTo: '/checkout',
+  },
+  {
+    name: 'WISHLIST',
+    linkTo: '/pages/wishlist',
+  },
+  {
+    name: 'LOGIN',
+    linkTo: '/account/login',
+  },
+  {
+    name: 'REGISTER',
+    linkTo: '/account/register',
+  },
+];
 
 const ItemsDropdown5 = () => {
   return (
     <div className="nav__middle__element">
-      {DropdownList.content.map((element, index) => (
-        <div key={index}>
-          <Link to={`/${element}`}>{element}</Link>
+      {DropdownList.map((element) => (
+        <div key={element.name}>
+          <Link to={`${element.linkTo}`}>{element.name}</Link>
         </div>
       ))}
     </div>

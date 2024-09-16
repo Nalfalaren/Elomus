@@ -21,7 +21,7 @@ export const ContactUsLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs title={'Contact Us'}></Breadcumbs>
+          <Breadcumbs title={'Contact Us'} position="Contact Us"></Breadcumbs>
           <div className="layout__content__context">
             <Suspense fallback={<></>}>
               <Outlet></Outlet>

@@ -8,7 +8,7 @@ import wishItem1 from '@/assets/images/drone-model1-after.webp';
 import './Wishlist.scss';
 import { Button } from 'react-bootstrap';
 
-import ProductView from '../../product-detail/viewed-products/ProductView';
+import ProductView from '../../product-detail-layout/product-detail/viewed-products/ProductView';
 
 const Wishlist = () => {
   const wishList = [

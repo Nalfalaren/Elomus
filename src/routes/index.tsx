@@ -38,6 +38,15 @@ const CartComponent = React.lazy(() => import('@/pages/cart'));
 const WishlistComponent = React.lazy(() => import('@/pages/wishlist'));
 const LoginComponent = React.lazy(() => import('@/pages/login'));
 const RegisterComponent = React.lazy(() => import('@/pages/register'));
+const ProductDetailComponent2 = React.lazy(
+  () => import('@/pages/product-detail-2'),
+);
+const ProductDetailComponent3 = React.lazy(
+  () => import('@/pages/product-detail-3'),
+);
+const ProductDetailComponent4 = React.lazy(
+  () => import('@/pages/product-detail-4'),
+);
 // Other page
 const PageNotFound = React.lazy(
   () => import('@/pages/error-page/PageNotFound'),
@@ -91,7 +100,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: '/product/:name',
-        element: <ProductDetailComponent />,
+        element: <ProductDetailComponent4 />,
       },
       { path: '*', element: <PageNotFound /> },
     ],
@@ -106,7 +115,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/blogs',
+        path: '/blogs/news',
         element: <BlogComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -122,7 +131,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/contact-us',
+        path: '/pages/contact-us',
         element: <ContactUsComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -138,7 +147,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/faqs',
+        path: '/pages/faqs',
         element: <FAQComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -154,7 +163,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/about-us',
+        path: '/pages/about-us',
         element: <AboutUsComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -170,7 +179,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/services',
+        path: '/pages/services',
         element: <ServiceComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -186,7 +195,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/blogs/:name',
+        path: '/blogs/news/:name',
         element: <BlogDetailComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -202,7 +211,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/gallery',
+        path: '/pages/gallery',
         element: <GalleryComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -234,7 +243,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/wishlist',
+        path: '/pages/wishlist',
         element: <WishlistComponent />,
       },
       { path: '*', element: <PageNotFound /> },

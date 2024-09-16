@@ -12,18 +12,24 @@ interface BlogItem {
   content: string;
 }
 const BlogItem = ({ imgName, id, title, date, content }: BlogItem) => {
+  const newTitle = encodeURIComponent(title).replace(/%20/g, '-');
   return (
     <div>
       <Card className="blog">
         <Card.Body className="blog__body">
           <div className="blog__body__img">
             <img src={imgName} alt={id}></img>
-        </div>
+          </div>
           <div className="blog__body__content">
             <h3>{title}</h3>
             <p>{date}</p>
             <p>{content}</p>
-            <Link to={`/blogs/${title}`} className="blog__body__content__link">Read more</Link>
+            <Link
+              to={`/blogs/news/${newTitle}`}
+              className="blog__body__content__link"
+            >
+              Read more
+            </Link>
           </div>
         </Card.Body>
       </Card>

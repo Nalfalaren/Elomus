@@ -46,7 +46,7 @@ const Navbar = () => {
     {
       title: 'Pages / Layouts',
       content: ItemsDropdown5,
-      linkTo: '/',
+      linkTo: '/contact-us',
     },
   ];
 
