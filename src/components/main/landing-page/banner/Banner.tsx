@@ -11,8 +11,8 @@ const Banner = () => {
         Buy Now Phantom 4 Professional offer an immersive, fun flying
         experience.
       </p>
-      <Link to="/" className="button button--primary">
-        Shop now
+      <Link to="/" className="banner__link">
+        SHOP NOW
       </Link>
     </div>
   );

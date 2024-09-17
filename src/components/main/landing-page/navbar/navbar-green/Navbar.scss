@@ -140,46 +140,47 @@
 
                     &__link {
                         @include flexBox(row, center, .5rem, center);
-                        color: white;
-
-
-
+                        color: white;           
+                        position: relative;
+                    
+                        ::before {
+                            content: '';
+                            position: absolute;
+                            border: 1px solid red;
+                            opacity: 0;
+                            transition: opacity 0.3s ease;
+                        }
+                    
                         @include respond-down('md') {
                             @include flexBox(row, space-between, .5rem, center);
                         }
-
-                        &__icon--plus {
-                            color: map-get($colors, text-1100);
-                        }
-
+                    
+                        &__icon--plus,
                         &__icon--down {
                             color: map-get($colors, text-1100);
                         }
-
+                    
                         &__1 {
                             text-decoration: none;
                             font-weight: bold;
                             color: map-get($colors, text-1100);
                             padding: .5rem;
-
+                    
                             @include respond-down('md') {
                                 color: map-get($colors, text-100);
                                 font-weight: lighter;
                             }
                         }
-
+                    
                         &:hover {
                             background-color: map-get($colors, 'background-1200');
-                            border: 0.5px solid #fff;
                             border-radius: 10px;
+                            ::before {
+                                opacity: 1;
+                            }
                         }
                     }
-
-                    &:hover &__sublink {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: translateY(0px);
-                    }
+                    
                 }
             }
         }

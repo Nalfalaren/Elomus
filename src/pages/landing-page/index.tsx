@@ -7,6 +7,7 @@ import Product1 from '@/components/main/landing-page/product/camera/Product1';
 import Product2 from '@/components/main/landing-page/product/drone-camera/Product2';
 import Product3 from '@/components/main/landing-page/product/screen/Product3';
 import ProductList from '@/components/main/landing-page/product-list/ProductList';
+import Parallax from '@/components/main/landing-page/parallax/Parallax';
 
 const LandingComponent = () => {
   return (
@@ -16,6 +17,7 @@ const LandingComponent = () => {
       <Banner></Banner>
       <Product1></Product1>
       <Product2></Product2>
+      <Parallax></Parallax>
       <ProductList></ProductList>
       <Feedback></Feedback>
       <Product3></Product3>

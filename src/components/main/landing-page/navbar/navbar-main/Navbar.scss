@@ -1,14 +1,8 @@
+// Import statements remain the same
 @import '../../../../../index.scss';
 @import '../../../../../styles/settings/setting.variables';
 @import '../../../../../styles/settings/setting.mixins';
 @import '../../../../../styles/settings/setting.breakpoint';
-// $breakpoints: (
-//   xs: 576px,
-//   sm: 768px,
-//   md: 992px,
-//   lg: 1280px,
-//   xl: 1400px,
-// );
 
 * {
     padding: 0;
@@ -21,8 +15,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    padding-inline: 1rem;
     margin-inline: auto;
 
     @include respond-down('xs') {
@@ -31,24 +23,24 @@
         margin-block: 0;
     }
 
-    @include respond-up('xs') {
-        max-width: 540px;
-    }
-
     @include respond-up('sm') {
         max-width: 720px;
     }
 
     @include respond-up('md') {
-        max-width: 1000px;
+        max-width: 960px;
         gap: 0;
         padding: 0;
     }
 
     @include respond-up('lg') {
-        max-width: 1180px;
+        max-width: 1140px;
         display: flex;
         gap: 1rem;
+    }
+
+    @include respond-down('lg'){
+        max-width: 1140px;
     }
 
     @include respond-up('xl') {
@@ -56,12 +48,16 @@
     }
 
     &__left {
+        margin-block: auto;
+        padding: 0 25px;
+        border-radius: 24px;
+
         @include respond-down('md') {
             order: 2;
         }
 
-        img{
-            @include respond-down('sm'){
+        img {
+            @include respond-down('sm') {
                 width: 80%;
             }
         }
@@ -73,21 +69,23 @@
             position: relative;
         }
 
-        &__bar{
-           display: none;
-           border: 1px solid map-get($colors, background-300);
-           padding: .7rem;
-           color: white;
+        &__bar {
+            display: none;
+            border: 1px solid map-get($colors, background-300);
+            padding: .7rem;
+            color: white;
+
             @include respond-down('md') {
-               display: block;
+                display: block;
             }
+
             @include respond-down('xs') {
                 width: 50%;
-             }
+            }
         }
 
         &__list {
-            @include flexBox(row, space-between, 1rem, start);
+            display: flex;
 
             @include respond-down('md') {
                 @include flexBox(column, space-between, 1rem, start);
@@ -101,6 +99,12 @@
 
             &__element {
                 list-style: none;
+
+                &:first-child {
+                    background-color: map-get($colors, 'background-1200');
+                    border-radius: 24px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                }
 
                 &__content {
                     @include flexBox(column, center, .2rem, center);
@@ -123,44 +127,47 @@
 
                         a {
                             text-decoration: none;
-                            color: map-get($colors , text-1200);
+                            color: map-get($colors, text-1200);
 
                             &:hover {
-                                color: map-get($colors , background-1300);
+                                color: map-get($colors, background-1300);
                             }
                         }
                     }
 
                     &__link {
-                        @include flexBox(row, center, .5rem, center);
-                        color: white;
-                        
-                        
+                        @include flexBox(row, center, 8px, center);
+                        padding: 5px 20px;
+                        margin: 0 2px 0 0;
+                        line-height: 26px;
+                        color: #fff;
 
                         @include respond-down('md') {
                             @include flexBox(row, space-between, .5rem, center);
                         }
 
-                        &__icon--plus{
+                        &__icon--plus {
                             color: map-get($colors, text-100);
                         }
 
                         &__1 {
                             text-decoration: none;
-                            font-weight: bold;
-                            color: white;
-                            padding: .5rem;
+                            font-weight: 600;
+                            color: #fff;
+                            border: 1px solid transparent;
+                            border-radius: 24px;
+                            position: relative;
 
                             @include respond-down('md') {
                                 color: map-get($colors, text-100);
                                 font-weight: lighter;
                             }
+
                         }
 
                         &:hover {
                             background-color: map-get($colors, 'background-1200');
-                            border: 0.5px solid #fff;
-                            border-radius: 10px;
+                            border-radius: 24px;
                         }
                     }
 
@@ -177,10 +184,11 @@
     &__right {
         @include flexBox(row, space-between, 1rem, center);
         order: 3;
+
         &__icon {
             color: white;
+            width: 17px;
+            height: 40px;
         }
     }
-
-    
 }

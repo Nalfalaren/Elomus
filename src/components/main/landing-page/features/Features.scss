@@ -4,7 +4,7 @@
 
 .feature {
     margin-top: 2rem;
-    max-width: 1320px;
+    max-width: 1200px;
     padding-inline: 2rem;
     margin-inline: auto;
     display: flex;
@@ -29,84 +29,97 @@
     }
 
     @include respond-up('xl') {
-        max-width: 1320px;
+        max-width: 1200px;
     }
 
     &__title {
         text-align: center;
-        p{
+        margin-block: 2.5rem;
+
+        p {
             font-style: italic;
-            color: map-get($colors, 'text-400');
+            color: map-get($colors, 'text-1300');
             font-family: georgia;
             font-size: 20px;
+            margin-bottom: .3rem;
         }
-        h2{
+
+        h2 {
             font-size: 36px;
             color: map-get($colors, 'text-1200');
             font-weight: 600;
             position: relative;
 
-            &::after, &::before{
-                content: "";
-                display: block;
-                width: 40px;
-                height: 1px;
-                background-color: map-get($colors, 'background-1300');
-                position: absolute;
-                left: 50%;
-                margin-left: -10px;
-            }
+        &::after,
+        &::before {
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: map-get($colors, 'background-1300');
+            position: absolute;
+            left: 50%;
+            bottom: -35%;
+            margin-left: -10px;
+        }
 
-            &::before{
-                margin-left: -30px;
-            }
+        &::after{
+            bottom: -50%;
+        }
+
+        &::before {
+            margin-left: -30px;
+        }
         }
     }
-    &__container{
+
+    &__container {
         display: flex;
         flex-direction: row;
+        justify-content: center;
         align-items: center;
         gap: 1.5rem;
 
-        @include respond-down('sm'){
+        @include respond-down('sm') {
             flex-wrap: wrap;
         }
 
-        &__detailed{
+        &__detailed {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
 
-            @include respond-down('sm'){
+            @include respond-down('sm') {
                 flex: 0 0 auto;
                 width: 40%;
             }
 
 
-            h2{
+            h2 {
                 text-align: center;
                 font-size: 1rem;
                 font-weight: 600;
                 margin-block: 1rem;
+                margin-top: 34px;
             }
 
-            p{
+            p {
                 text-align: center;
                 color: map-get($colors, 'text-1300');
             }
         }
     }
-    &__product{
-        margin: 0 auto 4em;
 
-        img{
+    &__product {
+        margin-top: 2rem;
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            vertical-align: middle;
         }
-        @include respond-down('md'){
+
+        @include respond-down('md') {
             width: 90%;
         }
     }

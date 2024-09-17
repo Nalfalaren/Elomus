@@ -85,7 +85,7 @@ const Navbar = () => {
                     to={element.linkTo}
                     className="nav__middle__list__element__content__link__1"
                   >
-                    {element.title}
+                    <span>{element.title}</span>
                   </Link>
                   {window.innerWidth > 992 ? (
                     <FontAwesomeIcon

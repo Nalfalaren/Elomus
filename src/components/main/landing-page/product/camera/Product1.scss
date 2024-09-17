@@ -3,7 +3,7 @@
 @import '../../../../../styles/settings/setting.breakpoint';
 
 .product {
-    max-width: 1320px;
+    max-width: 1200px;
     padding-inline: 2rem;
     padding-block: 2rem;
     display: flex;
@@ -35,7 +35,7 @@
     }
 
     @include respond-up('xl') {
-        max-width: 1320px;
+        max-width: 1200px;
     }
 
     &__intro {
@@ -46,7 +46,7 @@
         h3 {
             width: 70%;
             font-size: 34px;
-            color: map-get($colors, 'text-1100');
+            color: map-get($colors, 'text-1200');
 
             @include respond-down('sm'){
                 width: 80%;

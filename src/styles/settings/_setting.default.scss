@@ -13,7 +13,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   background-color: white;
-  @include respond-down(sm) {
+  @include respond-down('sm') {
     overflow-x: hidden;
   }
 }

@@ -2,12 +2,30 @@
 
 .banner {
     background-color: map-get($colors, 'background-1300');
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-block: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+
+    &__link{
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        border: 1px solid #fff;
+        font-size: 15px;
+        line-height: 40px;
+        padding: 0 30px;
+        border-radius: 25px;
+        transition: background-color 0.3s ease-in;
+
+        &:hover{
+            background-color: #fff;
+            color: map-get($colors, text-primary);
+        }
+    }
 
     p {
         font-family: georgia;

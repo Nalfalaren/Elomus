@@ -56,7 +56,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={!hoverImg ? imgPrev : imgAfter}
           alt={name}
-          style={{ width: '100%', height: 'auto' }}
+          style={{ width: '100%', height: 'auto', borderRadius: '1rem' }}
         />
         <div className="products-list__card__img__discount">
           <p>{discount}%</p>

@@ -7,7 +7,7 @@ import LowBreakpointSlider from './Item/LowBreakpointSlider';
 function ProductList() {
   return (
     <div className="products-list">
-      <div className="contact__title">
+      <div className="products-list__title">
         <p>Featured products</p>
         <h2>DRONE PRODUCTS</h2>
       </div>

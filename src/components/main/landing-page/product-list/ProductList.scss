@@ -1,15 +1,85 @@
 @import '../../../../styles/settings/setting.variables';
 @import '../../../../styles/settings/setting.mixins';
 @import '../../../../styles/settings/setting.breakpoint';
-hr{
+
+hr {
     width: 80%;
     margin-inline: auto;
 }
+
 .products-list {
-    max-width: 1320px;
+    max-width: 1200px;
     margin-inline: auto;
     margin-block: 3rem;
     position: relative;
+
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1180px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1200px;
+    }
+
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 80px;
+
+        p {
+            font-size: 20px;
+            color: map-get($colors, text-1100);
+            text-transform: none;
+            font-family: 'Georgia';
+            font-style: italic;
+            margin-bottom: 3px;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            color: map-get($colors, text-1200);
+
+
+            &::after,
+            &::before {
+                content: "";
+                width: 40px;
+                height: 1px;
+                background-color: map-get($colors, 'background-1300');
+                position: absolute;
+                left: 50%;
+                bottom: -45%;
+                margin-left: -10px;
+                margin-bottom: 10px;
+            }
+
+            &::after {
+                bottom: -50%;
+            }
+
+            &::before {
+                margin-left: -30px;
+                font-weight: 600;
+            }
+        }
+    }
 
     .products-list__wrapper {
         overflow: hidden;
@@ -33,7 +103,12 @@ hr{
         border: none;
         border-radius: 30px;
         width: 18rem;
-    
+        margin-bottom: 1rem;
+        transition: box-shadow 0.3s ease-in ;
+        &:hover{
+            box-shadow: 2px 2px 5px 7px map-get($colors, text-1000);
+        }
+
         @include respond-down('lg') {
             width: 12rem;
         }
@@ -41,7 +116,7 @@ hr{
         @include respond-down('md') {
             width: 13rem;
         }
-    
+
 
         &__img {
             position: relative;
@@ -52,7 +127,8 @@ hr{
                 color: #fff;
                 font-weight: 600;
                 border-radius: 12px;
-                width: 20%;
+                line-height: 25px;
+                width: 30%;
                 top: 5%;
                 right: 5%;
 
@@ -61,41 +137,39 @@ hr{
                 }
             }
 
-            &__icons{
+            &__icons {
                 position: absolute;
-                right: 5%;
-                bottom: 2%;
-                display: flex;
-                flex-direction: column;
-                width: 20%;
+                right: 10px;
+                bottom: 10px;
+                z-index: 3;
+                padding: 5px 8px;
                 border: 1px solid;
                 border-color: map-get($colors, background-1100);
-                box-shadow: 3px 2px 4px map-get($colors, background-1000);
-                border-radius: 12px;
+                border-radius: 10px;
                 background-color: #fff;
 
-               &__detailed{
-                margin-top: 1rem;
-                color: map-get($colors, text-1300);
-                text-align: center;
-                &:hover{
-                    color: map-get($colors, text-primary);
-                    transition: 0.3s ease-in;
+
+                &__detailed {
+                    color: map-get($colors, text-1300);
+                    width: 28px;
+                    display: block;
+                    font-weight: 400;
+                    text-align: center;
+                    opacity: 0.9;
+
+                    &:hover {
+                        color: map-get($colors, text-primary);
+                        transition: 0.3s ease-in;
+                        visibility: visible;
+                        opacity: 1;
+                    }
                 }
-               } 
             }
         }
 
         img {
             box-shadow: 1px 1px 1px map-get($colors, background-1000);
             border-radius: 15px;
-        }
-
-        &:hover {
-            border: 1px solid;
-            border-color: map-get($colors, background-1100);
-            box-shadow: 3px 2px 4px map-get($colors, background-1000);
-            border-radius: 1.5rem;
         }
 
         &__body {

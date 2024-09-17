@@ -1,0 +1,42 @@
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+.parallax{
+    background-image: url('https://elomus-theme.myshopify.com/cdn/shop/files/bkg_static5_elomus1.jpg?v=1613722923');
+    background-position: center;
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    background-size: 100%;
+    margin-block: 2rem;
+
+    &__row{
+        padding: 5rem;
+
+        @include respond-down('md'){
+            padding-block: 60px;
+        }
+
+        h3{
+            color: #fff;
+            font-size: 54px;
+            letter-spacing: .12em;
+            font-weight: 500;
+            margin: 0;
+
+            @include respond-down('sm'){
+                font-size: 6vw;
+            }
+        }
+
+        p{
+            font-size: 40px;
+            letter-spacing: .02em;
+            color: #fff;
+
+            @include respond-down('sm'){
+                font-size: 4vw;
+            }
+        }
+    }
+}
