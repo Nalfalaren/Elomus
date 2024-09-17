@@ -1,0 +1,37 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+.breadcumb-green{
+    background-color: map-get($colors, background-teritary);
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+
+    &__title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 28px;
+    }
+
+    @include respond-down('xs'){
+        font-size: 24px;
+    }
+
+    &__direction{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: #fff;
+        position: absolute;
+        bottom: 5%;
+        left: 25%;
+
+    }
+}

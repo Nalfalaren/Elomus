@@ -1,18 +1,15 @@
-@import '../../../../../index.scss';
 @import '../../../../../styles/settings/setting.variables';
 @import '../../../../../styles/settings/setting.mixins';
 @import '../../../../../styles/settings/setting.breakpoint';
-@import '../../../landing-page/product-list/ProductList.scss';
 
-.product-detail-2 {
+.product-detail-6 {
     max-width: 1200px;
     margin-inline: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1.5rem;
+    flex-direction: column;
     padding-block: 2rem;
     scroll-behavior: smooth;
+    gap: 1.5rem;
 
     @include respond-up('xs') {
         max-width: 540px;
@@ -34,9 +31,7 @@
         max-width: 1200px;
     }
 
-    @include respond-down('sm'){
-        display: flex;
-        flex-direction: column;
+    @include respond-down('xs') {
         padding-inline: 2rem;
     }
 
@@ -45,19 +40,20 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        max-width: 576px;
 
         &__carousel {
-            position: sticky;
-            top: 3.5rem;
-            height: fit-content;
-            flex-basis: 50%;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: row;
 
-            @include respond-down('sm'){
-                position: static;
-            }
             &--main {
                 max-width: 576px;
+                display: none;
+
+                @include respond-down('sm') {
+                    display: block;
+                }
+
                 img {
                     width: 100%;
                     height: auto;
@@ -65,8 +61,8 @@
                     border-radius: 3rem;
                 }
 
-                .carousel-control-next-icon{
-                    background-image: url('../../../../assets/images/chevron-right.svg');
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right.svg');
                     background-color: transparent;
                     border: 1px solid gray;
                     color: black;
@@ -74,17 +70,17 @@
                     height: 40px;
                     border-radius: 100%;
 
-                    &:hover{
-                        background-color: map-get($colors, background-1300);
+                    &:hover {
+                        background-color: map-get($colors, text-secondary);
                         color: #fff;
                     }
                 }
 
-                 .carousel-control-prev-icon{
-                    background-image: url('../../../../assets/images/chevron-left.svg');
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../../assets/images/chevron-left.svg');
                     @extend .carousel-control-next-icon;
 
-                    &:hover{
+                    &:hover {
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
@@ -92,7 +88,13 @@
             }
 
             &--other {
-                
+                width: 100%;
+                overflow-y: auto;
+
+                @include respond-down('sm') {
+                    display: none
+                }
+
                 &__item {
                     display: flex !important;
                     flex-direction: row;
@@ -102,9 +104,17 @@
                     margin-top: 1rem;
 
                     img {
-                        width: 23%;
+                        width: 33.33%;
                         border-radius: 1rem;
                         box-shadow: 1px 1px 1px map-get($colors, background-1000);
+
+                        @include respond-down('md'){
+                            width: 66%;
+                        }
+
+                        @include respond-down('sm'){
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -113,6 +123,8 @@
     }
 
     &__right {
+        width: 100%;
+        margin-top: 40px;
 
         hr {
             width: 100%;
@@ -121,18 +133,24 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        width: 50%;
+        margin-inline: auto;
 
         &__container {
             display: flex;
             flex-direction: column;
             gap: .4rem;
 
+            &__shortIntro{
+                color: map-get($colors, text-1100);
+            }
+
             &__brand {
                 display: flex;
                 flex-direction: row;
 
                 p {
-                    color: map-get($colors, text-primary);
+                    color: map-get($colors, text-teritary);
                 }
             }
 
@@ -156,7 +174,7 @@
                 color: map-get($colors, text-100);
                 margin-block: 1rem;
 
-                a{
+                a {
                     color: map-get($colors, text-100);
                 }
             }
@@ -169,21 +187,27 @@
                 }
 
                 &__tags {
-                    color: map-get($colors, text-primary);
-                    font-weight: 500;
-                    transition: color 0.3s ease-in;
+                    display: flex;
+                    gap: .5rem;
 
-                    &:hover {
-                        color: map-get($colors, text-1100);
+                    &__para {
+                        color: map-get($colors, text-teritary);
+                        font-weight: 500;
+                        transition: color 0.3s ease-in;
+
+                        &:hover {
+                            color: map-get($colors, text-1100);
+                        }
                     }
                 }
             }
 
             &__name {
                 margin-block: .5rem;
+
                 h2 {
                     font-size: 24px;
-                    
+
                 }
             }
 
@@ -193,7 +217,7 @@
                 font-weight: 600;
 
                 span {
-                    color: map-get($colors, text-primary);
+                    color: map-get($colors, text-teritary);
                 }
 
                 small {
@@ -206,20 +230,22 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+
                 p {
                     margin-bottom: .5rem;
                     font-size: 16px;
                     color: map-get($colors, text-1100);
                 }
 
-                &__size, &__colorList{
+                &__imgList {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    gap: 1rem;
 
-                    select{
-                        padding: 1rem;
-                        border-radius: 24px;
-                        border: 1px solid map-get($colors, background-1100);
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 12px;
                     }
                 }
             }
@@ -317,16 +343,16 @@
                 }
             }
 
-            &__key{
+            &__key {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
@@ -334,28 +360,30 @@
                 }
             }
 
-            &__prize{
+            &__prize {
                 display: flex;
                 flex-direction: column;
                 gap: .8rem;
-                span{
+
+                span {
                     font-weight: 600;
                 }
-                ul{
+
+                ul {
                     padding: revert;
                 }
             }
 
-            &__others{
+            &__others {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;

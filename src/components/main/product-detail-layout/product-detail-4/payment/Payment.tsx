@@ -12,7 +12,7 @@ import clock4 from '@/assets/images/clock4.webp';
 import clock5 from '@/assets/images/clock5.webp';
 import clock6 from '@/assets/images/clock5.webp';
 
-import './Payment.scss';
+import './Payment4.scss';
 
 const Payment = () => {
   const imgList = [clock1, clock2, clock3, clock4, clock5, clock6];
@@ -83,19 +83,19 @@ const Payment = () => {
   };
 
   return (
-    <div className="product-detail">
-      <div className="product-detail__left__carousel">
-        <div className="product-detail__left__carousel--other">
+    <div className="product-detail-4">
+      <div className="product-detail-4__left__carousel">
+        <div className="product-detail-4__left__carousel--other">
           {imgList.map((img, index) => (
             <div
-              className="product-detail__left__carousel--other__item"
+              className="product-detail-4__left__carousel--other__item"
               key={index}
             >
               <img src={img} alt={`Clock ${index + 1}`} />
             </div>
           ))}
         </div>
-        <Carousel className="product-detail__left__carousel--main">
+        <Carousel className="product-detail-4__left__carousel--main">
           {imgList.map((img, index) => (
             <Carousel.Item key={index}>
               <img src={img} alt={`Clock ${index + 1}`} />
@@ -103,22 +103,22 @@ const Payment = () => {
           ))}
         </Carousel>
       </div>
-      <div className="product-detail__right">
+      <div className="product-detail-4__right">
         {productInfo.map((info) => (
-          <div key={info.id} className="product-detail__right__container">
-            <div className="product-detail__right__container__rates">
+          <div key={info.id} className="product-detail-4__right__container">
+            <div className="product-detail-4__right__container__rates">
               {info.rates.map((rate, index) => (
                 <FontAwesomeIcon
                   icon={faStar}
                   key={index}
-                  className={`product-detail__right__container__rates--${rate ? 'filled' : 'unfilled'}`}
+                  className={`product-detail-4__right__container__rates--${rate ? 'filled' : 'unfilled'}`}
                 />
               ))}
             </div>
-            <div className="product-detail__right__container__name">
+            <div className="product-detail-4__right__container__name">
               <h2>{info.name}</h2>
             </div>
-            <div className="product-detail__right__container__price">
+            <div className="product-detail-4__right__container__price">
               <p>
                 {info.discount > 0 ? (
                   <span>
@@ -133,9 +133,9 @@ const Payment = () => {
               </p>
             </div>
             <hr />
-            <div className="product-detail__right__container__status">
+            <div className="product-detail-4__right__container__status">
               <p>Availability: {info.availability}</p>
-              <span className="product-detail__right__container__status__brand">
+              <span className="product-detail-4__right__container__status__brand">
                 Brand: <p>{info.brand}</p>
               </span>
               <p>SKU: {info.SKU}</p>
@@ -144,7 +144,7 @@ const Payment = () => {
                 {info.tags.map((tag, index) => (
                   <p
                     key={index}
-                    className="product-detail__right__container__status__tags"
+                    className="product-detail-4__right__container__status__tags"
                   >
                     {tag}
                     {index < info.tags.length - 1 && ','}
@@ -156,7 +156,7 @@ const Payment = () => {
                 {info.collections.map((collection, index) => (
                   <p
                     key={index}
-                    className="product-detail__right__container__status__tags"
+                    className="product-detail-4__right__container__status__tags"
                   >
                     {collection}
                     {index < info.collections.length - 1 && ','}
@@ -165,12 +165,12 @@ const Payment = () => {
               </div>
             </div>
             <hr />
-            <div className="product-detail__right__container__link">
+            <div className="product-detail-4__right__container__link">
               <FontAwesomeIcon icon={faTape} />
               <Link to="/">Size chart</Link>
             </div>
-            <div className="product-detail__right__container__colors">
-              <div className="product-detail__right__container__colors__imgList">
+            <div className="product-detail-4__right__container__colors">
+              <div className="product-detail-4__right__container__colors__imgList">
                 {imgList.slice(0, 4).map((img, index) => (
                   <img
                     src={img}
@@ -180,8 +180,8 @@ const Payment = () => {
                 ))}
               </div>
             </div>
-            <div className="product-detail__right__container__quality">
-              <div className="product-detail__right__container__quality__input">
+            <div className="product-detail-4__right__container__quality">
+              <div className="product-detail-4__right__container__quality__input">
                 <p>Qty</p>
                 <input
                   type="number"
@@ -190,33 +190,33 @@ const Payment = () => {
                   min="0"
                 />
               </div>
-              <div className="product-detail__right__container__quality__input__icon">
+              <div className="product-detail-4__right__container__quality__input__icon">
                 <FontAwesomeIcon icon={faHeart} />
               </div>
             </div>
-            <div className="product-detail__right__container__buttons">
+            <div className="product-detail-4__right__container__buttons">
               <Link
                 to="/"
-                className="product-detail__right__container__buttons--cart"
+                className="product-detail-4__right__container__buttons--cart"
               >
                 ADD TO CART
               </Link>
               <Link
                 to="/"
-                className="product-detail__right__container__buttons--paypal"
+                className="product-detail-4__right__container__buttons--paypal"
               >
                 Pay with Paypal
               </Link>
             </div>
-            <div className="product-detail__right__intro">
+            <div className="product-detail-4__right__intro">
               <h3>Product Details</h3>
               <h4>{info.intro}</h4>
-              <div className="product-detail__right__intro__overview">
+              <div className="product-detail-4__right__intro__overview">
                 <p>
                   <span>{info.overview.title}</span> {info.overview.content}
                 </p>
               </div>
-              <div className="product-detail__right__intro__key">
+              <div className="product-detail-4__right__intro__key">
                 <span>Key Features:</span>
                 <ul>
                   {info.keyFeatures.map((feature, index) => (
@@ -226,7 +226,7 @@ const Payment = () => {
                   ))}
                 </ul>
               </div>
-              <div className="product-detail__right__intro__prize">
+              <div className="product-detail-4__right__intro__prize">
                 <span>What's in the Box:</span>
                 <ul>
                   {info.bonusItems.map((item, index) => (
@@ -234,7 +234,7 @@ const Payment = () => {
                   ))}
                 </ul>
               </div>
-              <div className="product-detail__right__intro__others">
+              <div className="product-detail-4__right__intro__others">
                 {info.otherInfo.map((item, index) => (
                   <p key={index}>
                     <span>{item.title}</span>: {item.content}

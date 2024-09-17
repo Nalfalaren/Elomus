@@ -4,12 +4,11 @@
 @import '../../../../../styles/settings/setting.breakpoint';
 @import '../../../landing-page/product-list/ProductList.scss';
 
-.product-detail-2 {
+.product-detail-4 {
     max-width: 1200px;
     margin-inline: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 1.5rem;
     padding-block: 2rem;
     scroll-behavior: smooth;
@@ -34,7 +33,7 @@
         max-width: 1200px;
     }
 
-    @include respond-down('sm'){
+    @include respond-down('xs') {
         display: flex;
         flex-direction: column;
         padding-inline: 2rem;
@@ -45,19 +44,27 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        max-width: 576px;
 
         &__carousel {
+            display: flex;
+            flex-direction: row;
             position: sticky;
             top: 3.5rem;
             height: fit-content;
-            flex-basis: 50%;
+            
 
-            @include respond-down('sm'){
+            @include respond-down('sm') {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            @include respond-down('sm') {
                 position: static;
             }
+
             &--main {
                 max-width: 576px;
+
                 img {
                     width: 100%;
                     height: auto;
@@ -65,8 +72,8 @@
                     border-radius: 3rem;
                 }
 
-                .carousel-control-next-icon{
-                    background-image: url('../../../../assets/images/chevron-right.svg');
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right.svg');
                     background-color: transparent;
                     border: 1px solid gray;
                     color: black;
@@ -74,17 +81,17 @@
                     height: 40px;
                     border-radius: 100%;
 
-                    &:hover{
+                    &:hover {
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
                 }
 
-                 .carousel-control-prev-icon{
-                    background-image: url('../../../../assets/images/chevron-left.svg');
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left.svg');
                     @extend .carousel-control-next-icon;
 
-                    &:hover{
+                    &:hover {
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
@@ -92,17 +99,24 @@
             }
 
             &--other {
-                
+                width: 50%;
+
+                @include respond-down('sm'){
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                }
+
                 &__item {
                     display: flex !important;
-                    flex-direction: row;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     gap: 1rem;
                     margin-top: 1rem;
 
                     img {
-                        width: 23%;
+                        width: 60%;
                         border-radius: 1rem;
                         box-shadow: 1px 1px 1px map-get($colors, background-1000);
                     }
@@ -113,7 +127,7 @@
     }
 
     &__right {
-
+        width: 100%;
         hr {
             width: 100%;
         }
@@ -156,7 +170,7 @@
                 color: map-get($colors, text-100);
                 margin-block: 1rem;
 
-                a{
+                a {
                     color: map-get($colors, text-100);
                 }
             }
@@ -181,9 +195,10 @@
 
             &__name {
                 margin-block: .5rem;
+
                 h2 {
                     font-size: 24px;
-                    
+
                 }
             }
 
@@ -206,20 +221,22 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+
                 p {
                     margin-bottom: .5rem;
                     font-size: 16px;
                     color: map-get($colors, text-1100);
                 }
 
-                &__size, &__colorList{
+                &__imgList {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    gap: 1rem;
 
-                    select{
-                        padding: 1rem;
-                        border-radius: 24px;
-                        border: 1px solid map-get($colors, background-1100);
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 12px;
                     }
                 }
             }
@@ -317,16 +334,16 @@
                 }
             }
 
-            &__key{
+            &__key {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
@@ -334,28 +351,30 @@
                 }
             }
 
-            &__prize{
+            &__prize {
                 display: flex;
                 flex-direction: column;
                 gap: .8rem;
-                span{
+
+                span {
                     font-weight: 600;
                 }
-                ul{
+
+                ul {
                     padding: revert;
                 }
             }
 
-            &__others{
+            &__others {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;

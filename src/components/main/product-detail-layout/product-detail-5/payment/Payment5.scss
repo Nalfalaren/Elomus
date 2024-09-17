@@ -1,17 +1,15 @@
-@import '../../../../../index.scss';
 @import '../../../../../styles/settings/setting.variables';
 @import '../../../../../styles/settings/setting.mixins';
 @import '../../../../../styles/settings/setting.breakpoint';
-@import '../../../landing-page/product-list/ProductList.scss';
 
-.product-detail {
+.product-detail-5 {
     max-width: 1200px;
     margin-inline: auto;
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
     padding-block: 2rem;
     scroll-behavior: smooth;
+    gap: 1.5rem;
 
     @include respond-up('xs') {
         max-width: 540px;
@@ -46,24 +44,15 @@
         gap: 1rem;
 
         &__carousel {
-            display: flex;
-            flex-direction: row;
-            position: sticky;
-            top: 3.5rem;
-            height: fit-content;
-            
-
-            @include respond-down('sm') {
-                display: flex;
-                flex-direction: column-reverse;
-            }
-
-            @include respond-down('sm') {
-                position: static;
-            }
+            overflow-y: auto;
 
             &--main {
                 max-width: 576px;
+                display: none;
+
+                @include respond-down('sm') {
+                    display: block;
+                }
 
                 img {
                     width: 100%;
@@ -73,7 +62,7 @@
                 }
 
                 .carousel-control-next-icon {
-                    background-image: url('../../../../assets/images/chevron-right.svg');
+                    background-image: url('../../../../../assets/images/chevron-right.svg');
                     background-color: transparent;
                     border: 1px solid gray;
                     color: black;
@@ -82,13 +71,13 @@
                     border-radius: 100%;
 
                     &:hover {
-                        background-color: map-get($colors, background-1300);
+                        background-color: map-get($colors, text-secondary);
                         color: #fff;
                     }
                 }
 
                 .carousel-control-prev-icon {
-                    background-image: url('../../../../assets/images/chevron-left.svg');
+                    background-image: url('../../../../../assets/images/chevron-left.svg');
                     @extend .carousel-control-next-icon;
 
                     &:hover {
@@ -99,12 +88,11 @@
             }
 
             &--other {
-                width: 40%;
+                width: 100%;
+                overflow-y: auto;
 
-                @include respond-down('sm'){
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
+                @include respond-down('sm') {
+                    display: none
                 }
 
                 &__item {
@@ -128,6 +116,8 @@
 
     &__right {
         width: 100%;
+        margin-top: 40px;
+
         hr {
             width: 100%;
         }
@@ -146,7 +136,7 @@
                 flex-direction: row;
 
                 p {
-                    color: map-get($colors, text-primary);
+                    color: map-get($colors, text-secondary);
                 }
             }
 
@@ -183,12 +173,17 @@
                 }
 
                 &__tags {
-                    color: map-get($colors, text-primary);
-                    font-weight: 500;
-                    transition: color 0.3s ease-in;
+                    display: flex;
+                    gap: .5rem;
 
-                    &:hover {
-                        color: map-get($colors, text-1100);
+                    &__para {
+                        color: map-get($colors, text-secondary);
+                        font-weight: 500;
+                        transition: color 0.3s ease-in;
+
+                        &:hover {
+                            color: map-get($colors, text-1100);
+                        }
                     }
                 }
             }
@@ -203,12 +198,12 @@
             }
 
             &__price {
-                font-family: 'Oswald';
+                font-family: 'Ubuntu';
                 font-size: 28px;
                 font-weight: 600;
 
                 span {
-                    color: map-get($colors, text-primary);
+                    color: map-get($colors, text-secondary);
                 }
 
                 small {

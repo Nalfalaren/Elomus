@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 import Footer from '@/components/main/landing-page/footer/Footer';
-import Navbar from '@/components/main/landing-page/navbar/Navbar';
+import Navbar from '@/components/main/landing-page/navbar/navbar-main/Navbar';
 
 import '@/styles/layouts/_product-list.scss';
 import '@/index.scss';

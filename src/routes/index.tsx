@@ -18,6 +18,8 @@ import {
   LoginLayout,
   RegisterLayout,
   BlogDetailLayout,
+  ProductDetailYellowLayout,
+  ProductDetailGreenLayout,
 } from '@/layouts';
 // Auth page
 const SignIn = React.lazy(() => import('@/pages/auth/sign-in'));
@@ -46,6 +48,12 @@ const ProductDetailComponent3 = React.lazy(
 );
 const ProductDetailComponent4 = React.lazy(
   () => import('@/pages/product-detail-4'),
+);
+const ProductDetailComponent5 = React.lazy(
+  () => import('@/pages/product-detail-5'),
+);
+const ProductDetailComponent6 = React.lazy(
+  () => import('@/pages/product-detail-6'),
 );
 // Other page
 const PageNotFound = React.lazy(
@@ -99,8 +107,88 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/:name',
+        path: '/product/acer-aspire-drone',
+        element: <ProductDetailComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/product/cam-mod-by-kryptonite-vapor',
+        element: <ProductDetailComponent2 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/product/driptip-kryptonite-1',
+        element: <ProductDetailComponent3 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/product/driptip-kryptonite-2',
         element: <ProductDetailComponent4 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailYellowLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/product/driptip-kryptonite',
+        element: <ProductDetailComponent5 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailGreenLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/product/mod-cam-by-kryptonite-vapor',
+        element: <ProductDetailComponent6 />,
       },
       { path: '*', element: <PageNotFound /> },
     ],

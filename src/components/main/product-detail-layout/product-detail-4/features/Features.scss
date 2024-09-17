@@ -1,0 +1,39 @@
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+
+.features{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    margin-block: 4rem;
+    background-color: map-get($colors, background-1200);
+
+    @include respond-down('sm'){
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        h4{
+            text-align: center;
+            margin-bottom: .5rem;
+            font-size: 20px;
+        }
+
+        p{
+            text-align: center;
+            color: map-get($colors, text-1100);
+        }
+    }
+
+}
