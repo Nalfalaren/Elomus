@@ -21,32 +21,56 @@
     }
 
     &-control-prev{
+        width: fit-content;
+        height: min-content;
+        border-radius: 100%;
+        position: absolute;
+        top: 45%;
+        left: 2%;
         &-icon{
             background-image: url('../../../../assets/images/chevron-left.png');
             background-color: #e7e7e7;
             border: 1px solid map-get($colors, background-1000 );
             width: 50px;
             height: 50px;
-            border-radius: 100%;            
+            border-radius: 100%;
             &:hover{
                 background-color: map-get($colors, background-1300);
                 border: none,
-            }
+            }    
+            
+            @include respond-down('md'){
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+             }
         }
     }
 
     &-control-next{
+        width: 5%;
+        width: fit-content;
+        height: min-content;
+        position: absolute;
+        top: 45%;
+        right: 2%;
         &-icon{
             background-image: url('../../../../assets/images/chevron-right.png');
-
             background-color: #e7e7e7;
             border: 1px solid white;
             width: 50px;
             height: 50px;
-            border-radius: 100%;            
+            border-radius: 100%;
+            
             &:hover{
                 background-color: map-get($colors, background-1300);
-                border: none
+                border: none;
+            }
+
+            @include respond-down('md'){
+               width: 30px;
+               height: 30px;
+               background-color: #fff;
             }
         }
     }
@@ -56,9 +80,9 @@
         flex-direction: column;
         text-align: start;
         position: absolute;
-        top: 35%;
+        top: 25%;
         left: 10%;
-        width: 60%;
+        width: 55%;
         height: fit-content;
         background-color: map-get($colors, 'background-1200');
         padding: 1.5rem;
@@ -70,8 +94,14 @@
         &__title{
             font-style: italic;
             font-family: 'Oswald';
-            font-size: 22px;
+            font-size: 20px;
             padding-left: 80px;
+            padding-block: 15px;
+
+            @include respond-down('md'){
+                padding-left: 0;
+                padding-block: 5px;
+            }
 
             &::before{
                 content: "";
@@ -79,8 +109,13 @@
                 width: 50px;
                 height: 1px;
                 position: absolute;
-                top: 14%;
+                top: 15%;
                 margin-left: -65px;
+                text-align: center;
+
+                @include respond-down('md'){
+                    display: none;
+                }
             }
 
             @include respond-down('sm'){
@@ -98,6 +133,7 @@
 
             @include respond-down('md'){
                 font-size: 4vw;
+                margin-bottom: 5px;
             }
 
             @include respond-down('sm'){
@@ -127,7 +163,14 @@
                 padding: 10px 30px;
                 font-weight: 400;
                 font-size: calc(0.15178571rem + 0.80357143vw);
-                border-radius: 24px;
+                border-radius: 24px; 
+                transition: background-color 0.3s ease-in-out;
+
+                &:hover{
+                    background-color: map-get($colors, background-300);
+                    color: map-get($colors, text-primary);
+                    border: none
+                }
             }
             @include respond-down('md'){
                 padding: 0;
@@ -136,6 +179,7 @@
             @include respond-down('sm'){
                 width: fit-content;
             }
+
         }
     }
 }

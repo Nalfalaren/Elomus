@@ -12,20 +12,37 @@
 // );
 
 .title {
+    font-family: 'Poppins';
     text-align: center;
     margin-block: 2rem;
+    position: relative;
 
-    &::before{
-        content: "";
-        background-color: #fff;
-        width: 50px;
-        height: 1px;
-        position: absolute;
-        top: 14%;
-        margin-left: -65px;
+    h2{
+        font-size: 36px;
+        font-weight: 600;
     }
 
-    @include respond-down('sm'){
+    &::after,
+    &::before {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background-color: map-get($colors, 'background-1300');
+        position: absolute;
+        left: 50%;
+        bottom: -35%;
+        margin-left: -10px;
+    }
+
+    &::after {
+        bottom: -50%;
+    }
+
+    &::before {
+        margin-left: -30px;
+    }
+
+    @include respond-down('sm') {
         font-size: 12px;
     }
 }
@@ -35,10 +52,10 @@
     margin-inline: auto;
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     padding: 2rem;
 
-    a{
+    a {
         text-decoration: none;
     }
 
@@ -50,7 +67,7 @@
         grid-template-columns: repeat(1, minmax(200px, 1fr));
     }
 
-    
+
     @include respond-up('xs') {
         max-width: 540px;
     }
@@ -72,9 +89,11 @@
     }
 
     &__card {
+        border: none;
         &__title {
+            box-shadow: 0 2px 0 0 map-get($colors, text-1000);
             text-align: center;
-            background-color: map-get($colors, background-1000);
+            background-color: map-get($colors, background-1200);
         }
 
     }

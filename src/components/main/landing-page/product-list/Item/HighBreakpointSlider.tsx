@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+
 import {
   faStar,
   faCircleInfo,
   faHeart,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import ProductCard from '@/components/main/items/ProductCard';
+import { Button } from 'react-bootstrap';
+
 import droneModelAfter from '@/assets/images/drone-model1-after.webp';
 import droneModelPrev from '@/assets/images/drone-model1-prev.webp';
 import droneModelAfter2 from '@/assets/images/drone-model2-after.webp';
@@ -14,6 +15,7 @@ import droneModelPrev2 from '@/assets/images/drone-model2-prev.webp';
 import droneModelPrev3 from '@/assets/images/drone-model3-prev.webp';
 import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
+import ProductCard from '@/components/main/items/ProductCard';
 import '../ProductList.scss';
 
 const HighBreakpointSlider = () => {
@@ -24,6 +26,12 @@ const HighBreakpointSlider = () => {
       imgAfter: droneModelAfter,
       discount: 17,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Aspire Drone',
       oldPrice: 120,
       newPrice: 100,
@@ -34,6 +42,12 @@ const HighBreakpointSlider = () => {
       imgAfter: droneModelAfter2,
       discount: 17,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 100,
@@ -44,6 +58,12 @@ const HighBreakpointSlider = () => {
       imgAfter: droneModelAfter2,
       discount: 17,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 100,
@@ -54,6 +74,7 @@ const HighBreakpointSlider = () => {
       imgAfter: droneModelAfter4,
       discount: 33,
       rates: [true, true, true, false, false],
+      listColor: ['blue', 'gray', 'yellow', 'black'],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
@@ -64,6 +85,12 @@ const HighBreakpointSlider = () => {
       imgAfter: droneModelAfter4,
       discount: 33,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
@@ -73,6 +100,12 @@ const HighBreakpointSlider = () => {
       imgPrev: droneModelPrev4,
       imgAfter: droneModelAfter4,
       discount: 33,
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       rates: [true, true, true, false, false],
       name: 'Acer Drone E15',
       oldPrice: 120,
@@ -89,8 +122,17 @@ const HighBreakpointSlider = () => {
   const [optionsHover, setOptionsHover] = useState<boolean[]>(
     Array(productList.length).fill(false),
   );
-  const itemsToShow = 6;
+  const [itemsToShow, setItemsToShow] = useState(1);
   const totalItems = productList.length;
+
+  useEffect(() => {
+    const updateItemsToShow = () => {
+      setItemsToShow(window.innerWidth > 992 ? 6 : 1);
+    };
+    updateItemsToShow();
+    window.addEventListener('resize', updateItemsToShow);
+    return () => window.removeEventListener('resize', updateItemsToShow);
+  }, []);
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
@@ -125,16 +167,6 @@ const HighBreakpointSlider = () => {
     }).format(amount);
   };
 
-  const getVisibleItems = () => {
-    const start = activeIndex;
-    const end = (activeIndex + itemsToShow) % totalItems;
-    if (start < end) {
-      return productList.slice(start, end);
-    } else {
-      return [...productList.slice(start), ...productList.slice(0, end)];
-    }
-  };
-
   return (
     <div className="products-list">
       <div className="products-list__wrapper">
@@ -142,12 +174,10 @@ const HighBreakpointSlider = () => {
           className="products-list__inner"
           style={{
             transform: `translateX(-${activeIndex * (100 / itemsToShow)}%)`,
-            transition: 'transform 0.5s ease',
-            display: 'flex',
-            width: `${(totalItems * 100) / itemsToShow}%`,
+            width: `${(totalItems * 100) / 6}%`,
           }}
         >
-          {getVisibleItems().map((product, index) => (
+          {productList.map((product, index) => (
             <div key={product.id} className="products-list__item">
               <ProductCard
                 hoverImg={imgHover[index]}
@@ -158,6 +188,7 @@ const HighBreakpointSlider = () => {
                 product={product}
                 index={index}
                 listIcon={listIcon}
+                colorList={product.listColor}
                 handleImgHoverTrue={() => handleImgHover(index, true)}
                 handleImgHoverFalse={() => handleImgHover(index, false)}
                 handleOptionsHoverTrue={() => handleOptionsHover(index, true)}

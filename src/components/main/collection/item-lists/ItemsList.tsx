@@ -129,7 +129,7 @@ const ItemsList = () => {
   return (
     <div>
       <div className="title">
-        <h2>Collections</h2>
+        <h2>COLLECTIONS</h2>
       </div>
       <div className="items">
         {listItems.map((item) => (
@@ -137,9 +137,11 @@ const ItemsList = () => {
             <Card className="items__card">
               <img src={item.img} alt={item.id}></img>
               <Card.Body className="items__card__title">
-                <Card.Title>
-                  {item.name} <small>({item.quantity} items)</small>
+                <div>
+                  <Card.Title>
+                    {item.name} <small>({item.quantity} items)</small>
                 </Card.Title>
+                </div>
               </Card.Body>
             </Card>
           </Link>

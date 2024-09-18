@@ -11,11 +11,7 @@ function ProductList() {
         <p>Featured products</p>
         <h2>DRONE PRODUCTS</h2>
       </div>
-      {window.innerWidth > 992 ? (
-        <HighBreakpointSlider />
-      ) : (
-        <LowBreakpointSlider />
-      )}
+      <HighBreakpointSlider />
       <hr></hr>
     </div>
   );

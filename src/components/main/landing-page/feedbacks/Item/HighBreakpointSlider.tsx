@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Card } from 'react-bootstrap';
@@ -14,11 +15,11 @@ const HighBreakpointSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handlePrev = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + 4) % 4);
+    setActiveIndex((prevIndex) => (prevIndex - 1) % 2);
   };
 
   const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % 4);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % 2);
   };
 
   const cardData = [
@@ -72,11 +73,13 @@ const HighBreakpointSlider = () => {
                   <div className="feedback__carousel__card__body">
                     <img src={card.image} alt={`customer${index + 1}`} />
                     <Card.Title>{card.title}</Card.Title>
-                    <Card.Text>{card.text}</Card.Text>
-                    <FontAwesomeIcon icon={faQuoteRight} />
-                    <Card.Text className="feedback__carousel__card__body__customer">
-                      {card.customer}
-                    </Card.Text>
+                    <Card.Text style={{width: '90%'}}>{card.text}</Card.Text>
+                    <div className="feedback__carousel__card__body__quote">
+                      <FontAwesomeIcon icon={faQuoteRight} />
+                      <Card.Text className="feedback__carousel__card__body__customer">
+                        {card.customer}
+                      </Card.Text>
+                    </div>
                   </div>
                 </Card.Body>
               </Card>
@@ -84,10 +87,18 @@ const HighBreakpointSlider = () => {
           ))}
         </div>
       </div>
-      <button className="carousel-control-prev" onClick={handlePrev}>
+      <button
+        className="carousel-control-prev"
+        onClick={handlePrev}
+        style={activeIndex === 0 ? { display: 'none' } : { display: 'block' }}
+      >
         &lt;
       </button>
-      <button className="carousel-control-next" onClick={handleNext}>
+      <button
+        className="carousel-control-next"
+        onClick={handleNext}
+        style={activeIndex === 1 ? { display: 'none' } : { display: 'block' }}
+      >
         &gt;
       </button>
     </div>

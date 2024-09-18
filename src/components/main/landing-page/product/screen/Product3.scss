@@ -53,13 +53,17 @@
 
         h3 {
             font-size: 34px;
-            color: map-get($colors, 'text-1100')
+            color: map-get($colors, 'text-1200')
         }
 
         p {
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.5rem;
-            color: map-get($colors, 'text-1100')
+            color: map-get($colors, 'text-1200');
+
+            @include respond-down('sm'){
+                font-size: 12px;
+            }
         }
 
         &__container {
@@ -82,10 +86,58 @@
                     align-items: center;
                     h2 {
                         font-size: 12px;
+                        color: map-get($colors, text-1200);
                     }
                 }
             }
+        }
 
+        &__button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 8px;
+            gap: 8px;
+            border: 1px solid map-get($colors, text-1000);
+            width: 28%;
+            border-radius: 24px;
+            padding: 0 20px;
+            font-size: 13px;
+            color: map-get($colors, text-1000);
+            line-height: 40px;
+            transition: background-color 0.2s ease-in;
+
+            @include respond-down('lg'){
+                width: 40%;
+            }
+
+            @include respond-down('md'){
+                width: 50%;
+            }
+
+            @include respond-down('sm'){
+                width: 35%;
+            }
+
+            @include respond-down('xs'){
+                width: 50%;
+            }
+
+
+            a{
+                text-decoration: none;
+                color: map-get($colors, text-1200);
+            }
+
+            &__icon{
+                color: map-get($colors, text-1200);
+                margin-bottom: 8px;
+            }
+
+            &:hover{
+                background-color: map-get($colors, background-1300);
+                color: white;
+            }
         }
     }
 

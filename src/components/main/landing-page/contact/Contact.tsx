@@ -12,7 +12,7 @@ const Contact = () => {
       <hr style={{ width: '100%' }}></hr>
       <div className="contact">
         <div className="contact__title">
-          <p>Our news</p>
+          <p>our news</p>
           <h2>SIGN UP FOR LATEST NEWS</h2>
         </div>
         <div className="contact__form">

@@ -20,17 +20,19 @@ const LowBreakpointSlider = () => {
                 <img src={Customer1} alt="customer1"></img>
                 <Card.Title>A really great experience</Card.Title>
                 <div>
-                  <Card.Text>
+                  <Card.Text style={{ width: '90%' }}>
                     All Perfect !! I have three sites with magento , this theme
                     is the best !! Excellent support , advice theme installation
                     package , sorry for English, are Italian but I had no
                     problem.
                   </Card.Text>
                 </div>
-                <FontAwesomeIcon icon={faQuoteRight} />
-                <Card.Text className="feedback__carousel__card__body__customer">
-                  Alva Ono
-                </Card.Text>
+                <div className="feedback__carousel__card__body__quote">
+                  <FontAwesomeIcon icon={faQuoteRight} />
+                  <Card.Text className="feedback__carousel__card__body__customer">
+                    Alva Ono
+                  </Card.Text>
+                </div>
               </div>
             </Card.Body>
           </Card>
@@ -39,22 +41,26 @@ const LowBreakpointSlider = () => {
           <Card style={{ width: '100%' }} className="feedback__carousel__card">
             <Card.Body>
               <div className="feedback__carousel__card__body">
-                <img src={Customer2} alt="customer2"></img>
+                <div className="feedback__carousel__card__body__img">
+                  <img src={Customer2} alt="customer2"></img>
+                </div>
                 <Card.Title>Trustworthy and powerful</Card.Title>
                 <div>
-                  <Card.Text>
+                  <Card.Text style={{ width: '90%' }}>
                     erfect Themes and the best of all that you have many options
                     to choose! Best Support team ever!Very fast responding and
                     experts on their fields! Thank you very much! ..
                   </Card.Text>
                 </div>
-                <FontAwesomeIcon
-                  icon={faQuoteRight}
-                  className="feedback__carousel__card__body__icon"
-                />
-                <Card.Text className="feedback__carousel__card__body__customer">
-                  Amber Laha
-                </Card.Text>
+                <div className="feedback__carousel__card__body__quote">
+                  <FontAwesomeIcon
+                    icon={faQuoteRight}
+                    className="feedback__carousel__card__body__icon"
+                  />
+                  <Card.Text className="feedback__carousel__card__body__customer">
+                    Amber Laha
+                  </Card.Text>
+                </div>
               </div>
             </Card.Body>
           </Card>
@@ -66,21 +72,21 @@ const LowBreakpointSlider = () => {
                 <img src={Customer3} alt="customer3"></img>
                 <Card.Title>Best designer around</Card.Title>
                 <div>
-                  <Card.Text>
+                  <Card.Text style={{ width: '90%' }}>
                     Code, template and others are very good. The support has
                     served me immediately and solved my problems when I need
                     help. Are to be congratulated. Att Renan Andrade ..
                   </Card.Text>
                 </div>
-                <div>
+                <div className="feedback__carousel__card__body__quote">
                   <FontAwesomeIcon
                     icon={faQuoteRight}
                     className="feedback__carousel__card__body__icon"
                   />
+                  <Card.Text className="feedback__carousel__card__body__customer">
+                    Dewey Tetzlaff
+                  </Card.Text>
                 </div>
-                <Card.Text className="feedback__carousel__card__body__customer">
-                  Dewey Tetzlaff
-                </Card.Text>
               </div>
             </Card.Body>
           </Card>
@@ -90,24 +96,26 @@ const LowBreakpointSlider = () => {
             <Card.Body>
               <div className="feedback__carousel__card__body">
                 <img src={Customer4} alt="customer4"></img>
-                <Card.Title>Trustworthy and powerful</Card.Title>
+                <Card.Title className="feedback__carousel__card__body__title">
+                  Trustworthy and powerful
+                </Card.Title>
                 <div>
-                  <Card.Text>
+                  <Card.Text style={{ width: '90%' }}>
                     Perfect Themes and the best of all that you have many
                     options to choose! Best Support team ever!Very fast
                     responding and experts on their fields! Thank you very much!
                     ..
                   </Card.Text>
                 </div>
-                <div>
+                <div className="feedback__carousel__card__body__quote">
                   <FontAwesomeIcon
                     icon={faQuoteRight}
                     className="feedback__carousel__card__body__icon"
                   />
+                  <Card.Text className="feedback__carousel__card__body__customer">
+                    Lavina Wilderman
+                  </Card.Text>
                 </div>
-                <Card.Text className="feedback__carousel__card__body__customer">
-                  Lavina Wilderman
-                </Card.Text>
               </div>
             </Card.Body>
           </Card>

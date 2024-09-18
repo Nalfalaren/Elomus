@@ -23,11 +23,12 @@ interface ProductCardProps {
   discount: number;
   index: number;
   product: Product;
+  colorList?: string[];
   listIcon: React.ReactElement[];
-  handleImgHoverTrue: (index: number, isHovered: boolean) => void;
-  handleImgHoverFalse: (index: number, isHovered: boolean) => void;
-  handleOptionsHoverTrue: (index: number, isHovered: boolean) => void;
-  handleOptionsHoverFalse: (index: number, isHovered: boolean) => void;
+  handleImgHoverTrue: () => void;
+  handleImgHoverFalse: () => void;
+  handleOptionsHoverTrue: () => void;
+  handleOptionsHoverFalse: () => void;
   formatCurrency: (value: number) => string;
 }
 
@@ -38,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   name,
   discount,
   product,
-  index,
+  colorList,
   listIcon,
   handleImgHoverTrue,
   handleImgHoverFalse,
@@ -64,8 +65,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {hoverImg && (
           <div
             className="products-list__card__img__icons"
-            onMouseOver={() => handleOptionsHoverTrue(index, true)}
-            onMouseLeave={() => handleOptionsHoverFalse(index, false)}
+            onMouseOver={handleOptionsHoverTrue}
+            onMouseLeave={handleOptionsHoverFalse}
           >
             {listIcon.map((icon, iconIndex) => (
               <div
@@ -97,6 +98,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
             ),
           )}
         </div>
+        <div className="products-list__card__body__colors">
+          {colorList &&
+            colorList.map((color, colorIndex) => (
+              <div
+                key={colorIndex}
+                className="products-list__card__body__colors__block"
+              >
+                <img
+                  src={color}
+                  alt={`Color ${colorIndex}`}
+                  className={`products-list__card__body__colors__img ${colorIndex === 3 ? 'checkbox-color' : ''}`}
+                />
+              </div>
+            ))}
+        </div>
         <Card.Title className="products-list__card__body__name">
           {name}
         </Card.Title>
@@ -108,7 +124,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {formatCurrency(product.oldPrice)}
           </Card.Text>
         </div>
-        <Button className="button button--tertiary">ADD TO CART</Button>
+        <Button className="button button--tertiary products-list__card__body__button">
+          ADD TO CART
+        </Button>
       </Card.Body>
     </Card>
   );

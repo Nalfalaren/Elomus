@@ -7,7 +7,7 @@ const Feedback = () => {
   return (
     <div className="feedback">
       <div className="feedback__title">
-        <p>Welcome to my personal presentation</p>
+        <p>WELCOME TO MY PERSONAL PRESENTATION</p>
         <h2>
           WHAT OUR <span>CLIENTS SAY</span>
         </h2>

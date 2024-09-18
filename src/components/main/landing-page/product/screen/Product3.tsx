@@ -9,6 +9,9 @@ import sensor from '@/assets/images/sensor.png';
 import speed from '@/assets/images/speed.png';
 
 import './Product3.scss';
+import { Link } from 'react-router-dom';
+import { faArrowsTurnRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Product3 = () => {
   const productData = [
@@ -20,27 +23,27 @@ const Product3 = () => {
     },
     {
       id: '2',
-      img: control,
-      title: 'Control range',
-      result: '7 KM',
-    },
-    {
-      id: '3',
-      img: sensor,
-      title: 'Sensor range',
-      result: '30 M',
-    },
-    {
-      id: '4',
       img: speed,
       title: 'Speed',
       result: '72KM/H',
     },
     {
-      id: '5',
+      id: '3',
+      img: control,
+      title: 'Control range',
+      result: '7 KM',
+    },
+    {
+      id: '4',
       img: resolution,
       title: 'Video resolution',
       result: '4K 60FPS',
+    },
+    {
+      id: '5',
+      img: sensor,
+      title: 'Sensor range',
+      result: '30 M',
     },
     {
       id: '6',
@@ -76,6 +79,13 @@ const Product3 = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="product3__intro__button">
+          <FontAwesomeIcon
+            icon={faArrowsTurnRight}
+            className="product3__intro__button__icon"
+          />
+          <Link to={`/product/acer-aspire-drone`}>View Product</Link>
         </div>
       </div>
       <div className="product3__img">

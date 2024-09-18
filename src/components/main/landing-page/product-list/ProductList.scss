@@ -33,6 +33,17 @@ hr {
         max-width: 1200px;
     }
 
+    @include respond-down('md') {
+
+        .products-list__inner {
+            width: 100%;
+        }
+
+        .products-list__item {
+            flex: 0 0 104%!important;
+        }
+    }
+
 
     &__title {
         display: flex;
@@ -96,17 +107,17 @@ hr {
         flex: 0 0 20%;
         padding: 0 10px;
         box-sizing: border-box;
-
     }
 
     .products-list__card {
         border: none;
         border-radius: 30px;
         width: 18rem;
-        margin-bottom: 1rem;
-        transition: box-shadow 0.3s ease-in ;
-        &:hover{
-            box-shadow: 2px 2px 5px 7px map-get($colors, text-1000);
+        margin-block: 1rem;
+        transition: box-shadow 0.3s ease-in;
+
+        &:hover {
+            box-shadow: 0 0 1px 3px map-get($colors, text-1000);
         }
 
         @include respond-down('lg') {
@@ -114,7 +125,7 @@ hr {
         }
 
         @include respond-down('md') {
-            width: 13rem;
+            width: 80%;
         }
 
 
@@ -128,9 +139,17 @@ hr {
                 font-weight: 600;
                 border-radius: 12px;
                 line-height: 25px;
-                width: 30%;
+                width: 20%;
                 top: 5%;
                 right: 5%;
+
+                @include respond-down('lg') {
+                    width: 30%;
+                }
+
+                @include respond-down('md') {
+                    width: 15%;
+                }
 
                 p {
                     text-align: center;
@@ -168,8 +187,8 @@ hr {
         }
 
         img {
-            box-shadow: 1px 1px 1px map-get($colors, background-1000);
-            border-radius: 15px;
+            box-shadow: 0 0 0 1px map-get($colors, background-1000);
+            border-radius: 25px;
         }
 
         &__body {
@@ -179,37 +198,62 @@ hr {
             align-items: center;
             gap: 1rem;
 
+            &__colors {
+                display: flex;
+                gap: .4rem;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 100%;
+                    border: 1px solid map-get($colors, background-1000);
+
+                    &:hover {
+                        border: 1px solid #a8741a;
+                    }
+
+                    .active {
+                        border: 1px solid #a8741a;
+                    }
+                }
+            }
+
             &__star {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                gap: .5rem;
+                gap: .2rem;
+
+                svg {
+                    width: 11px;
+                    height: 18px;
+                }
 
                 &--filled {
                     color: map-get($colors, status-200);
                 }
 
                 &--unfilled {
-                    color: map-get($colors, text-7C);
+                    color: map-get($colors, text-1000);
                 }
             }
 
             &__name {
                 text-align: center;
-                font-size: 16px;
+                font-size: 14px;
             }
 
             &__price {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 1rem;
                 font-family: 'Oswald';
 
                 &--new {
                     color: map-get($colors, text-primary);
-                    font-size: 18px;
+                    font-size: 16px;
                     font-weight: 600;
                     margin-right: 10px;
                     text-align: center;
@@ -222,6 +266,10 @@ hr {
                     text-decoration: line-through;
                 }
             }
+
+            &__button {
+                font-family: 'Oswald';
+            }
         }
     }
 
@@ -230,11 +278,11 @@ hr {
         width: 50px;
         height: 50px;
         position: absolute;
-        top: 50%;
+        top: 43%;
         transform: translateY(-50%);
         background-color: white;
         border-radius: 100%;
-        box-shadow: 2px 2px 2px map-get($colors, background-1000);
+        box-shadow: 0 0 0 1px map-get($colors, background-1000);
         color: map-get($colors, text-1200);
         border: none;
         padding: 0.5rem;

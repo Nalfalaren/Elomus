@@ -12,9 +12,9 @@ function AboutTheFold() {
         <Carousel.Item>
           <img src={drone1} alt="drone1" className="d-block w-100"></img>
           <Carousel.Caption className="carousel-caption--first">
-            <p className="carousel-caption__title">
+            <h1 className="carousel-caption__title">
               The world’s Smallest Quadcopter
-            </p>
+            </h1>
             <h1 className="carousel-caption__name">Elomus F18 Drone 3 Auto</h1>
             <p className="carousel-caption__content">
               Newest hover function, Elomus F18 Drone 3 Auto Quadcopter UFO with
@@ -28,9 +28,9 @@ function AboutTheFold() {
         <Carousel.Item>
           <img src={drone2} alt="drone2" className="d-block w-100"></img>
           <Carousel.Caption>
-            <p className="carousel-caption__title">
+            <h1 className="carousel-caption__title">
               The world’s Smallest Quadcopter
-            </p>
+            </h1>
             <h1 className="carousel-caption__name">BuzzBee Nano Drone</h1>
             <p className="carousel-caption__content">
               Ideal for indoor usage & ultra portable. 3 User modes, junior,

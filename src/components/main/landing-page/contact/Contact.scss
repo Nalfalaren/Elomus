@@ -40,27 +40,36 @@
             font-size: 36px;
             color: map-get($colors, 'text-1200');
             font-weight: 600;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
+            position: relative;
 
-            &::after, &::before{
+            @include respond-down('sm'){
+                font-size: 24px;
+            }
+
+            &::after,
+            &::before {
                 content: "";
-                display: block;
                 width: 40px;
                 height: 1px;
                 background-color: map-get($colors, 'background-1300');
                 position: absolute;
                 left: 50%;
+                bottom: -35%;
                 margin-left: -10px;
             }
-
-            &::before{
+    
+            &::after{
+                bottom: -50%;
+            }
+    
+            &::before {
                 margin-left: -30px;
             }
         }
     }
 
     &__form{
-        width: 60%;
         margin-left: auto;
         margin-right: auto;
         position: relative;
@@ -71,17 +80,25 @@
         }
 
         &__input{
-            padding: 1rem;
+            padding: 10px 160px 10px 25px;
+            line-height: 30px;
+            height: 54px;
+            border-radius: 35px;
+            font-weight: 400;
             border-radius: 2rem;
             background-color: map-get($colors , background-1400);
         }
 
         &__link{
             position: absolute;
-            top: 8%;
-            left: 87%;
-            padding-block: 1.5rem;
-            font-size: 10px;
+            right: 0;
+            top: 0;
+            line-height: 54px;
+            padding: 25px;
+            border-radius: 35px;
+            color: #ffffff;
+            font-weight: 600;
+            
 
             @include respond-down('md'){
                 font-size: 8px;
