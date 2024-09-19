@@ -5,9 +5,10 @@ import Navbar from '@/components/main/landing-page/navbar/navbar-main/Navbar';
 
 import '@/styles/layouts/_main.scss';
 import '@/index.scss';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Breadcumbs from '@/components/main/collection/breadcumbs/Breadcumbs';
 import useSticky from '@/composables/scroll/useSticky';
+import { convertUrlToTitle } from '@/composables/convert/ConvertURL';
 
 interface IPropsMainLayout {
   settingPage?: boolean;
@@ -15,6 +16,9 @@ interface IPropsMainLayout {
 
 export const ProductDetailLayout: React.FC<IPropsMainLayout> = () => {
   const isSticky = useSticky();
+  const location = useLocation();
+  const title = convertUrlToTitle(location.pathname);
+
   return (
     <div className="main">
       <div className="layout">
@@ -34,10 +38,7 @@ export const ProductDetailLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__context">
-          <Breadcumbs
-            title={'Product Detail'}
-            position="Product Detail"
-          ></Breadcumbs>
+          <Breadcumbs title={title} position={title}></Breadcumbs>
           <div className="layout__content__context">
             <Suspense fallback={<></>}>
               <Outlet></Outlet>

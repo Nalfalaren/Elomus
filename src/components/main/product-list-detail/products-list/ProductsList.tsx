@@ -19,9 +19,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Sidebar from '@/components/Sidebar';
+
 import ProductCard from '../../items/ProductCard';
 
-import Sidebar from '@/components/Sidebar';
 import { Link } from 'react-router-dom';
 
 const ProductsList = () => {
@@ -29,6 +30,12 @@ const ProductsList = () => {
     'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_grid_hover.png?v=172316855767935615901722488037',
     'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_grid4.png?v=82978414880152813121722488035',
     'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_grid5.png?v=29113817210500446361722488036',
+    'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_list.png?v=98054757699547239741722488037',
+  ];
+
+  const smOptions = [
+    'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_grid_hover.png?v=172316855767935615901722488037',
+    'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_grid4.png?v=82978414880152813121722488035',
     'https://elomus-theme.myshopify.com/cdn/shop/t/55/assets/bkg_list.png?v=98054757699547239741722488037',
   ];
 
@@ -51,6 +58,12 @@ const ProductsList = () => {
       imgAfter: droneModelAfter,
       discount: 17,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Aspire Drone',
       oldPrice: 120,
       newPrice: 100,
@@ -61,6 +74,12 @@ const ProductsList = () => {
       imgAfter: droneModelAfter2,
       discount: 17,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 100,
@@ -71,6 +90,12 @@ const ProductsList = () => {
       imgAfter: droneModelAfter2,
       discount: 17,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 100,
@@ -81,6 +106,7 @@ const ProductsList = () => {
       imgAfter: droneModelAfter4,
       discount: 33,
       rates: [true, true, true, false, false],
+      listColor: ['blue', 'gray', 'yellow', 'black'],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
@@ -91,6 +117,12 @@ const ProductsList = () => {
       imgAfter: droneModelAfter4,
       discount: 33,
       rates: [true, true, true, false, false],
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
@@ -100,6 +132,12 @@ const ProductsList = () => {
       imgPrev: droneModelPrev4,
       imgAfter: droneModelAfter4,
       discount: 33,
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       rates: [true, true, true, false, false],
       name: 'Acer Drone E15',
       oldPrice: 120,
@@ -110,6 +148,12 @@ const ProductsList = () => {
       imgPrev: droneModelPrev4,
       imgAfter: droneModelAfter4,
       discount: 33,
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       rates: [true, true, true, false, false],
       name: 'Acer Drone E15',
       oldPrice: 120,
@@ -120,6 +164,12 @@ const ProductsList = () => {
       imgPrev: droneModelPrev4,
       imgAfter: droneModelAfter4,
       discount: 33,
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       rates: [true, true, true, false, false],
       name: 'Acer Drone E15',
       oldPrice: 120,
@@ -130,6 +180,12 @@ const ProductsList = () => {
       imgPrev: droneModelPrev4,
       imgAfter: droneModelAfter4,
       discount: 33,
+      listColor: [
+        droneModelPrev,
+        droneModelPrev2,
+        droneModelPrev3,
+        droneModelPrev4,
+      ],
       rates: [true, true, true, false, false],
       name: 'Acer Drone E15',
       oldPrice: 120,
@@ -143,19 +199,6 @@ const ProductsList = () => {
   const [optionsHover, setOptionsHover] = useState<boolean[]>(
     Array(productList.length).fill(false),
   );
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const itemsToShow = 1;
-  const totalItems = productList.length;
-
-  const handlePrev = () => {
-    setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % totalItems);
-  };
 
   const handleImgHover = (index: number, isHovering: boolean) => {
     if (!optionsHover[index]) {
@@ -194,16 +237,23 @@ const ProductsList = () => {
       </div>
       <div className="products-list__filter">
         <div className="products-list__filter__img">
-          {imgOptions.map((option, index) => (
-            <div key={index}>
-              <img src={option} alt={option}></img>
-            </div>
-          ))}
+          {window.innerWidth > 726
+            ? imgOptions.map((option, index) => (
+                <div key={index}>
+                  <img src={option} alt={option}></img>
+                </div>
+              ))
+            : smOptions.map((option, index) => (
+                <div key={index}>
+                  <img src={option} alt={option}></img>
+                </div>
+              ))}
         </div>
         <div className="products-list__filter__result">
           <span>Showing 1 to 8 of 8 items</span>
         </div>
-        <div className="products__filter__options">
+        <div className="products-list__filter__options">
+          <label>Sort by</label>
           <select>
             <option value="Featured" selected>
               Featured
@@ -231,23 +281,18 @@ const ProductsList = () => {
               discount={product.discount}
               product={product}
               index={index}
+              colorList={product.listColor}
               listIcon={listIcon}
               handleImgHoverTrue={() => handleImgHover(index, true)}
               handleImgHoverFalse={() => handleImgHover(index, false)}
               handleOptionsHoverTrue={() => handleOptionsHover(index, true)}
               handleOptionsHoverFalse={() => handleOptionsHover(index, false)}
               formatCurrency={formatCurrency}
-              className="products__result__card"
+              className="products-list__result__card"
             />
           </Link>
         ))}
       </div>
-      <Button className="carousel-control-prev" onClick={handlePrev}>
-        &lt;
-      </Button>
-      <Button className="carousel-control-next" onClick={handleNext}>
-        &gt;
-      </Button>
     </div>
   );
 };

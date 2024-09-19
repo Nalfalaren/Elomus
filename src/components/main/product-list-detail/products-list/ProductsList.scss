@@ -4,54 +4,111 @@
 @import '../../../../styles/settings/setting.breakpoint';
 @import '../../landing-page/product-list/ProductList.scss';
 
-.products-list{
-    &__mb{
+.products-list {
+    position: sticky;
+    top: 2.5rem;
+    background-color: white;
+
+    &__mb {
         display: flex;
         flex-direction: row;
         justify-content: center;
         text-align: center;
         gap: 1rem;
+        display: none;
 
-        svg{
+        @include respond-down('md') {
+        display: block;
+        }
+
+        svg {
             width: 20px;
             height: 20px;
         }
     }
-    &__result{
+
+    &__result {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 1rem;
+        margin: 1rem;
 
-        &__link{
-            text-decoration: none;
+        @include respond-down('lg'){
+            margin: 0;
         }
+
+        @include respond-down('md'){
+            display: flex;
+            justify-content: center;
+        }
+
+        &__link {
+            text-decoration: none;
+            padding: 0 8px;
+            width: 16rem!important;
+
+            @include respond-down('lg'){
+                width: 12rem!important;
+            }
+        }
+
     }
 
-    &__filter{
+    &__filter {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         gap: 1rem;
         background-color: map-get($colors, background-1200);
         padding: 1.5rem;
 
-        &__img{
+        @include respond-down('xs'){
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &__img {
             display: flex;
             width: 20px;
             height: 20px;
             gap: 1rem;
+
+            @include respond-down('sm'){
+                margin-right: 80px;
+            }
         }
 
-        &__result{
+        &__result {
             font-size: 13px;
             color: map-get($colors, text-1100);
+            margin-left: 120px;
+
+            @include respond-down('sm'){
+                margin: 0;
+            }
         }
 
-        &__options{
-            select{      
+        &__options {
+            label {
+                color: map-get($colors, text-1100);
+                margin-right: 10px;
+                font-size: 13px;
+
+                @include respond-down('lg') {
+                    display: none;
+                }
+            }
+
+            select {
                 border-radius: 6px;
-                border: 1px solid map-get($colors, background-1100);
+                padding: .5rem;
+                border: 1px solid map-get($colors, background-1000);
+                color: map-get($colors, text-1100)
             }
         }
     }

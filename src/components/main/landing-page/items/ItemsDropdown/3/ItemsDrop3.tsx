@@ -7,6 +7,7 @@ import drone3 from '@/assets/images/drone-model3-prev.webp';
 import drone4 from '@/assets/images/drone-model4-prev.webp';
 
 import './ItemsDropdown3.scss';
+import { Link } from 'react-router-dom';
 
 const ItemsDrop3 = () => {
     const productsList = [
@@ -16,7 +17,7 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/collections',
+            linkTo: '/products/acer-aspire-drone',
         },
         {
             id: '2',
@@ -24,7 +25,7 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/collections',
+            linkTo: '/products/acer-aspire-drone',
         },
         {
             id: '3',
@@ -32,7 +33,7 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/collections',
+            linkTo: '/products/acer-aspire-drone',
         },
         {
             id: '4',
@@ -40,22 +41,22 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/collections',
+            linkTo: '/products/acer-aspire-drone',
         },
     ];
     return (<div className='product-list'>
         {productsList.map((product) => (
-            <div>
+            <Link to={product.linkTo} key={product.id}>
                 <div className='product-list__image'>
                     <img src={product.productImage} alt={product.id}></img>
                 </div>
                 <div className='product-list__info'>
                     <h3>{product.productName}</h3>
                     <p>
-                    ${product.newPrice} <span className='product-list__info__old-price'> ${product.oldPrice}</span>
+                    ${product.newPrice.toFixed(2)} <span className='product-list__info__old-price'> ${product.oldPrice.toFixed(2)}</span>
                     </p>
                 </div>
-            </div>
+            </Link>
         ))}
     </div>);
 };

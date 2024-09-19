@@ -136,7 +136,12 @@ const Payment = () => {
             </div>
             <hr></hr>
             <div className="product-detail__right__container__status">
-              <p>Availability: {info.availability}</p>
+              <span>
+                Availability:
+                <p className="product-detail__right__container__status__stock">
+                  {info.availability}
+                </p>
+              </span>
               <span className="product-detail__right__container__status__brand">
                 Brand: <p>{info.brand}</p>
               </span>

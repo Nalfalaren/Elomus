@@ -112,7 +112,7 @@ hr {
     .products-list__card {
         border: none;
         border-radius: 30px;
-        width: 18rem;
+        width: 16rem;
         margin-block: 1rem;
         transition: box-shadow 0.3s ease-in;
 
@@ -125,7 +125,7 @@ hr {
         }
 
         @include respond-down('md') {
-            width: 80%;
+            width: 90%;
         }
 
 
@@ -148,7 +148,7 @@ hr {
                 }
 
                 @include respond-down('md') {
-                    width: 15%;
+                    width: 25%;
                 }
 
                 p {
@@ -188,7 +188,6 @@ hr {
 
         img {
             box-shadow: 0 0 0 1px map-get($colors, background-1000);
-            border-radius: 25px;
         }
 
         &__body {

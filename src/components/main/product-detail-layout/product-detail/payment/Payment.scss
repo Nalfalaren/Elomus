@@ -34,7 +34,7 @@
         max-width: 1200px;
     }
 
-    @include respond-down('sm'){
+    @include respond-down('sm') {
         display: flex;
         flex-direction: column;
         padding-inline: 2rem;
@@ -51,38 +51,52 @@
             top: 3.5rem;
             height: fit-content;
 
-            @include respond-down('sm'){
+            @include respond-down('sm') {
                 position: static;
             }
+
             &--main {
                 max-width: 576px;
+                margin-bottom: 1rem;
+
                 img {
                     width: 100%;
                     height: auto;
                     object-fit: cover;
-                    border-radius: 1rem;
+                    border-radius: 2rem;
+
                 }
 
-                .carousel-control-next-icon{
-                    background-image: url('../../../../assets/images/chevron-right.svg');
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 45%;
+                }
+
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
                     background-color: transparent;
-                    border: 1px solid gray;
-                    color: black;
+                    background-size: 15px 15px;
+                    border: 1px solid map-get($colors, background-1000);
                     width: 40px;
                     height: 40px;
                     border-radius: 100%;
+                    box-shadow: 0 0 2px 3px map-get($colors, background-1000);
 
-                    &:hover{
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
                 }
 
-                 .carousel-control-prev-icon{
-                    background-image: url('../../../../assets/images/chevron-left.svg');
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
                     @extend .carousel-control-next-icon;
 
-                    &:hover{
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
@@ -90,16 +104,53 @@
             }
 
             &--other {
-                
+
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 30%;
+                }
+
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
+                    background-color: transparent;
+                    background-size: 25px 25px;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
+                    @extend .carousel-control-next-icon;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
                 &__item {
                     display: flex !important;
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
                     gap: 1rem;
+                    width: 75%;
+                    margin-left: 50px;
 
                     img {
                         width: 23%;
+                        border-radius: 25px;
                     }
                 }
             }
@@ -133,14 +184,16 @@
 
             &__rates {
                 display: flex;
-                gap: .3rem;
+                gap: .2rem;
 
                 &--filled {
                     color: map-get($colors, status-200);
+                    width: 10px;
                 }
 
                 &--unfilled {
                     color: map-get($colors, text-1000);
+                    width: 10px;
                 }
             }
 
@@ -151,12 +204,20 @@
                 color: map-get($colors, text-100);
                 margin-block: 1rem;
 
-                a{
-                    color: map-get($colors, text-100);
+                a {
+                    color: map-get($colors, text-1200);
                 }
             }
 
             &__status {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+
+                &__stock {
+                    color: #66AA00;
+                }
+
                 span {
                     display: flex;
                     gap: .2rem;
@@ -172,13 +233,21 @@
                         color: map-get($colors, text-1100);
                     }
                 }
+
+                &__brand {
+
+                    p {
+                        @extend .product-detail__right__container__status__tags
+                    }
+                }
             }
 
             &__name {
-                margin-block: .5rem;
+                margin-block: .2rem;
+
                 h2 {
                     font-size: 24px;
-                    
+
                 }
             }
 
@@ -243,7 +312,7 @@
                         border: 1px solid map-get($colors, background-800);
                         width: 30px;
                         height: 30px;
-                        padding: .5rem;
+                        padding: 7px;
                         border-radius: 100%;
                         transition: color 0.2s ease-in;
 
@@ -306,16 +375,16 @@
                 }
             }
 
-            &__key{
+            &__key {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
@@ -323,28 +392,30 @@
                 }
             }
 
-            &__prize{
+            &__prize {
                 display: flex;
                 flex-direction: column;
                 gap: .8rem;
-                span{
+
+                span {
                     font-weight: 600;
                 }
-                ul{
+
+                ul {
                     padding: revert;
                 }
             }
 
-            &__others{
+            &__others {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;

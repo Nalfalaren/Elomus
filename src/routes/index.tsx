@@ -107,7 +107,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/acer-aspire-drone',
+        path: '/products/acer-aspire-drone',
         element: <ProductDetailComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -123,7 +123,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/cam-mod-by-kryptonite-vapor',
+        path: '/products/cam-mod-by-kryptonite-vapor',
         element: <ProductDetailComponent2 />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -139,7 +139,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/driptip-kryptonite-1',
+        path: '/products/driptip-kryptonite-1',
         element: <ProductDetailComponent3 />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -155,7 +155,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/driptip-kryptonite-2',
+        path: '/products/driptip-kryptonite-2',
         element: <ProductDetailComponent4 />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -171,7 +171,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/driptip-kryptonite',
+        path: '/products/driptip-kryptonite',
         element: <ProductDetailComponent5 />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -187,7 +187,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/product/mod-cam-by-kryptonite-vapor',
+        path: '/products/mod-cam-by-kryptonite-vapor',
         element: <ProductDetailComponent6 />,
       },
       { path: '*', element: <PageNotFound /> },

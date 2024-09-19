@@ -60,6 +60,8 @@ const CategorySidebar = () => {
     'Orange',
   ];
 
+  const vendor = ['Abibus', 'Blubiu'];
+
   const chosenCategory = [
     {
       id: '1',
@@ -71,13 +73,37 @@ const CategorySidebar = () => {
   ];
 
   const [isChecked, setIsChecked] = useState<boolean[]>(
-    Array(categoriesList.length + stocks.length).fill(false),
+    Array(categoriesList.length).fill(false),
+  );
+
+  const [isStockChecked, setIsStockChecked] = useState<boolean[]>(
+    Array(stocks.length).fill(false),
+  );
+
+  const [isVendorChecked, setIsVendorChecked] = useState<boolean[]>(
+    Array(stocks.length).fill(false),
   );
 
   const handleChecked = (index: number) => {
     setIsChecked((prev) => {
-      const newChecked = [...prev];
-      newChecked[index] = !newChecked[index];
+      const newChecked = Array(categoriesList.length).fill(false);
+      newChecked[index] = true;
+      return newChecked;
+    });
+  };
+
+  const handleStockChecked = (index: number) => {
+    setIsStockChecked((prev) => {
+      const newChecked = Array(stocks.length).fill(false);
+      newChecked[index] = true;
+      return newChecked;
+    });
+  };
+
+  const handleVendorChecked = (index: number) => {
+    setIsVendorChecked((prev) => {
+      const newChecked = Array(vendor.length).fill(false);
+      newChecked[index] = true;
       return newChecked;
     });
   };
@@ -90,11 +116,14 @@ const CategorySidebar = () => {
           {categoriesList.map((category, index) => (
             <div
               key={category.id}
-              className={`filter__categories__detailed__item ${isChecked[index] ? 'add-filter active' : 'add-filter'}`}
+              className={`filter__categories__detailed__item`}
               onClick={() => handleChecked(index)}
             >
               <input type="checkbox" style={{ display: 'none' }} />
-              <Link to={`/collections/${category.category.toLowerCase()}`}>
+              <Link
+                to={`/collections/${category.category.toLowerCase()}`}
+                className={`${isChecked[index] ? 'add-filter active' : 'add-filter'}`}
+              >
                 {category.category} ({category.quantity} items)
               </Link>
               <br />
@@ -108,72 +137,99 @@ const CategorySidebar = () => {
           {stocks.map((stock, index) => (
             <div
               key={stock.name}
-              className={`filter__categories__detailed__item ${isChecked[index] ? 'add-filter active' : 'add-filter'}`}
-              onClick={() => handleChecked(index)}
+              className="filter__categories__detailed__item"
+              onClick={() => handleStockChecked(index)}
             >
               <input type="checkbox" style={{ display: 'none' }} />
-              <Link to={`/collections/${stock.name.toLowerCase()}`}>
+              <Link
+                to={`/collections/${stock.name.toLowerCase()}`}
+                className={`${isStockChecked[index] ? 'add-filter active' : 'add-filter'}`}
+              >
                 {stock.name} ({stock.quantity} items)
               </Link>
               <br />
             </div>
           ))}
         </div>
-        <div className="filter__categories">
-          <Form.Label style={{ fontSize: '20px' }}>Price</Form.Label>
-          <Form.Range />
-        </div>
-        <div className="filter__categories">
-          <h2>Product type</h2>
-          <div className="filter__categories__detailed">
-            {chosenCategory.map((category) => (
-              <div
-                className="filter__categories__detailed__item"
-                key={category.id}
-              >
-                <input type="checkbox" style={{ display: 'none' }} />
-                <Link to={`/collections/${category.category.toLowerCase()}`}>
-                  {category.category} ({category.quantity} items)
-                </Link>
-                <br />
-                <br />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="filter__categories">
-          <h2>Colors</h2>
-          <div className="filter__categories__colors">
-            {colorsList.map((color, index) => (
-              <div key={index}>
-                <input
-                  type="checkbox"
-                  value={color}
-                  style={{
-                    width: '30px',
-                    height: '30px',
-                    borderRadius: '50%',
-                    backgroundColor: color,
-                    appearance: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    marginRight: '8px',
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="filter__categories">
-          <h2>Shop By Vendors</h2>
-          <div className="filter__categories__detailed__item">
-            <input type="checkbox" name="SwissG" value="SwissG" />
-            <label htmlFor="SwissG">SwissG</label>
-          </div>
-        </div>
+      </div>
+      <div className="filter__categories">
+        <h3>Price</h3>
+        <input
+          type="range"
+          className="filter__categories__min"
+          value="2500"
+          min={100}
+          max={9900}
+        ></input>
+        <input
+          type="range"
+          className="filter__categories__max"
+          value="7500"
+          min={100}
+          max={9900}
+        ></input>
+      </div>
+      <div className="filter__categories">
+        <h2>Product type</h2>
         <div className="filter__categories__detailed">
-          <img src={Drone} alt="drone" />
+          {chosenCategory.map((category) => (
+            <div
+              className="filter__categories__detailed__item"
+              key={category.id}
+            >
+              <input type="checkbox" style={{ display: 'none' }} />
+              <Link to={`/collections/${category.category.toLowerCase()}`}>
+                {category.category} ({category.quantity} items)
+              </Link>
+              <br />
+            </div>
+          ))}
         </div>
+      </div>
+      <div className="filter__categories">
+        <h2>Colors</h2>
+        <div className="filter__categories__colors">
+          {colorsList.map((color, index) => (
+            <div key={index}>
+              <input
+                type="checkbox"
+                value={color}
+                style={{
+                  width: '30px',
+                  height: '30px',
+                  borderRadius: '50%',
+                  backgroundColor: color,
+                  appearance: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  marginRight: '8px',
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="filter__categories">
+        <h2>Shop By Vendors</h2>
+        {vendor.map((shop, index) => (
+          <div
+            key={shop}
+            className={`filter__categories__detailed__item`}
+            onClick={() => handleVendorChecked(index)}
+          >
+            <input type="checkbox" style={{ display: 'none' }} />
+            <Link
+              to={`/collections/${shop.toLowerCase()}`}
+              className={`${isVendorChecked[index] ? 'add-filter active' : 'add-filter'}`}
+            >
+              {shop}
+            </Link>
+            <br />
+          </div>
+        ))}
+      </div>
+      <div className="filter__categories__detailed">
+        <img src={Drone} alt="drone" />
       </div>
     </div>
   );
