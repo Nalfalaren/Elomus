@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-import { Carousel } from 'react-bootstrap';
+import { faHeart, faStar, faTape } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button, Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import droneModelAfter from '@/assets/images/drone-model1-after.webp';
 import droneModelPrev from '@/assets/images/drone-model1-prev.webp';
@@ -9,9 +12,7 @@ import droneModelPrev2 from '@/assets/images/drone-model2-prev.webp';
 import droneModelPrev3 from '@/assets/images/drone-model3-prev.webp';
 import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faStar, faTape } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import paypal from '@/assets/images/paypal.svg';
 
 import './Payment.scss';
 
@@ -82,21 +83,47 @@ const Payment = () => {
   ];
 
   const [quantity, setQuantity] = useState(0);
+  const [currentImage, setCurrentImage] = useState<string>('');
+
+  const handleHoverImage = (image: string) => {
+    setCurrentImage(image);
+  };
+
+  const handleNotHoverImage = () => {
+    setCurrentImage('');
+  };
+
   return (
     <div className="product-detail">
       <div className="product-detail__left__carousel">
         <Carousel className="product-detail__left__carousel--main">
           {imgList.map((img, index) => (
             <Carousel.Item key={index}>
-              <img src={img} alt={img}></img>
+              {currentImage ? (
+                <img src={currentImage} alt={img}></img>
+              ) : (
+                <img src={img} alt={img}></img>
+              )}
             </Carousel.Item>
           ))}
         </Carousel>
-        <Carousel className="product-detail__left__carousel--other">
+        <Carousel
+          className="product-detail__left__carousel--other"
+          indicators={false}
+        >
           <Carousel.Item className="product-detail__left__carousel--other__item">
-            {imgList.slice(0, 4).map((img, index) => (
-              <img src={img} alt={img} key={index}></img>
-            ))}
+            <div className="carousel-images">
+              {imgList.slice(0, 4).map((img, index) => (
+                <img
+                  src={img}
+                  alt={img}
+                  key={index}
+                  onMouseOver={() => handleHoverImage(img)}
+                  onMouseDown={handleNotHoverImage}
+                  className="carousel-image"
+                />
+              ))}
+            </div>
           </Carousel.Item>
         </Carousel>
       </div>
@@ -184,7 +211,7 @@ const Payment = () => {
             </div>
             <div className="product-detail__right__container__quality">
               <div className="product-detail__right__container__quality__input">
-                <p>Qty</p>
+                <p>Qty:</p>
                 <input type="text" value={quantity} name="count"></input>
               </div>
               <div className="product-detail__right__container__quality__input__icon">
@@ -192,18 +219,12 @@ const Payment = () => {
               </div>
             </div>
             <div className="product-detail__right__container__buttons">
-              <Link
-                to={'/'}
-                className="product-detail__right__container__buttons--cart"
-              >
+              <span className="product-detail__right__container__buttons--cart">
                 ADD TO CART
-              </Link>
-              <Link
-                to={'/'}
-                className="product-detail__right__container__buttons--paypal"
-              >
-                Pay with Paypal
-              </Link>
+              </span>
+              <span className="product-detail__right__container__buttons--paypal">
+                Pay with <img src={paypal} alt="paypal"></img>
+              </span>
             </div>
             <div className="product-detail__right__intro">
               <h3>Product Details</h3>

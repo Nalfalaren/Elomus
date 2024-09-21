@@ -35,13 +35,13 @@ const NotFrequentFaq = () => {
     });
   };
   return (
-    <div className="FAQ">
+    <div className="FAQ-inverse">
       <h1>Not So Frequently Asked Questions</h1>
-      <div className="FAQ__questions">
+      <div className="FAQ-inverse__questions">
         {NotFrequentFaq.map((faq, index) => (
           <div
             key={faq.id}
-            className="FAQ__questions__item"
+            className="FAQ-inverse__questions__item"
             onClick={() => handleClick(index)}
           >
             <span>

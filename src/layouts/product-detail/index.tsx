@@ -39,7 +39,7 @@ export const ProductDetailLayout: React.FC<IPropsMainLayout> = () => {
         </header>
         <section className="layout__context">
           <Breadcumbs title={title} position={title}></Breadcumbs>
-          <div className="layout__content__context">
+          <div>
             <Suspense fallback={<></>}>
               <Outlet></Outlet>
             </Suspense>

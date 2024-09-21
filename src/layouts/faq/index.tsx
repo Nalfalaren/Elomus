@@ -35,12 +35,10 @@ export const FAQLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs title={'FAQ'}></Breadcumbs>
-          <div className="layout__content__context">
-            <Suspense fallback={<></>}>
-              <Outlet></Outlet>
-            </Suspense>
-          </div>
+          <Breadcumbs title={'FAQ'} position="FAQ"></Breadcumbs>
+          <Suspense fallback={<></>}>
+            <Outlet></Outlet>
+          </Suspense>
         </section>
         <footer>
           <Footer></Footer>

@@ -11,19 +11,25 @@
         text-align: center;
         color: map-get($colors, text-primary);
         font-size: 36px;
-
-        &::after, &::before{
+        position: relative;
+        
+        &::after,
+        &::before {
             content: "";
-            display: block;
             width: 40px;
             height: 1px;
             background-color: map-get($colors, 'background-1300');
             position: absolute;
             left: 50%;
+            bottom: -35%;
             margin-left: -10px;
         }
 
-        &::before{
+        &::after{
+            bottom: -50%;
+        }
+
+        &::before {
             margin-left: -30px;
         }
     }

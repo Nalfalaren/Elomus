@@ -13,6 +13,28 @@
         font-size: 36px;
         color: map-get($colors, text-primary);
         font-weight: 600;
+        position: relative;
+        margin-block: 30px;
+
+        &::after,
+        &::before {
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: map-get($colors, 'background-1300');
+            position: absolute;
+            left: 50%;
+            bottom: -35%;
+            margin-left: -10px;
+        }
+
+        &::after{
+            bottom: -50%;
+        }
+
+        &::before {
+            margin-left: -30px;
+        }
     }
 
     p {

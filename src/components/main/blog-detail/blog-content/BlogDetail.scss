@@ -68,8 +68,11 @@
     
         }
 
-        &__title,
-        &__author {
+        &__title{
+            text-align: center;
+        }
+
+        &__author{
             text-align: center;
         }
 

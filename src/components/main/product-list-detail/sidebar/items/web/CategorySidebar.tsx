@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import '../../ProductList.scss';
 import Drone from '@/assets/images/sidebar-drone.jpg';
+import Range from './Range';
 
 const CategorySidebar = () => {
   const categoriesList = [
@@ -154,20 +155,7 @@ const CategorySidebar = () => {
       </div>
       <div className="filter__categories">
         <h3>Price</h3>
-        <input
-          type="range"
-          className="filter__categories__min"
-          value="2500"
-          min={100}
-          max={9900}
-        ></input>
-        <input
-          type="range"
-          className="filter__categories__max"
-          value="7500"
-          min={100}
-          max={9900}
-        ></input>
+        <Range></Range>
       </div>
       <div className="filter__categories">
         <h2>Product type</h2>

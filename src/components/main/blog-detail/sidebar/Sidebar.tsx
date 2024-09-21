@@ -43,7 +43,7 @@ const Sidebar = () => {
             className="blog-sidebar__block__input__icon"
           />
         </div>
-        <hr></hr>
+        <hr className="hr"></hr>
       </section>
       <section className="blog-sidebar__block">
         <h3>Recent Articles</h3>

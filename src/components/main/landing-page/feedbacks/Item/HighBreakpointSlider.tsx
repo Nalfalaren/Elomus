@@ -73,7 +73,7 @@ const HighBreakpointSlider = () => {
                   <div className="feedback__carousel__card__body">
                     <img src={card.image} alt={`customer${index + 1}`} />
                     <Card.Title>{card.title}</Card.Title>
-                    <Card.Text style={{width: '90%'}}>{card.text}</Card.Text>
+                    <Card.Text style={{ width: '90%' }}>{card.text}</Card.Text>
                     <div className="feedback__carousel__card__body__quote">
                       <FontAwesomeIcon icon={faQuoteRight} />
                       <Card.Text className="feedback__carousel__card__body__customer">

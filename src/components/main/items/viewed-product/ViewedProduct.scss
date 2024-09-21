@@ -1,0 +1,70 @@
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.breakpoint';
+@import '../../../../styles/settings/setting.mixins';
+
+.viewed-card{
+    border: none;
+    background-color: map-get($colors, background-1200);
+
+    &__body{
+        padding: 0;
+        border-radius: 24px;
+
+        
+        &:hover {
+            box-shadow: 0 0 1px 3px map-get($colors, text-1000);
+        }
+
+        @include respond-down('lg') {
+            width: 12rem;
+        }
+
+        @include respond-down('md') {
+            width: 90%;
+        }
+        
+        &__img{
+            width: 100%;
+            border-radius: 3rem;
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 3rem;
+            }
+        }
+
+        &__context{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+
+            &__link{
+                text-decoration: none;
+                color: black;
+                font-size: 12px;
+            }
+
+            &__name{
+                text-decoration: none;
+                color: #454545;
+                font-size: 14px;
+            }
+
+            &__price{
+                display: flex;
+                gap: .8rem;
+                font-family: 'Oswald';
+                &--discount{
+                    color: map-get($colors, text-primary);
+                    font-size: 16px;
+                }
+
+                small{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

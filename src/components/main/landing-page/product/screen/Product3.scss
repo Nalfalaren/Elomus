@@ -3,7 +3,7 @@
 @import '../../../../../styles/settings/setting.breakpoint';
 
 .product3 {
-    max-width: 1320px;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -29,7 +29,7 @@
     }
 
     @include respond-up('xl') {
-        max-width: 1320px;
+        max-width: 1200px;
     }
 
     @include respond-down('sm'){
@@ -99,7 +99,7 @@
             margin-top: 8px;
             gap: 8px;
             border: 1px solid map-get($colors, text-1000);
-            width: 28%;
+            width: 30%;
             border-radius: 24px;
             padding: 0 20px;
             font-size: 13px;

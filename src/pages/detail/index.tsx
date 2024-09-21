@@ -7,7 +7,7 @@ import ProductView from '@/components/main/product-detail-layout/product-detail/
 
 const ProductDetailComponent = () => {
   return (
-    <div className="layout__content__context__container">
+    <div className="layout__content__colored__container">
       <Payment></Payment>
       <FAQ></FAQ>
       <SimilarProducts></SimilarProducts>

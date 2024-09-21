@@ -65,7 +65,9 @@ const BlogDetail = () => {
           </div>
           <span className="article__block__badge">{art.badge}</span>
           <h3 className="article__block__title">{art.title}</h3>
-          <p className="article__block__author">{art.author}</p>
+          <p className="article__block__author" style={{ textAlign: 'center' }}>
+            {art.author}
+          </p>
           <div>
             <p>{art.overview}</p>
           </div>
