@@ -15,3 +15,4 @@ export * from './login';
 export * from './register';
 export * from './product-detail-yellow';
 export * from './product-detail-green';
+export * from './product-detail-blue';

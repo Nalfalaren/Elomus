@@ -9,8 +9,8 @@ const DropdownList = [
     name: 'HORIZONTAL THUMBS',
     linkTo: '/products/cam-mod-by-kryptonite-vapor',
   },
-  { name: 'VERTICAL THUMBS', linkTo: '/products/driptip-kryptonite-1' },
-  { name: 'VERTICAL THUMBS - RIGHT', linkTo: '/products/driptip-kryptonite-2' },
+  { name: 'VERTICAL THUMBS', linkTo: '/products/driptip-kryptonite-2' },
+  { name: 'VERTICAL THUMBS - RIGHT', linkTo: '/products/driptip-kryptonite-1' },
   { name: 'IMAGE ROLLOVER - VERTICAL', linkTo: '/products/driptip-kryptonite' },
   {
     name: 'HORIZONTAL - SLIDER',

@@ -9,9 +9,8 @@
     margin-inline: auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     gap: 1.5rem;
-    padding-block: 2rem;
+    padding-block: 5rem;
     scroll-behavior: smooth;
 
     @include respond-up('xs') {
@@ -58,42 +57,62 @@
             }
             &--main {
                 max-width: 576px;
+                width: 0 0 100%;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                border-radius: 1rem;
                 img {
                     width: 100%;
                     height: auto;
                     object-fit: cover;
-                    border-radius: 3rem;
                 }
 
-                .carousel-control-next-icon{
-                    background-image: url('../../../../assets/images/chevron-right.svg');
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 40%;
+                }
+
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
                     background-color: transparent;
-                    border: 1px solid gray;
-                    color: black;
+                    background-size: 25px 25px;
+                    border: none;
                     width: 40px;
                     height: 40px;
                     border-radius: 100%;
+                    border: 1px solid map-get($colors, background-1100);
+                    box-shadow: 0 0 0 1px map-get($colors, background-1100);
 
-                    &:hover{
+                    &::before{
+                        border: 1px solid #ffff;
+                    }
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
                 }
 
-                 .carousel-control-prev-icon{
-                    background-image: url('../../../../assets/images/chevron-left.svg');
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
                     @extend .carousel-control-next-icon;
 
-                    &:hover{
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
+
                 }
             }
 
             &--other {
                 
                 &__item {
+                    width: 70%;
+                    margin-left: 70px;
                     display: flex !important;
                     flex-direction: row;
                     justify-content: center;
@@ -101,7 +120,36 @@
                     gap: 1rem;
                     margin-top: 1rem;
 
+                    
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
+                    background-color: transparent;
+                    background-size: 25px 25px;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
+                    @extend .carousel-control-next-icon;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
                     img {
+                        margin-top: 1rem;
                         width: 23%;
                         border-radius: 1rem;
                         box-shadow: 1px 1px 1px map-get($colors, background-1000);
@@ -120,6 +168,7 @@
 
         display: flex;
         flex-direction: column;
+        flex-basis: 50%;
         gap: 1rem;
 
         &__container {
@@ -142,10 +191,14 @@
 
                 &--filled {
                     color: map-get($colors, status-200);
+                    width: 12px;
+                    height: 12px;
                 }
 
                 &--unfilled {
                     color: map-get($colors, text-1000);
+                    width: 12px;
+                    height: 12px;
                 }
             }
 
@@ -162,6 +215,9 @@
             }
 
             &__status {
+                display: flex;
+                flex-direction: column;
+                gap: .3rem;
                 span {
                     display: flex;
                     gap: .2rem;
@@ -183,7 +239,6 @@
                 margin-block: .5rem;
                 h2 {
                     font-size: 24px;
-                    
                 }
             }
 
@@ -200,6 +255,11 @@
                     text-decoration: line-through;
                     color: map-get($colors, text-1000);
                 }
+            }
+
+            &__intro{
+                line-height: 30px;
+                color: map-get($colors, text-1300);
             }
 
             &__colors {
@@ -272,26 +332,44 @@
                 gap: 1rem;
 
                 &--cart {
+                    font-family: 'Oswald';
+                    font-size: 16px;
                     width: 100%;
                     text-decoration: none;
                     border: 1px solid map-get($colors, background-800);
-                    color: map-get($colors, text-300);
-                    padding: .5rem;
-                    border-radius: 15px;
-                    text-align: center;
-                }
-
-                &--paypal {
-                    text-decoration: none;
-                    background-color: map-get($colors, status-200);
-                    color: black;
+                    color: map-get($colors, text-1200);
                     font-weight: 500;
                     padding: .5rem;
                     border-radius: 15px;
                     text-align: center;
+                    transition: color 0.2s ease-in-out;
+
+                    &:hover{
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
                 }
+
+                &--paypal {
+                    font-size: 1rem;
+                    line-height: 25px;
+                    text-decoration: none;
+                    background-color: map-get($colors, status-200);
+                    color: black;
+                    padding: .5rem;
+                    border-radius: 15px;
+                    text-align: center;
+
+                    img{
+                        vertical-align: middle;
+                        height: 100%;
+                        width: 15%;
+                        text-align: left;
+                        margin-left: 3px;
+                    }
             }
         }
+    }
 
         &__intro {
             display: flex;

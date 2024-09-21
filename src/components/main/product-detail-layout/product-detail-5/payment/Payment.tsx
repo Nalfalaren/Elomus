@@ -11,6 +11,8 @@ import clock3 from '@/assets/images/clock3.webp';
 import clock4 from '@/assets/images/clock4.webp';
 import clock5 from '@/assets/images/clock5.webp';
 
+import paypal from '@/assets/images/paypal.svg';
+
 import './Payment5.scss';
 
 const Payment = () => {
@@ -44,22 +46,15 @@ const Payment = () => {
     <div className="product-detail-5">
       <div className="product-detail-5__left__carousel">
         {imgList.map((img, index) => (
-          <Carousel className="product-detail-5__left__carousel--other">
-            <Carousel.Item
+          <div className="product-detail-5__left__carousel--other">
+            <div
               className="product-detail-5__left__carousel--other__item"
               key={index}
             >
               <img src={img} alt={`Clock ${index + 1}`} />
-            </Carousel.Item>
-          </Carousel>
+            </div>
+          </div>
         ))}
-        <Carousel className="product-detail-5__left__carousel--main">
-          {imgList.map((img, index) => (
-            <Carousel.Item key={index}>
-              <img src={img} alt={`Clock ${index + 1}`} />
-            </Carousel.Item>
-          ))}
-        </Carousel>
       </div>
       <div className="product-detail-5__right">
         {productInfo.map((info) => (
@@ -90,11 +85,17 @@ const Payment = () => {
                 )}
               </p>
             </div>
+            <div className="product-detail-5__right__container__intro">
+              {info.shortIntro}
+            </div>
             <hr />
             <div className="product-detail-5__right__container__status">
               <p>Availability: {info.availability}</p>
               <span className="product-detail-5__right__container__status__brand">
-                Brand: <p>{info.brand}</p>
+                Brand:{' '}
+                <p className="product-detail-5__right__container__status__tags__para">
+                  {info.brand}
+                </p>
               </span>
               <p>SKU: {info.SKU}</p>
               <div className="product-detail-5__right__container__status__tags">
@@ -163,7 +164,7 @@ const Payment = () => {
                 to="/"
                 className="product-detail-5__right__container__buttons--paypal"
               >
-                Pay with Paypal
+                Pay with <img src={paypal} alt="paypal"></img>
               </Link>
             </div>
           </div>

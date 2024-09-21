@@ -2,22 +2,25 @@ import React, { Suspense } from 'react';
 
 import Footer from '@/components/main/landing-page/footer/Footer';
 import Navbar from '@/components/main/landing-page/navbar/navbar-main/Navbar';
-import '@/styles/layouts/_product-list.scss';
-import '@/index.scss';
-import { Outlet } from 'react-router-dom';
 
-import CategorySidebar from '@/components/main/product-list-detail/sidebar/items/web/CategorySidebar';
-import Breadcumbs from '@/components/main/collection/breadcumbs/Breadcumbs';
+import '@/styles/layouts/_product-detail-blue.scss';
+import '@/index.scss';
+import { Outlet, useLocation } from 'react-router-dom';
 import useSticky from '@/composables/scroll/useSticky';
+import { convertUrlToTitle } from '@/composables/convert/ConvertURL';
+import BreadcumbsYellow from '@/components/main/collection/breadcumbs-yellow/Breadcumbs';
 
 interface IPropsMainLayout {
   settingPage?: boolean;
 }
 
-export const RegisterLayout: React.FC<IPropsMainLayout> = () => {
+export const ProductDetailGrayLayout: React.FC<IPropsMainLayout> = () => {
   const isSticky = useSticky();
+  const location = useLocation();
+  const title = convertUrlToTitle(location.pathname);
+
   return (
-    <div className="main">
+    <div className="product-detail-gray">
       <div className="layout">
         <header
           className="layout__header"
@@ -27,19 +30,16 @@ export const RegisterLayout: React.FC<IPropsMainLayout> = () => {
                   position: 'sticky',
                   zIndex: 1000,
                   top: 0,
-                  backgroundColor: '#21b3f1',
+                  backgroundColor: '#7E7E7E',
                 }
-              : { position: 'absolute', zIndex: 10 }
+              : { position: 'absolute', padding: '1.5rem', zIndex: 10 }
           }
         >
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs
-            title={'Create Account'}
-            position="Create Account"
-          ></Breadcumbs>
-          <div className="layout__content__context">
+          <BreadcumbsYellow position={title}></BreadcumbsYellow>
+          <div>
             <Suspense fallback={<></>}>
               <Outlet></Outlet>
             </Suspense>

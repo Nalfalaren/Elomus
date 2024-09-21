@@ -77,6 +77,8 @@
           height: auto;
           display: block;
           margin: 0 auto;
+          border: 1px solid map-get($colors, text-1000);
+          border-radius: 10px;
 
           @include respond-down('sm'){
             width: 80px;

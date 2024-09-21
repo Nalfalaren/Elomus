@@ -35,7 +35,7 @@ export const WishListLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__content">
-          <Breadcumbs title={'Wishlist'}></Breadcumbs>
+          <Breadcumbs title={'Wishlist'} position="Wishlist"></Breadcumbs>
           <div className="layout__content__context">
             <Suspense fallback={<></>}>
               <Outlet></Outlet>

@@ -37,7 +37,7 @@ export const ProductDetailGreenLayout: React.FC<IPropsMainLayout> = () => {
         >
           <NavbarGreen></NavbarGreen>
         </header>
-        <section className="layout__context">
+        <section className="layout__content">
           <BreadcumbsGreen
             title={'Product Detail'}
             position="Product Detail"

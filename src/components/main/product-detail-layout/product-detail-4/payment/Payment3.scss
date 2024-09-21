@@ -12,6 +12,7 @@
     gap: 1.5rem;
     padding-block: 2rem;
     scroll-behavior: smooth;
+    margin-top: 5rem;
 
     @include respond-up('xs') {
         max-width: 540px;
@@ -47,11 +48,8 @@
 
         &__carousel {
             display: flex;
-            flex-direction: row-reverse;
-            position: sticky;
-            top: 3.5rem;
             height: fit-content;
-            flex-basis: 60%;
+            flex-basis: 100%;
 
             @include respond-down('sm') {
                 display: flex;
@@ -64,42 +62,62 @@
 
             &--main {
                 max-width: 576px;
-
+                flex: 0 0 80%;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                border-radius: 1rem;
+                height: fit-content;
                 img {
                     width: 100%;
                     height: auto;
                     object-fit: cover;
-                    border-radius: 3rem;
+                }
+
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 40%;
                 }
 
                 .carousel-control-next-icon {
-                    background-image: url('../../../../assets/images/chevron-right.svg');
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
                     background-color: transparent;
-                    border: 1px solid gray;
-                    color: black;
+                    background-size: 25px 25px;
+                    border: none;
                     width: 40px;
                     height: 40px;
                     border-radius: 100%;
+                    border: 1px solid map-get($colors, background-1100);
+                    box-shadow: 0 0 0 1px map-get($colors, background-1100);
+
+                    &::before{
+                        border: 1px solid #ffff;
+                    }
 
                     &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
                 }
 
                 .carousel-control-prev-icon {
-                    background-image: url('../../../../assets/images/chevron-left.svg');
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
                     @extend .carousel-control-next-icon;
 
                     &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
+
                 }
             }
 
             &--other {
-                width: 30%;
+
+                width: 15%;
+                margin-right: 1rem;
 
                 @include respond-down('sm'){
                     display: flex;
@@ -114,9 +132,10 @@
                     align-items: center;
                     gap: 1rem;
                     margin-top: 1rem;
+                    width: 75%;
 
                     img {
-                        width: 60%;
+                        width: 100%;
                         border-radius: 1rem;
                         box-shadow: 1px 1px 1px map-get($colors, background-1000);
                     }
@@ -127,7 +146,9 @@
     }
 
     &__right {
-
+        width: 100%;
+        display: flex;
+        flex-basis: 60%;
         hr {
             width: 100%;
         }
@@ -141,12 +162,17 @@
             flex-direction: column;
             gap: .4rem;
 
+            &__intro{
+                line-height: 30px;
+                color: map-get($colors, text-1300);
+            }
+
             &__brand {
                 display: flex;
                 flex-direction: row;
 
                 p {
-                    color: map-get($colors, text-primary);
+                    color: map-get($colors, text-fourth);
                 }
             }
 
@@ -156,10 +182,14 @@
 
                 &--filled {
                     color: map-get($colors, status-200);
+                    width: 12px;
+                    height: 12px;
                 }
 
                 &--unfilled {
                     color: map-get($colors, text-1000);
+                    width: 12px;
+                    height: 12px;
                 }
             }
 
@@ -180,6 +210,10 @@
                     display: flex;
                     gap: .2rem;
                     flex-wrap: wrap;
+                }
+
+                &__content{
+                    color: map-get($colors, text-fourth);
                 }
 
                 &__tags {
@@ -208,7 +242,7 @@
                 font-weight: 600;
 
                 span {
-                    color: map-get($colors, text-primary);
+                    color: map-get($colors, text-fourth);
                 }
 
                 small {
@@ -289,23 +323,41 @@
                 gap: 1rem;
 
                 &--cart {
+                    font-family: 'Oswald';
+                    font-size: 16px;
                     width: 100%;
                     text-decoration: none;
                     border: 1px solid map-get($colors, background-800);
-                    color: map-get($colors, text-300);
-                    padding: .5rem;
-                    border-radius: 15px;
-                    text-align: center;
-                }
-
-                &--paypal {
-                    text-decoration: none;
-                    background-color: map-get($colors, status-200);
-                    color: black;
+                    color: map-get($colors, text-1200);
                     font-weight: 500;
                     padding: .5rem;
                     border-radius: 15px;
                     text-align: center;
+                    transition: color 0.2s ease-in-out;
+
+                    &:hover{
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
+                &--paypal {
+                    font-size: 1rem;
+                    line-height: 25px;
+                    text-decoration: none;
+                    background-color: map-get($colors, status-200);
+                    color: black;
+                    padding: .5rem;
+                    border-radius: 15px;
+                    text-align: center;
+
+                    img{
+                        vertical-align: middle;
+                        height: 100%;
+                        width: 15%;
+                        text-align: left;
+                        margin-left: 3px;
+                    }
                 }
             }
         }

@@ -11,7 +11,6 @@ const ProductDetailComponent2 = () => {
     <div className="layout__content__context__container">
       <Payment></Payment>
       <Info></Info>
-      <FAQ></FAQ>
       <SimilarProducts></SimilarProducts>
       <ProductView></ProductView>
     </div>

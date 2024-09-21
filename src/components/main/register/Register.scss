@@ -7,6 +7,11 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 2rem;
+
+    @include respond-down('sm'){
+        padding-inline: 2rem;
+    }
 
     h3 {
         font-size: 36px;
@@ -14,7 +19,7 @@
 
     p {
         color: map-get($colors, text-1100);
-        font-size: 24px;
+        font-size: 18px;
     }
 
     &__form {
@@ -25,7 +30,7 @@
         &__group {
             label {
                 color: map-get($colors, text-1100);
-                font-size: 18px;
+                font-size: 13px;
             }
         }
 
@@ -44,8 +49,8 @@
                 background-color: map-get($colors, background-1300);
                 color: #fff;
                 border: none;
-                padding-block: 1rem;
-                padding-inline: 1.5rem;
+                padding-inline: 1.2rem;
+                line-height: 30px;
                 border-radius: 24px;
 
                 span{

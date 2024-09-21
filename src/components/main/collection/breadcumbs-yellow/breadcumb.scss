@@ -1,0 +1,25 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+.breadcumb-yellow{
+    min-height: 130px;
+    background-color: #a58157;
+    position: relative;
+    @include respond-down('xs'){
+        font-size: 24px;
+    }
+
+    &__direction{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        min-height: 100px;
+        color: #fff;
+        position: absolute;
+        bottom: -15%;
+        left: 19%;
+        max-width: 1200px;
+    }
+}

@@ -12,7 +12,7 @@ import cam6 from '@/assets/images/cam5.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faStar, faTape } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-
+import paypal from '@/assets/images/paypal.svg';
 import './Payment.scss';
 
 const Payment = () => {
@@ -94,6 +94,9 @@ const Payment = () => {
                 )}
               </p>
             </div>
+            <div className="product-detail-2__right__container__intro">
+              {info.shortIntro}
+            </div>
             <hr></hr>
             <div className="product-detail-2__right__container__status">
               <p>Availability: {info.availability}</p>
@@ -166,7 +169,7 @@ const Payment = () => {
                 to={'/'}
                 className="product-detail-2__right__container__buttons--paypal"
               >
-                Pay with Paypal
+                Pay with <img src={paypal} alt="paypal"></img>
               </Link>
             </div>
           </div>

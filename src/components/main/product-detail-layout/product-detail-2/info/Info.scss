@@ -5,6 +5,8 @@
 
 .info {
     color: map-get($colors, text-1100);
+    max-width: 1200px;
+    margin-inline: auto;
 
     hr {
         width: 100%;

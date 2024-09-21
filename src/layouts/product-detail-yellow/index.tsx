@@ -1,13 +1,15 @@
 import React, { Suspense } from 'react';
 
 import Footer from '@/components/main/landing-page/footer/Footer';
-import Navbar from '@/components/main/landing-page/navbar/navbar-main/Navbar';
+import Navbar from '@/components/main/landing-page/navbar/navbar-yellow/Navbar';
 
-import '@/styles/layouts/_main.scss';
+import '@/styles/layouts/_product-detail-yellow.scss';
 import '@/index.scss';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Breadcumbs from '@/components/main/collection/breadcumbs/Breadcumbs';
 import useSticky from '@/composables/scroll/useSticky';
+import { convertUrlToTitle } from '@/composables/convert/ConvertURL';
+import BreadcumbsYellow from '@/components/main/collection/breadcumbs-yellow/Breadcumbs';
 
 interface IPropsMainLayout {
   settingPage?: boolean;
@@ -15,8 +17,11 @@ interface IPropsMainLayout {
 
 export const ProductDetailYellowLayout: React.FC<IPropsMainLayout> = () => {
   const isSticky = useSticky();
+  const location = useLocation();
+  const title = convertUrlToTitle(location.pathname);
+
   return (
-    <div className="main">
+    <div className="product-detail-yellow">
       <div className="layout">
         <header
           className="layout__header"
@@ -26,7 +31,7 @@ export const ProductDetailYellowLayout: React.FC<IPropsMainLayout> = () => {
                   position: 'sticky',
                   zIndex: 1000,
                   top: 0,
-                  backgroundColor: '#A58157',
+                  backgroundColor: '#fff',
                 }
               : { position: 'absolute', zIndex: 10 }
           }
@@ -34,10 +39,7 @@ export const ProductDetailYellowLayout: React.FC<IPropsMainLayout> = () => {
           <Navbar></Navbar>
         </header>
         <section className="layout__context">
-          <Breadcumbs
-            title={'Product Detail'}
-            position="Product Detail"
-          ></Breadcumbs>
+          <BreadcumbsYellow position={title}></BreadcumbsYellow>
           <div className="layout__content__context">
             <Suspense fallback={<></>}>
               <Outlet></Outlet>

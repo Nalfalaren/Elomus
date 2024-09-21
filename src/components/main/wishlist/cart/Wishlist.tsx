@@ -57,16 +57,11 @@ const Wishlist = () => {
                 </span>
               </td>
               <td className="wishlist__cart">
-                <Button>
-                  <FontAwesomeIcon icon={faCartShopping} />
-                </Button>
+                <Button>Add To Cart</Button>
               </td>
             </tr>
           ))}
         </table>
-      </div>
-      <div>
-        <ProductView />
       </div>
     </div>
   );

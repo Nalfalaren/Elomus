@@ -48,7 +48,7 @@ const Info = () => {
     },
   ];
 
-  const pageTitles = ['Description', 'Reviews', 'Custom Tab'];
+  const pageTitles = ['Description', 'Reviews'];
   const [currentPage, setCurrentPage] = useState('Description');
 
   const handleTitles = (page: React.SetStateAction<string>) => {
@@ -108,11 +108,11 @@ const Info = () => {
               </div>
             </div>
           ))}
-        {currentPage === 'Custom Tab' && (
-          <p>
-            You can add, text, html, images and videos as well to the tab from
-            product settings area
-          </p>
+        {currentPage === 'Reviews' && (
+          <div className="info">
+            <h3 className="info__reviews">Customer Reviews</h3>
+            <p>Based on 2 reviews Write a review</p>
+          </div>
         )}
       </div>
       <hr></hr>

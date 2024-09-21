@@ -39,17 +39,19 @@ const Features = () => {
   ];
   return (
     <div className="features">
-      {featureList.map((feature) => (
-        <div key={feature.id} className="features__block">
-          <div>
-            <img src={feature.image} alt={feature.id}></img>
+      <div className="features__container">
+        {featureList.map((feature) => (
+          <div key={feature.id} className="features__container__block">
+            <div>
+              <img src={feature.image} alt={feature.id}></img>
+            </div>
+            <div>
+              <h4>{feature.name}</h4>
+              <p>{feature.content}</p>
+            </div>
           </div>
-          <div>
-            <h4>{feature.name}</h4>
-            <p>{feature.content}</p>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

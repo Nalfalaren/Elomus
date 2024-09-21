@@ -43,26 +43,24 @@
             position: relative;
 
             &::after,
-            &::before {
-                content: "";
-                width: 40px;
-                height: 1px;
-                background-color: map-get($colors, 'background-1300');
-                position: absolute;
-                left: 50%;
-                bottom: -50%;
-                margin-left: -10px;
-                margin-bottom: 10px;
-            }
+        &::before {
+            content: "";
+            width: 40px;
+            height: 1px;
+            background-color: map-get($colors, 'background-1300');
+            position: absolute;
+            left: 50%;
+            bottom: -35%;
+            margin-left: -10px;
+        }
 
-            &::after {
-                bottom: -65%;
-            }
+        &::after{
+            bottom: -50%;
+        }
 
-            &::before {
-                margin-left: -30px;
-                font-weight: 600;
-            }
+        &::before {
+            margin-left: -30px;
+        }
         }
 
         .carousel-control-prev-1,

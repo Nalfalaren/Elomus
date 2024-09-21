@@ -58,13 +58,14 @@
             &--main {
                 max-width: 576px;
                 margin-bottom: 1rem;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                border-radius: 1rem;
 
                 img {
                     width: 100%;
                     height: auto;
                     object-fit: cover;
-                    border-radius: 2rem;
-
+                    border-radius: 1rem;
                 }
 
                 .carousel-control-next,

@@ -2,37 +2,43 @@
 @import '../../../../../styles/settings/setting.mixins';
 @import '../../../../../styles/settings/setting.breakpoint';
 
-.features{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+.features {
     padding: 3rem;
     margin-block: 4rem;
     background-color: map-get($colors, background-1200);
 
-    @include respond-down('sm'){
+    @include respond-down('sm') {
         display: flex;
         flex-direction: column;
     }
 
-    &__block{
+    &__container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
+        max-width: 1200px;
+        margin-inline: auto;
 
-        h4{
-            text-align: center;
-            margin-bottom: .5rem;
-            font-size: 20px;
-        }
+        &__block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            line-height: 30px;
 
-        p{
-            text-align: center;
-            color: map-get($colors, text-1100);
+            h4 {
+                text-align: center;
+                margin-bottom: .5rem;
+                font-size: 20px;
+            }
+
+            p {
+                text-align: center;
+                color: map-get($colors, text-1100);
+            }
         }
     }
 

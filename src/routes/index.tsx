@@ -20,7 +20,9 @@ import {
   BlogDetailLayout,
   ProductDetailYellowLayout,
   ProductDetailGreenLayout,
+  ProductDetailWatchLayout,
 } from '@/layouts';
+import { ProductDetailGrayLayout } from '@/layouts/product-detail-gray';
 // Auth page
 const SignIn = React.lazy(() => import('@/pages/auth/sign-in'));
 
@@ -134,7 +136,7 @@ export const router = createBrowserRouter([
     element: (
       <>
         <ScrollRestoration getKey={(location) => location.pathname} />
-        <ProductDetailLayout />
+        <ProductDetailGrayLayout />
       </>
     ),
     children: [
@@ -150,7 +152,7 @@ export const router = createBrowserRouter([
     element: (
       <>
         <ScrollRestoration getKey={(location) => location.pathname} />
-        <ProductDetailLayout />
+        <ProductDetailWatchLayout />
       </>
     ),
     children: [
