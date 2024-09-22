@@ -1,7 +1,6 @@
 import React from 'react';
 import './Feedback.scss';
 import HighBreakpointSlider from './Item/HighBreakpointSlider';
-import LowBreakpointSlider from './Item/LowBreakpointSlider';
 
 const Feedback = () => {
   return (
@@ -13,11 +12,7 @@ const Feedback = () => {
         </h2>
       </div>
       <div className="feedback__carousel">
-        {window.innerWidth > 992 ? (
-          <HighBreakpointSlider />
-        ) : (
-          <LowBreakpointSlider />
-        )}
+        <HighBreakpointSlider />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import Footer5 from '@/assets/images/footer-pic-5.jpg';
 import Footer6 from '@/assets/images/footer-pic-6.jpg';
 
 import './Footer.scss';
+import { IsMobile } from '@/composables/responsive/isMobile';
 
 const Footer = () => {
   const footerList = [
@@ -46,13 +47,13 @@ const Footer = () => {
   ];
 
   const listImages = [Footer1, Footer2, Footer3, Footer4, Footer5, Footer6];
+  const isMobile = IsMobile();
 
   return (
     <div className="footer">
       <div className="footer__info">
         {footerList.map((footer) =>
-          !(footer.id === '2' || footer.id === '3') ||
-          window.innerWidth > 992 ? (
+          !(footer.id === '2' || footer.id === '3') || !isMobile ? (
             <div key={footer.id} className="footer__info__block">
               <h3>{footer.title}</h3>
               <ul>

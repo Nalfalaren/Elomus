@@ -12,7 +12,6 @@ const ProductDetailComponent2 = () => {
       <Payment></Payment>
       <Info></Info>
       <SimilarProducts></SimilarProducts>
-      <ProductView></ProductView>
     </div>
   );
 };

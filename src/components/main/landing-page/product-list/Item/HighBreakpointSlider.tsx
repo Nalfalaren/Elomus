@@ -17,6 +17,7 @@ import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
 import ProductCard from '@/components/main/items/ProductCard';
 import '../ProductList.scss';
+import { IsRendered } from '@/composables/responsive/useResponsive';
 
 const HighBreakpointSlider = () => {
   const productList = [
@@ -122,17 +123,8 @@ const HighBreakpointSlider = () => {
   const [optionsHover, setOptionsHover] = useState<boolean[]>(
     Array(productList.length).fill(false),
   );
-  const [itemsToShow, setItemsToShow] = useState(1);
   const totalItems = productList.length;
-
-  useEffect(() => {
-    const updateItemsToShow = () => {
-      setItemsToShow(window.innerWidth > 992 ? 6 : 1);
-    };
-    updateItemsToShow();
-    window.addEventListener('resize', updateItemsToShow);
-    return () => window.removeEventListener('resize', updateItemsToShow);
-  }, []);
+  const itemsToShow = IsRendered(6);
 
   const handlePrev = () => {
     setActiveIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);

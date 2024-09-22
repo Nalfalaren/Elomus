@@ -1,0 +1,51 @@
+@import '../../../../../../../styles/settings/setting.variables';
+
+.product-list-blue2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+
+    &__image{
+        max-width: 250px;
+        max-height: 300px;
+
+        &:hover{
+            box-shadow: 0 0 0 2px map-get($colors, background-1000);
+            border-radius: 24px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+    }
+
+    &__info{
+        h3{
+            font-size: 14px;
+            text-align: center;
+            margin-block: 1rem;
+        }
+
+        p{
+            color: map-get($colors, text-primary);
+            font-size: 18px;
+            font-weight: 600;
+            margin-right: 10px;
+            text-align: center;
+            font-family: 'Oswald';
+        }
+
+        &__old-price{
+            color: map-get($colors, text-1300);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: line-through;
+        }
+    }
+}

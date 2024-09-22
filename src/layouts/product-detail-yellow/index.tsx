@@ -32,8 +32,11 @@ export const ProductDetailYellowLayout: React.FC<IPropsMainLayout> = () => {
                   zIndex: 1000,
                   top: 0,
                   backgroundColor: '#fff',
+                  borderColor: '#e8e8e8',
+                  borderWidth: '1px',
+                  borderStyle: 'solid',
                 }
-              : { position: 'absolute', zIndex: 10 }
+              : { position: 'absolute', zIndex: 10, border: 'none' }
           }
         >
           <Navbar></Navbar>

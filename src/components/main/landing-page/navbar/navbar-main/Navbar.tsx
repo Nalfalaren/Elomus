@@ -13,9 +13,10 @@ import { Link } from 'react-router-dom';
 import brand from '@/assets/images/brand.webp';
 
 import './Navbar.scss';
+import { IsMobile } from '@/composables/responsive/isMobile';
 import ItemsDropdown1 from '../../items/ItemsDropdown/1/ItemsDropdown';
 import ItemsDropdown2 from '../../items/ItemsDropdown/2/ItemsDropdown2';
-import ItemsDrop3 from '../../items/ItemsDropdown/3/ItemsDrop3';
+import ItemsDrop3 from '../../items/ItemsDropdown/items3/3main/ItemsDrop3';
 import ItemsDropdown4 from '../../items/ItemsDropdown/4/ItemsDropdown4';
 import ItemsDropdown5 from '../../items/ItemsDropdown/5/ItmesDropdown5';
 
@@ -87,7 +88,7 @@ const Navbar = () => {
                   >
                     <span>{element.title}</span>
                   </Link>
-                  {window.innerWidth > 992 ? (
+                  {!IsMobile() ? (
                     <FontAwesomeIcon
                       icon={faChevronDown}
                       className="nav__middle__list__element__content__link__icon--down"

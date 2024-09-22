@@ -11,7 +11,6 @@ import clock3 from '@/assets/images/clock3.webp';
 import clock4 from '@/assets/images/clock4.webp';
 import clock5 from '@/assets/images/clock5.webp';
 import clock6 from '@/assets/images/clock5.webp';
-
 import paypal from '@/assets/images/paypal.svg';
 
 import './Payment3.scss';
@@ -101,13 +100,17 @@ const Payment = () => {
             </div>
           ))}
         </div>
-        <Carousel fade className="product-detail-3__left__carousel--main">
-          {imgList.map((img, index) => (
-            <Carousel.Item key={index}>
-              <img src={img} alt={`Main ${index + 1}`} />
-            </Carousel.Item>
-          ))}
-        </Carousel>
+        <div
+          style={{ position: 'sticky', top: '3.5rem', height: 'fit-content' }}
+        >
+          <Carousel fade className="product-detail-3__left__carousel--main">
+            {imgList.map((img, index) => (
+              <Carousel.Item key={index}>
+                <img src={img} alt={`Main ${index + 1}`} />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
       </div>
       <div className="product-detail-3__right">
         {productInfo.map((info) => (
@@ -144,10 +147,7 @@ const Payment = () => {
             <hr />
             <div className="product-detail-3__right__container__status">
               <span>
-                Availability:{' '}
-                <p className="product-detail-3__right__container__status__content">
-                  {info.availability}
-                </p>
+                Availability: <p>{info.availability}</p>
               </span>
               <span className="product-detail-3__right__container__status__brand">
                 Brand:{' '}
@@ -161,7 +161,12 @@ const Payment = () => {
                   {info.SKU}
                 </p>
               </span>
-              <div>Tags: {info.tags.join(', ')}</div>
+              <div>
+                Tags:
+                <span className="product-detail-3__right__container__status__content">
+                  {info.tags.join(', ')}
+                </span>
+              </div>
               <div style={{ display: 'flex', gap: '3px' }}>
                 Collections:
                 <span className="product-detail-3__right__container__status__content">

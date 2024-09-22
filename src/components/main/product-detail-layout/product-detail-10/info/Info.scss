@@ -1,0 +1,124 @@
+@import '../../../../../index.scss';
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+
+.info-brown-2 {
+    color: map-get($colors, text-1100);
+    max-width: 1200px;
+    margin-inline: auto;
+
+    &__reviews{
+        color: map-get($colors, text-1200);
+        margin-bottom: 1rem;
+    }
+
+    hr {
+        width: 100%;
+        margin-block: 3rem;
+    }
+
+    &__tabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+
+        @include respond-down('sm'){
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__button {
+            background-color: transparent;
+            border: none;
+            color: map-get($colors, text-1100);
+            font-size: 18px;
+            font-weight: 600;
+
+            &:hover {
+                color: map-get($colors, text-tenth);
+            }
+        }
+
+        &__chosen {
+            color: map-get($colors, text-tenth);
+        }
+    }
+
+    &__intro {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-top: 1rem;
+
+        h3 {
+            font-size: 20px;
+        }
+
+        h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        &__overview {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                font-weight: 600;
+            }
+        }
+
+        &__key {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            span {
+                font-weight: 600;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                padding: revert;
+            }
+        }
+
+        &__prize {
+            display: flex;
+            flex-direction: column;
+            gap: .8rem;
+
+            span {
+                font-weight: 600;
+            }
+
+            ul {
+                padding: revert;
+            }
+        }
+
+        &__others {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            span {
+                font-weight: 600;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                padding: revert;
+            }
+        }
+    }
+
+}

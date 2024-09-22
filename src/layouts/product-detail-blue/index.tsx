@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 
 import Footer from '@/components/main/landing-page/footer/Footer';
-import Navbar from '@/components/main/landing-page/navbar/navbar-main/Navbar';
+import Navbar from '@/components/main/landing-page/navbar/navbar-blue/Navbar';
 
 import '@/styles/layouts/_product-detail-blue.scss';
 import '@/index.scss';
@@ -32,8 +32,9 @@ export const ProductDetailWatchLayout: React.FC<IPropsMainLayout> = () => {
                   zIndex: 1000,
                   top: 0,
                   backgroundColor: '#128AED',
+                  padding: '0.5rem',
                 }
-              : { position: 'absolute', zIndex: 10 }
+              : { position: 'absolute', zIndex: 10, padding: '1.5rem' }
           }
         >
           <Navbar></Navbar>

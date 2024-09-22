@@ -33,7 +33,7 @@
         max-width: 1200px;
     }
 
-    @include respond-down('sm'){
+    @include respond-down('sm') {
         display: flex;
         flex-direction: column;
         padding-inline: 2rem;
@@ -48,20 +48,23 @@
 
         &__carousel {
             position: sticky;
-            top: 3.5rem;
+            top: 5.5rem;
             height: fit-content;
             flex-basis: 50%;
 
-            @include respond-down('sm'){
+            @include respond-down('sm') {
                 position: static;
             }
+
             &--main {
                 max-width: 576px;
                 width: 0 0 100%;
                 box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
                 border-radius: 1rem;
+
                 img {
                     width: 100%;
+                    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
                     height: auto;
                     object-fit: cover;
                 }
@@ -84,10 +87,6 @@
                     border: 1px solid map-get($colors, background-1100);
                     box-shadow: 0 0 0 1px map-get($colors, background-1100);
 
-                    &::before{
-                        border: 1px solid #ffff;
-                    }
-
                     &:hover {
                         background-image: url('../../../../../assets/images/chevron-right-white.svg');
                         background-color: map-get($colors, background-1300);
@@ -109,18 +108,15 @@
             }
 
             &--other {
-                
-                &__item {
-                    width: 70%;
-                    margin-left: 70px;
-                    display: flex !important;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                    margin-top: 1rem;
 
-                    
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 40%;
+                }
+
+
                 .carousel-control-next-icon {
                     background-image: url('../../../../../assets/images/chevron-right-black.svg');
                     background-color: transparent;
@@ -148,11 +144,22 @@
                     }
                 }
 
+
+                &__item {
+                    width: 80%;
+                    margin-left: 70px;
+                    display: flex !important;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-top: 1rem;
+
                     img {
                         margin-top: 1rem;
                         width: 23%;
                         border-radius: 1rem;
-                        box-shadow: 1px 1px 1px map-get($colors, background-1000);
+                        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
                     }
                 }
             }
@@ -161,15 +168,14 @@
     }
 
     &__right {
-
-        hr {
-            width: 100%;
-        }
-
         display: flex;
         flex-direction: column;
         flex-basis: 50%;
         gap: 1rem;
+        
+        hr {
+            width: 100%;
+        }
 
         &__container {
             display: flex;
@@ -209,7 +215,7 @@
                 color: map-get($colors, text-100);
                 margin-block: 1rem;
 
-                a{
+                a {
                     color: map-get($colors, text-100);
                 }
             }
@@ -218,6 +224,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: .3rem;
+
                 span {
                     display: flex;
                     gap: .2rem;
@@ -237,6 +244,7 @@
 
             &__name {
                 margin-block: .5rem;
+
                 h2 {
                     font-size: 24px;
                 }
@@ -257,7 +265,7 @@
                 }
             }
 
-            &__intro{
+            &__intro {
                 line-height: 30px;
                 color: map-get($colors, text-1300);
             }
@@ -266,17 +274,19 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+
                 p {
                     margin-bottom: .5rem;
                     font-size: 16px;
                     color: map-get($colors, text-1100);
                 }
 
-                &__size, &__colorList{
+                &__size,
+                &__colorList {
                     display: flex;
                     flex-direction: column;
 
-                    select{
+                    select {
                         padding: 1rem;
                         border-radius: 24px;
                         border: 1px solid map-get($colors, background-1100);
@@ -340,11 +350,11 @@
                     color: map-get($colors, text-1200);
                     font-weight: 500;
                     padding: .5rem;
-                    border-radius: 15px;
+                    border-radius: 24px;
                     text-align: center;
                     transition: color 0.2s ease-in-out;
 
-                    &:hover{
+                    &:hover {
                         background-color: map-get($colors, background-1300);
                         color: #fff;
                     }
@@ -357,19 +367,19 @@
                     background-color: map-get($colors, status-200);
                     color: black;
                     padding: .5rem;
-                    border-radius: 15px;
                     text-align: center;
+                    border-radius: 24px;
 
-                    img{
+                    img {
                         vertical-align: middle;
                         height: 100%;
                         width: 15%;
                         text-align: left;
                         margin-left: 3px;
                     }
+                }
             }
         }
-    }
 
         &__intro {
             display: flex;
@@ -395,16 +405,16 @@
                 }
             }
 
-            &__key{
+            &__key {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;
@@ -412,28 +422,30 @@
                 }
             }
 
-            &__prize{
+            &__prize {
                 display: flex;
                 flex-direction: column;
                 gap: .8rem;
-                span{
+
+                span {
                     font-weight: 600;
                 }
-                ul{
+
+                ul {
                     padding: revert;
                 }
             }
 
-            &__others{
+            &__others {
                 display: flex;
                 flex-direction: column;
                 gap: 0.5rem;
 
-                span{
+                span {
                     font-weight: 600;
                 }
 
-                ul{
+                ul {
                     display: flex;
                     flex-direction: column;
                     gap: .5rem;

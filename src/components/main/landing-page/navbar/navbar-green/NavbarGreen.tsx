@@ -12,15 +12,15 @@ import { Link } from 'react-router-dom';
 
 import brand from '@/assets/images/logo_green.webp';
 
-
-import './navbar.scss';
+import './Navbar.scss';
 import ItemsDropdown1 from '../../items/ItemsDropdown/1/ItemsDropdown';
 import ItemsDropdown2 from '../../items/ItemsDropdown/2/ItemsDropdown2';
-import ItemsDrop3 from '../../items/ItemsDropdown/3/ItemsDrop3';
+import ItemsDrop3 from '../../items/ItemsDropdown/items3/3green/ItemsDrop3';
 import ItemsDropdown4 from '../../items/ItemsDropdown/4/ItemsDropdown4';
 import ItemsDropdown5 from '../../items/ItemsDropdown/5/ItmesDropdown5';
 
 import { useState } from 'react';
+import { IsMobile } from '@/composables/responsive/isMobile';
 
 const Navbar = () => {
   const navList = [
@@ -52,6 +52,7 @@ const Navbar = () => {
   ];
 
   const [isClick, setIsClick] = useState(false);
+
 
   const handleClick = () => {
     if (window.innerWidth < 992) {
@@ -91,7 +92,7 @@ const Navbar = () => {
                   >
                     {element.title}
                   </Link>
-                  {window.innerWidth > 992 ? (
+                  {!IsMobile() ? (
                     <FontAwesomeIcon
                       icon={faChevronDown}
                       className="nav-green__middle__list__element__content__link__icon--down"
@@ -103,7 +104,7 @@ const Navbar = () => {
                     />
                   )}
                 </div>
-                <div className="nav-green__middle__list__element__content__sublink">
+                <div className="nav-green__middle__list__element__content__sublink-green">
                   {element.content()}
                 </div>
               </div>

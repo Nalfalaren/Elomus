@@ -10,6 +10,7 @@ import Customer3 from '@/assets/images/customer3.avif';
 import Customer4 from '@/assets/images/customer4.avif';
 
 import '../Feedback.scss';
+import { IsRendered } from '@/composables/responsive/useResponsive';
 
 const HighBreakpointSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -51,17 +52,19 @@ const HighBreakpointSlider = () => {
 
   const carouselItems = [...cardData, ...cardData, ...cardData];
 
+  const numberToRender = IsRendered(4);
+
   return (
     <div className="feedback__carousel">
       <div className="feedback__carousel__wrapper">
         <div
           className="feedback__carousel__inner"
           style={{
-            transform: `translateX(-${activeIndex * 33.3333}%)`,
+            transform: `${numberToRender !== 1 ? `translateX(-${activeIndex * 33.3333}%` : `translateX(-${activeIndex * 100}%`})`,
             transition: 'transform 0.5s ease',
           }}
         >
-          {carouselItems.map((card, index) => (
+          {carouselItems.slice(0, numberToRender).map((card, index) => (
             <div key={index} className="feedback__carousel__item">
               <Card
                 style={{

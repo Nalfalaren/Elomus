@@ -21,8 +21,16 @@ import {
   ProductDetailYellowLayout,
   ProductDetailGreenLayout,
   ProductDetailWatchLayout,
+  ProductDetailGrayLayout,
+  ProductDetailBlue2Layout,
+  ProductDetailRedLayout,
+  ProductDetailBrownLayout,
+  ProductDetailGreen2Layout,
+  ProductDetailBrown2Layout,
+  ProductDetailBrown3Layout,
 } from '@/layouts';
-import { ProductDetailGrayLayout } from '@/layouts/product-detail-gray';
+
+
 // Auth page
 const SignIn = React.lazy(() => import('@/pages/auth/sign-in'));
 
@@ -56,6 +64,21 @@ const ProductDetailComponent5 = React.lazy(
 );
 const ProductDetailComponent6 = React.lazy(
   () => import('@/pages/product-detail-6'),
+);
+const ProductDetailComponent7 = React.lazy(
+  () => import('@/pages/product-detail-7'),
+);
+const ProductDetailComponent8 = React.lazy(
+  () => import('@/pages/product-detail-8'),
+);
+const ProductDetailComponent9 = React.lazy(
+  () => import('@/pages/product-detail-9'),
+);
+const ProductDetailComponent10 = React.lazy(
+  () => import('@/pages/product-detail-10'),
+);
+const ProductDetailComponent11 = React.lazy(
+  () => import('@/pages/product-detail-11'),
 );
 // Other page
 const PageNotFound = React.lazy(
@@ -120,7 +143,7 @@ export const router = createBrowserRouter([
     element: (
       <>
         <ScrollRestoration getKey={(location) => location.pathname} />
-        <ProductDetailLayout />
+        <ProductDetailBlue2Layout />
       </>
     ),
     children: [
@@ -191,6 +214,86 @@ export const router = createBrowserRouter([
       {
         path: '/products/mod-cam-by-kryptonite-vapor',
         element: <ProductDetailComponent6 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailRedLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/products/drink-de-energy-health-strength',
+        element: <ProductDetailComponent7 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailBrownLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/products/coil-master-kbag',
+        element: <ProductDetailComponent8 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailGreen2Layout />
+      </>
+    ),
+    children: [
+      {
+        path: '/products/cleansers-de-nano',
+        element: <ProductDetailComponent9 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailBrown2Layout />
+      </>
+    ),
+    children: [
+      {
+        path: '/products/brewer-ce251-60-oz-12-cup-coffee-maker-1',
+        element: <ProductDetailComponent10 />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <ProductDetailBrown3Layout />
+      </>
+    ),
+    children: [
+      {
+        path: '/products/cam-mod-by-kryptonite-vapor-1',
+        element: <ProductDetailComponent11 />,
       },
       { path: '*', element: <PageNotFound /> },
     ],

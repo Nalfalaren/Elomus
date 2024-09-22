@@ -1,0 +1,471 @@
+@import '../../../../../index.scss';
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+@import '../../../landing-page/product-list/ProductList.scss';
+
+.product-detail-9 {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-block: 5rem;
+    scroll-behavior: smooth;
+
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1140px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1200px;
+    }
+
+    @include respond-down('sm') {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 2rem;
+    }
+
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 576px;
+
+        &__carousel {
+            position: sticky;
+            top: 3.5rem;
+            height: fit-content;
+            flex-basis: 50%;
+
+            @include respond-down('sm') {
+                position: static;
+            }
+
+            &--main {
+                max-width: 576px;
+                width: 0 0 100%;
+                box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                border-radius: 1rem;
+
+                img {
+                    width: 100%;
+                    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                    height: auto;
+                    object-fit: cover;
+                }
+
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 40%;
+                }
+
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
+                    background-color: transparent;
+                    background-size: 25px 25px;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+                    border: 1px solid map-get($colors, background-1100);
+                    box-shadow: 0 0 0 1px map-get($colors, background-1100);
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
+                    @extend .carousel-control-next-icon;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+
+                }
+            }
+
+            &--other {
+
+                .carousel-control-next,
+                .carousel-control-prev {
+                    width: fit-content;
+                    height: fit-content;
+                    top: 40%;
+                }
+
+
+                .carousel-control-next-icon {
+                    background-image: url('../../../../../assets/images/chevron-right-black.svg');
+                    background-color: transparent;
+                    background-size: 25px 25px;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 100%;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-right-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
+                .carousel-control-prev-icon {
+                    background-image: url('../../../../../assets/images/chevron-left-black.svg');
+                    @extend .carousel-control-next-icon;
+
+                    &:hover {
+                        background-image: url('../../../../../assets/images/chevron-left-white.svg');
+                        background-color: map-get($colors, background-1300);
+                        color: #fff;
+                    }
+                }
+
+
+                &__item {
+                    width: 80%;
+                    margin-left: 70px;
+                    display: flex !important;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-top: 1rem;
+
+                    img {
+                        margin-top: 1rem;
+                        width: 23%;
+                        border-radius: 2rem;
+                        border: 1px solid map-get($colors, text-800);
+                        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__right {
+
+        hr {
+            width: 100%;
+        }
+
+        display: flex;
+        flex-direction: column;
+        flex-basis: 50%;
+        gap: 1rem;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+
+            &__sizes {
+                display: flex;
+                gap: 0.5rem;
+
+                &__option {
+                    background-color: transparent;
+                    border: 1px solid map-get($colors, text-nineth);
+                    padding: .5rem;
+
+                    &.active {
+                        background-color: map-get($colors, text-nineth);
+                        color: white;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            &__brand {
+                display: flex;
+                flex-direction: row;
+
+                p {
+                    color: map-get($colors, text-nineth);
+                }
+            }
+
+            &__rates {
+                display: flex;
+                gap: .3rem;
+
+                &--filled {
+                    color: map-get($colors, status-200);
+                    width: 12px;
+                    height: 12px;
+                }
+
+                &--unfilled {
+                    color: map-get($colors, text-1000);
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+
+            &__link {
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                color: map-get($colors, text-100);
+                margin-block: 1rem;
+
+                a {
+                    color: map-get($colors, text-100);
+                }
+            }
+
+            &__status {
+                display: flex;
+                flex-direction: column;
+                gap: .3rem;
+
+                span {
+                    display: flex;
+                    gap: .2rem;
+                    flex-wrap: wrap;
+                }
+
+                &__tags {
+                    color: map-get($colors, text-nineth);
+                    font-weight: 500;
+                    transition: color 0.3s ease-in;
+
+                    &:hover {
+                        color: map-get($colors, text-1100);
+                    }
+                }
+            }
+
+            &__name {
+                margin-block: .5rem;
+
+                h2 {
+                    font-size: 24px;
+                }
+            }
+
+            &__price {
+                font-size: 28px;
+                font-weight: 500;
+
+                span {
+                    color: map-get($colors, text-nineth);
+                }
+
+                small {
+                    text-decoration: line-through;
+                    color: map-get($colors, text-1000);
+                }
+            }
+
+            &__intro {
+                line-height: 30px;
+                color: map-get($colors, text-1300);
+            }
+
+            &__colors {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &__colorList {
+                    display: flex;
+                    flex-direction: row;
+
+                    .label {
+                        border: 1px solid transparent;
+
+                        &.first {
+                            border: 1px solid map-get($colors, text-nineth);
+                        }
+                    }
+                }
+
+            }
+
+            &__quality {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                margin-block: 1rem;
+
+                &__input {
+                    display: flex;
+                    gap: .5rem;
+                    align-items: center;
+
+                    p {
+                        color: map-get($colors, text-1100);
+                        font-weight: 500;
+                    }
+
+                    input {
+                        padding: .5rem;
+                        border-radius: 20px;
+                        border: 1px solid map-get($colors, background-800);
+                        width: 40%;
+                        text-align: center;
+                    }
+
+                    &__icon {
+                        border: 1px solid map-get($colors, background-800);
+                        width: 30px;
+                        height: 30px;
+                        padding: .5rem;
+                        border-radius: 100%;
+                        transition: color 0.2s ease-in;
+
+                        &:hover {
+                            background-color: map-get($colors, text-nineth);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &__buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+               
+                &--cart {
+                    width: 100%;
+                    text-decoration: none;
+                    border: 1px solid map-get($colors, background-800);
+                    color: map-get($colors, text-1200);
+                    font-weight: 500;
+                    padding: .5rem;
+                    text-align: center;
+                    transition: background-color 0.2s ease-in-out;
+                    border-radius: 24px;
+
+                    &:hover{
+                        background-color: map-get($colors, text-nineth);
+                        color: #fff;
+                    }
+                }
+
+                &--paypal {
+                    font-size: 1rem;
+                    line-height: 25px;
+                    text-decoration: none;
+                    background-color: map-get($colors, status-200);
+                    color: black;
+                    padding: .5rem;
+                    text-align: center;
+                    border-radius: 24px;
+
+                    img{
+                        vertical-align: middle;
+                        height: 100%;
+                        width: 10%;
+                        text-align: left;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+
+        &__intro {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-top: 1rem;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            &__overview {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            &__key {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                span {
+                    font-weight: 600;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding: revert;
+                }
+            }
+
+            &__prize {
+                display: flex;
+                flex-direction: column;
+                gap: .8rem;
+
+                span {
+                    font-weight: 600;
+                }
+
+                ul {
+                    padding: revert;
+                }
+            }
+
+            &__others {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                span {
+                    font-weight: 600;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding: revert;
+                }
+            }
+        }
+
+    }
+}

@@ -15,6 +15,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import '../../../landing-page/product-list/ProductList.scss';
 import './SimilarProduct.scss';
+import { IsRendered } from '@/composables/responsive/useResponsive';
 const SimilarProducts = () => {
   const similarList = [
     {
@@ -61,7 +62,7 @@ const SimilarProducts = () => {
 
   const listIcon = [faCircleInfo, faHeart, faEye];
 
-  const itemsRender = window.innerWidth < 998 ? 1 : 4;
+  const itemsRender = IsRendered(4);
 
   const [imgHover, setImgHover] = useState<boolean[]>(
     Array(similarList.length).fill(false),

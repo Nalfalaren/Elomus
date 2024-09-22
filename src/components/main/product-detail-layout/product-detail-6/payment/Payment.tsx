@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { faHeart, faStar, faTape } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Carousel } from 'react-bootstrap';
+import { Button, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import clock1 from '@/assets/images/clock1.webp';
@@ -11,6 +11,8 @@ import clock3 from '@/assets/images/clock3.webp';
 import clock4 from '@/assets/images/clock4.webp';
 import clock5 from '@/assets/images/clock5.webp';
 import clock6 from '@/assets/images/clock6.webp';
+
+import paypal from '@/assets/images/paypal.svg';
 
 import './Payment6.scss';
 
@@ -31,20 +33,21 @@ const Payment = () => {
     {
       id: 'watch',
       rates: [true, true, true, false, false],
-      name: 'Driptip Kryptonite',
+      name: 'MOD CAM By Kryptonite Vapor',
       shortIntro:
-        'More room to move. With 80GB or 160GB of storage and up to 40 hours of battery life, the new iPod classic lets you enjoy up to 40,000 songs or...',
-      price: 120,
-      discount: 33,
+        "Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're not typically too concerned with marketing talk this particular statement is clearly pretty...",
+      price: 200,
+      discount: 0,
       availability: 'In Stock',
-      brand: 'Canada',
-      SKU: 123,
-      tags: ['smart watch'],
-      collections: ['Home page', 'Smart watches'],
+      brand: 'Canona',
+      SKU: 126,
+      tags: ['stroller'],
+      collections: ['Home page', 'Stroller'],
     },
   ];
 
   const [quantity, setQuantity] = useState(0);
+  const sizes = ['SMALL', 'MEDIUM'];
 
   const handleQuantityChange = (event) => {
     const value = Math.max(0, parseInt(event.target.value, 10) || 0);
@@ -54,7 +57,7 @@ const Payment = () => {
   return (
     <div className="product-detail-6">
       <div className="product-detail-6__left__carousel">
-        <Carousel className="product-detail-6__left__carousel--other">
+        <Carousel fade className="product-detail-6__left__carousel--other">
           {imgChunks.map((chunk, chunkIndex) => (
             <Carousel.Item
               key={chunkIndex}
@@ -110,7 +113,10 @@ const Payment = () => {
             <div className="product-detail-6__right__container__status">
               <p>Availability: {info.availability}</p>
               <span className="product-detail-6__right__container__status__brand">
-                Brand: <p>{info.brand}</p>
+                Brand:{' '}
+                <p className="product-detail-6__right__container__status__tags__para">
+                  {info.brand}
+                </p>
               </span>
               <p>SKU: {info.SKU}</p>
               <div className="product-detail-6__right__container__status__tags">
@@ -143,7 +149,16 @@ const Payment = () => {
               <FontAwesomeIcon icon={faTape} />
               <Link to="/">Size chart</Link>
             </div>
+            <div className="product-detail-6__right__container__sizes">
+              <p>Size</p>
+              <div className="size">
+                {sizes.map((size, index) => (
+                  <Button key={index}>{size}</Button>
+                ))}
+              </div>
+            </div>
             <div className="product-detail-6__right__container__colors">
+              <p>Color</p>
               <div className="product-detail-6__right__container__colors__imgList">
                 {imgList.slice(0, 4).map((img, index) => (
                   <img
@@ -179,7 +194,7 @@ const Payment = () => {
                 to="/"
                 className="product-detail-6__right__container__buttons--paypal"
               >
-                Pay with Paypal
+                Pay with <img src={paypal} alt="paypal2"></img>
               </Link>
             </div>
           </div>

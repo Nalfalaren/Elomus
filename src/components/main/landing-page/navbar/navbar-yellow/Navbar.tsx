@@ -15,11 +15,12 @@ import brand2 from '@/assets/images/brand_2.webp';
 import './Navbar.scss';
 import ItemsDropdown1 from '../../items/ItemsDropdown/1/ItemsDropdown';
 import ItemsDropdown2 from '../../items/ItemsDropdown/2/ItemsDropdown2';
-import ItemsDrop3 from '../../items/ItemsDropdown/3/ItemsDrop3';
+import ItemsDrop3 from '../../items/ItemsDropdown/items3/3yellow/ItemsDrop3';
 import ItemsDropdown4 from '../../items/ItemsDropdown/4/ItemsDropdown4';
 import ItemsDropdown5 from '../../items/ItemsDropdown/5/ItmesDropdown5';
 
 import { useState } from 'react';
+import { IsMobile } from '@/composables/responsive/isMobile';
 
 const Navbar = () => {
   const navList = [
@@ -90,7 +91,7 @@ const Navbar = () => {
                   >
                     <span>{element.title}</span>
                   </Link>
-                  {window.innerWidth > 992 ? (
+                  {!IsMobile() ? (
                     <FontAwesomeIcon
                       icon={faChevronDown}
                       className="nav-yellow__middle__list__element__content__link__icon--down"

@@ -13,11 +13,11 @@
         width: 100%;
         box-sizing: border-box;
         position: absolute;
-        background-color: #7e7e7e;
+        background-color: #9ea6a7;
         padding: .5rem;
 
         @include respond-down('md'){
-            background-color: #7E7E7E;
+            background-color: #9ea6a7;
         }
       }
 

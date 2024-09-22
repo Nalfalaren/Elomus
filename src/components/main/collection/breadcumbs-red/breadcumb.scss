@@ -1,0 +1,40 @@
+@import '../../../../index.scss';
+@import '../../../../styles/settings/setting.variables';
+@import '../../../../styles/settings/setting.mixins';
+@import '../../../../styles/settings/setting.breakpoint';
+
+.breadcumb-red{
+    min-height: 300px;
+    background-color: map-get($colors, text-seventh);
+    position: relative;
+
+    &__title{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 18px;
+
+        @include respond-down('xs'){
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__direction{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        min-height: 100px;
+        color: #fff;
+        position: absolute;
+        bottom: -10%;
+        left: 19%;
+        max-width: 1200px;
+
+        @include respond-down('xs'){
+            left: 10%
+        }
+    }
+}

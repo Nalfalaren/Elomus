@@ -13,6 +13,7 @@ import droneModelPrev3 from '@/assets/images/drone-model3-prev.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
 import ViewedProductCard from '@/components/main/items/viewed-product/ViewedProductCard';
 import './ProductView.scss';
+import { IsRendered } from '@/composables/responsive/useResponsive';
 
 const ProductView = () => {
   const productList = [
@@ -57,6 +58,8 @@ const ProductView = () => {
       collectionName: 'Canona',
     },
   ];
+
+  const itemsToRender = IsRendered(5);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [imgHover, setImgHover] = useState<boolean[]>(
@@ -120,23 +123,27 @@ const ProductView = () => {
               width: `${(productList.length * 100) / 4}%`,
             }}
           >
-            {getVisibleItems().map((product, index) => (
-              <div key={product.id} className="products-detail-1__item">
-                <ViewedProductCard
-                  img={product.img}
-                  collectionName={product.collectionName}
-                  productName={product.name}
-                  oldPrice={product.oldPrice}
-                  discount={product.discount}
-                  isHover={imgHover[index]}
-                  handleOptionsHoverTrue={() => handleOptionsHover(index, true)}
-                  handleOptionsHoverFalse={() =>
-                    handleOptionsHover(index, false)
-                  }
-                  id={product.id}
-                />
-              </div>
-            ))}
+            {getVisibleItems()
+              .slice(0, itemsToRender)
+              .map((product, index) => (
+                <div key={product.id} className="products-detail-1__item">
+                  <ViewedProductCard
+                    img={product.img}
+                    collectionName={product.collectionName}
+                    productName={product.name}
+                    oldPrice={product.oldPrice}
+                    discount={product.discount}
+                    isHover={imgHover[index]}
+                    handleOptionsHoverTrue={() =>
+                      handleOptionsHover(index, true)
+                    }
+                    handleOptionsHoverFalse={() =>
+                      handleOptionsHover(index, false)
+                    }
+                    id={product.id}
+                  />
+                </div>
+              ))}
             <Button className="carousel-control-prev-1" onClick={handlePrev}>
               &lt;
             </Button>

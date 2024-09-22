@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 import './ItemsDropdown4.scss';
@@ -22,8 +23,11 @@ const DropdownList = [
   },
   { name: 'PRE ORDER', linkTo: '/products/coil-master-kbag' },
   { name: 'VIDEO THUMB', linkTo: '/products/cleansers-de-nano' },
-  { name: 'TRUST BADGE', linkTo: '/brewer-ce251-60-oz-12-cup-coffee-maker-1' },
-  { name: 'DEAL COUNTER', linkTo: '/cam-mod-by-kryptonite-vapor' },
+  {
+    name: 'TRUST BADGE',
+    linkTo: '/products/brewer-ce251-60-oz-12-cup-coffee-maker-1',
+  },
+  { name: 'DEAL COUNTER', linkTo: '/products/cam-mod-by-kryptonite-vapor-1' },
 ];
 
 const ItemsDropdown4 = () => {

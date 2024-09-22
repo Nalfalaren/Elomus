@@ -1,0 +1,365 @@
+@import '../../../../../styles/settings/setting.variables';
+@import '../../../../../styles/settings/setting.mixins';
+@import '../../../../../styles/settings/setting.breakpoint';
+
+.product-detail-7 {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    padding-block: 2rem;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+
+    @include respond-up('xs') {
+        max-width: 540px;
+    }
+
+    @include respond-up('sm') {
+        max-width: 720px;
+    }
+
+    @include respond-up('md') {
+        max-width: 960px;
+    }
+
+    @include respond-up('lg') {
+        max-width: 1140px;
+    }
+
+    @include respond-up('xl') {
+        max-width: 1200px;
+    }
+
+    @include respond-down('sm') {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 2rem;
+    }
+
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &__carousel {
+            max-width: 576px;
+            overflow-y: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 10px; 
+            &--other {
+                overflow-y: auto;
+
+                @include respond-down('sm') {
+                    display: none
+                }
+
+                &__item {
+
+                    img {
+                        width: 100%;
+                        border-radius: 1rem;
+                        box-shadow: 1px 1px 1px map-get($colors, background-1000);
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__right {
+        width: 100%;
+        margin-top: 40px;
+
+        hr {
+            width: 100%;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex-basis: 50%;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: .3rem;
+
+            &__intro{
+                color: map-get($colors, text-1100);
+                line-height: 30px;
+            }
+
+            &__brand {
+                display: flex;
+                flex-direction: row;
+
+                p {
+                    color: map-get($colors, text-seventh);
+                }
+            }
+
+            &__rates {
+                display: flex;
+                gap: .3rem;
+
+                &--filled {
+                    color: map-get($colors, status-200);
+                    width: 12px;
+                    height: 12px;
+                }
+
+                &--unfilled {
+                    color: map-get($colors, text-1000);
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+
+            &__link {
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                color: map-get($colors, text-100);
+                margin-block: 1rem;
+
+                a {
+                    color: map-get($colors, text-100);
+                }
+            }
+
+            &__status {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                span {
+                    display: flex;
+                    gap: .2rem;
+                    flex-wrap: wrap;
+                }
+
+                &__tags {
+                    display: flex;
+                    gap: .5rem;
+
+                    &__para {
+                        color: map-get($colors, text-seventh);
+                        font-weight: 500;
+                        transition: color 0.3s ease-in;
+
+                        &:hover {
+                            color: map-get($colors, text-1100);
+                        }
+                    }
+                }
+            }
+
+            &__name {
+                margin-block: .5rem;
+
+                h2 {
+                    font-size: 24px;
+
+                }
+            }
+
+            &__price {
+                font-family: 'Oswald';
+                font-size: 28px;
+                font-weight: 600;
+
+                span {
+                    color: map-get($colors, text-seventh);
+                }
+
+                small {
+                    text-decoration: line-through;
+                    color: map-get($colors, text-1000);
+                }
+            }
+
+            &__colors {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                p {
+                    margin-bottom: .5rem;
+                    font-size: 16px;
+                    color: map-get($colors, text-1100);
+                }
+
+                &__imgList {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 12px;
+                    }
+                }
+            }
+
+            &__quality {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                margin-block: 1rem;
+
+                &__input {
+                    display: flex;
+                    gap: .5rem;
+                    align-items: center;
+
+                    p {
+                        color: map-get($colors, text-1100);
+                        font-weight: 500;
+                    }
+
+                    input {
+                        padding: .5rem;
+                        border-radius: 20px;
+                        border: 1px solid map-get($colors, background-800);
+                        width: 40%;
+                        text-align: center;
+                    }
+
+                    &__icon {
+                        border: 1px solid map-get($colors, background-800);
+                        width: 30px;
+                        height: 30px;
+                        padding: .5rem;
+                        border-radius: 100%;
+                        transition: color 0.2s ease-in;
+
+                        &:hover {
+                            background-color: map-get($colors, text-primary);
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            &__buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &--cart {
+                    font-family: 'Oswald';
+                    width: 100%;
+                    text-decoration: none;
+                    border: 1px solid map-get($colors, background-800);
+                    color: map-get($colors, text-1200);
+                    font-weight: 500;
+                    padding: .5rem;
+                    text-align: center;
+                    transition: background-color 0.2s ease-in-out;
+
+                    &:hover{
+                        background-color: map-get($colors, text-seventh);
+                        color: #fff;
+                    }
+                }
+
+                &--paypal {
+                    font-size: 1rem;
+                    line-height: 25px;
+                    text-decoration: none;
+                    background-color: map-get($colors, status-200);
+                    color: black;
+                    padding: .5rem;
+                    text-align: center;
+
+                    img{
+                        vertical-align: middle;
+                        height: 100%;
+                        width: 10%;
+                        text-align: left;
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+
+        &__intro {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-top: 1rem;
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            &__overview {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            &__key {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                span {
+                    font-weight: 600;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding: revert;
+                }
+            }
+
+            &__prize {
+                display: flex;
+                flex-direction: column;
+                gap: .8rem;
+
+                span {
+                    font-weight: 600;
+                }
+
+                ul {
+                    padding: revert;
+                }
+            }
+
+            &__others {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                span {
+                    font-weight: 600;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    padding: revert;
+                }
+            }
+        }
+
+    }
+}

@@ -115,7 +115,6 @@ const Info = () => {
           </div>
         )}
       </div>
-      <hr></hr>
     </div>
   );
 };

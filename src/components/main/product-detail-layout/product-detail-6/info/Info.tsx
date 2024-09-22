@@ -116,7 +116,6 @@ const Info = () => {
             </p>
           ))}
       </div>
-      <hr></hr>
     </div>
   );
 };
