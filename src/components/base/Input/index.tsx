@@ -4,7 +4,11 @@ export type TextFieldProps = InputHTMLAttributes<HTMLInputElement>;
 
 const Input = forwardRef<HTMLInputElement, TextFieldProps>(
   ({ ...props }, ref) => {
-    return <input ref={ref} className={'input'} {...props} />;
+    return (
+      <div>
+        <input ref={ref} className={'input'} {...props} />
+      </div>
+    );
   },
 );
 

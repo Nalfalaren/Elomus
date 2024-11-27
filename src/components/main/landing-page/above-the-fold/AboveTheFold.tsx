@@ -21,7 +21,7 @@ function AboutTheFold() {
               2Mp Wifi Camera
             </p>
             <div className="carousel-caption__link">
-              <Link to="/collections">SHOP NOW</Link>
+              <Link to="/collections/drone">SHOP NOW</Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>
@@ -37,7 +37,7 @@ function AboutTheFold() {
               intermediate & healess.
             </p>
             <div className="carousel-caption__link">
-              <Link to="/collections">SHOP NOW</Link>
+              <Link to="/collections/drone">SHOP NOW</Link>
             </div>
           </Carousel.Caption>
         </Carousel.Item>

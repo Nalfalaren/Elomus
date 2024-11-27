@@ -3,11 +3,11 @@ import Banner from '@/components/main/landing-page/banner/Banner';
 import Contact from '@/components/main/landing-page/contact/Contact';
 import Features from '@/components/main/landing-page/features/Features';
 import Feedback from '@/components/main/landing-page/feedbacks/Feedback';
+import Parallax from '@/components/main/landing-page/parallax/Parallax';
 import Product1 from '@/components/main/landing-page/product/camera/Product1';
 import Product2 from '@/components/main/landing-page/product/drone-camera/Product2';
 import Product3 from '@/components/main/landing-page/product/screen/Product3';
 import ProductList from '@/components/main/landing-page/product-list/ProductList';
-import Parallax from '@/components/main/landing-page/parallax/Parallax';
 
 const LandingComponent = () => {
   return (

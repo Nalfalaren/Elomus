@@ -10,16 +10,19 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line import/order
 import brand from '@/assets/images/brand.webp';
 
 import './Navbar.scss';
 import { IsMobile } from '@/composables/responsive/isMobile';
+
 import ItemsDropdown1 from '../../items/ItemsDropdown/1/ItemsDropdown';
 import ItemsDropdown2 from '../../items/ItemsDropdown/2/ItemsDropdown2';
-import ItemsDrop3 from '../../items/ItemsDropdown/items3/3main/ItemsDrop3';
 import ItemsDropdown4 from '../../items/ItemsDropdown/4/ItemsDropdown4';
 import ItemsDropdown5 from '../../items/ItemsDropdown/5/ItmesDropdown5';
+import ItemsDrop3 from '../../items/ItemsDropdown/items3/3main/ItemsDrop3';
 
+// eslint-disable-next-line import/order
 import { useState } from 'react';
 
 const Navbar = () => {
@@ -30,9 +33,9 @@ const Navbar = () => {
       linkTo: '/',
     },
     {
-      title: 'Shop',
-      content: ItemsDropdown2,
-      linkTo: '/collections',
+      title: 'Our services',
+      content: ItemsDropdown4,
+      linkTo: '/services',
     },
     {
       title: 'Top Products',
@@ -40,9 +43,9 @@ const Navbar = () => {
       linkTo: '/collections/:name',
     },
     {
-      title: 'Product Pages',
-      content: ItemsDropdown4,
-      linkTo: '/product/:name',
+      title: 'Shop',
+      content: ItemsDropdown2,
+      linkTo: '/collections',
     },
     {
       title: 'Pages / Layouts',
@@ -101,7 +104,7 @@ const Navbar = () => {
                   )}
                 </div>
                 <div className="nav__middle__list__element__content__sublink">
-                  {element.content()}
+                  {element?.content()}
                 </div>
               </div>
             </li>

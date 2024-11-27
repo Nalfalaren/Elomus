@@ -2,8 +2,16 @@ import React from 'react';
 
 import './Total.scss';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
+import { DATA_LIST } from '../CartData/fakeData';
 
 const Total = () => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate('/checkout', { state: DATA_LIST[0] });
+  };
+
   return (
     <div className="total">
       <table>
@@ -29,7 +37,7 @@ const Total = () => {
       </table>
       <div className="total__buttons">
         <Button>Continue Shopping</Button>
-        <Button>PROCEED TO CHECK OUT</Button>
+        <Button onClick={handleNavigate}>PROCEED TO CHECK OUT</Button>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import {
   faCircleInfo,
   faHeart,
   faEye,
+  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Card } from 'react-bootstrap';
@@ -24,7 +25,7 @@ interface ProductCardProps {
   index: number;
   product: Product;
   colorList?: string[];
-  listIcon: React.ReactElement[];
+  listIcon: IconDefinition[];
   handleImgHoverTrue: () => void;
   handleImgHoverFalse: () => void;
   handleOptionsHoverTrue: () => void;
@@ -82,7 +83,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </div>
       <Card.Body className="products-list__card__body">
         <div className="products-list__card__body__star">
-          {product.rates.map((rate, starIndex) =>
+          {product?.rates?.map((rate, starIndex) =>
             rate ? (
               <FontAwesomeIcon
                 icon={faStar}

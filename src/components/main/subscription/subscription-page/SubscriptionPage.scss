@@ -1,0 +1,17 @@
+@import '../../../../styles/settings/setting.variables';
+.subscription{
+    text-align: center;
+
+    h1{
+        font-size: 48px;
+        color: map-get($colors, 'offer-color');
+    }
+
+    &__list{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        gap: 2rem;
+    }
+}

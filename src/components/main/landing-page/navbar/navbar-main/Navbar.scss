@@ -29,12 +29,6 @@
 
     @include respond-up('lg') {
         max-width: 1140px;
-        display: flex;
-        gap: 1rem;
-    }
-
-    @include respond-down('lg'){
-        max-width: 1140px;
     }
 
     @include respond-up('xl') {

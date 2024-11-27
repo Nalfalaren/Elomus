@@ -1,23 +1,13 @@
 import React from 'react';
 
-import droneModelAfter from '@/assets/images/drone-model1-after.webp';
-import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Button } from 'react-bootstrap';
 import { faRotateLeft, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import './Cart.scss';
+import { DATA_LIST } from '../CartData/fakeData';
 
 const Cart = () => {
-  const cartList = [
-    {
-      id: '1',
-      image: droneModelAfter,
-      name: 'Acer Drone E15',
-      color: 'blue',
-      price: 100,
-      total: 100,
-    },
-  ];
   return (
     <div className="cart">
       <h3>Shopping Cart</h3>
@@ -30,7 +20,7 @@ const Cart = () => {
             <th>Unit Price</th>
             <th>Total</th>
           </tr>
-          {cartList.map((cartItem) => (
+          {DATA_LIST.map((cartItem) => (
             <tr key={cartItem.id}>
               <td className="cart__table__img">
                 <img src={cartItem.image} alt={cartItem.name} />
@@ -50,8 +40,8 @@ const Cart = () => {
                   </Button>
                 </div>
               </td>
-              <td>${cartItem.price.toFixed(2)}</td>
-              <td>${cartItem.total.toFixed(2)}</td>
+              <td>${cartItem.offerPrice.toFixed(2)}</td>
+              <td>${cartItem.offerPrice.toFixed(2)}</td>
             </tr>
           ))}
         </table>

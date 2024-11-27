@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+import {
+  faCircleInfo,
+  faEye,
+  faHeart,
+} from '@fortawesome/free-solid-svg-icons';
+
 import droneModelAfter2 from '@/assets/images/drone-model2-after.webp';
 import droneModelPrev2 from '@/assets/images/drone-model2-prev.webp';
 import droneModelPrev3 from '@/assets/images/drone-model3-prev.webp';
@@ -7,15 +13,12 @@ import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
 import shaverModelAfter1 from '@/assets/images/shaver-model1-after.webp';
 import shaverModelBefore1 from '@/assets/images/shaver-model1-before.webp';
+import { IsRendered } from '@/composables/responsive/useResponsive';
+
 import ProductCard from '../../../items/ProductCard';
-import {
-  faCircleInfo,
-  faEye,
-  faHeart,
-} from '@fortawesome/free-solid-svg-icons';
 import '../../../landing-page/product-list/ProductList.scss';
 import './SimilarProduct.scss';
-import { IsRendered } from '@/composables/responsive/useResponsive';
+
 const SimilarProducts = () => {
   const similarList = [
     {

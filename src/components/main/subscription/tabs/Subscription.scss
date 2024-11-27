@@ -1,0 +1,25 @@
+@import '../../../../styles/settings/setting.variables';
+.subscription-tabs{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 40%;
+    height: 50px;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    border: 2px solid map-get($colors, 'text-primary');
+    &__block{
+        font-size: 20px;
+
+        &.colored{
+            background-color: map-get($colors, 'text-primary');
+            color: white;
+            font-weight: 500;
+        }
+
+        p{
+            margin-top: .3rem;
+        }
+    }
+}

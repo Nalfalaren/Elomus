@@ -28,8 +28,9 @@ import {
   ProductDetailGreen2Layout,
   ProductDetailBrown2Layout,
   ProductDetailBrown3Layout,
+  SubscriptionLayout,
+  CheckoutLayout,
 } from '@/layouts';
-
 
 // Auth page
 const SignIn = React.lazy(() => import('@/pages/auth/sign-in'));
@@ -50,6 +51,8 @@ const CartComponent = React.lazy(() => import('@/pages/cart'));
 const WishlistComponent = React.lazy(() => import('@/pages/wishlist'));
 const LoginComponent = React.lazy(() => import('@/pages/login'));
 const RegisterComponent = React.lazy(() => import('@/pages/register'));
+const SubscriptionComponent = React.lazy(() => import('@/pages/subscription'));
+const CheckoutComponent = React.lazy(() => import('@/pages/checkout'));
 const ProductDetailComponent2 = React.lazy(
   () => import('@/pages/product-detail-2'),
 );
@@ -132,7 +135,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: '/products/acer-aspire-drone',
+        path: '/products/drone/:name',
         element: <ProductDetailComponent />,
       },
       { path: '*', element: <PageNotFound /> },
@@ -470,6 +473,38 @@ export const router = createBrowserRouter([
       {
         path: '/account/register',
         element: <RegisterComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <SubscriptionLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/hiring/subscription',
+        element: <SubscriptionComponent />,
+      },
+      { path: '*', element: <PageNotFound /> },
+    ],
+  },
+  {
+    errorElement: <></>,
+    element: (
+      <>
+        <ScrollRestoration getKey={(location) => location.pathname} />
+        <CheckoutLayout />
+      </>
+    ),
+    children: [
+      {
+        path: '/checkout',
+        element: <CheckoutComponent />,
       },
       { path: '*', element: <PageNotFound /> },
     ],

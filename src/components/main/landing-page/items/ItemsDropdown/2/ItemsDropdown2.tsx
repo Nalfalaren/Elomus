@@ -55,7 +55,7 @@ const ItemsDropdown2 = () => {
   ];
 
   return (
-    <div className='shop'>
+    <div className="shop">
       {shopList.map((element) => (
         <div key={element.id} className="shop__element">
           <h3>{element.subTitle}</h3>

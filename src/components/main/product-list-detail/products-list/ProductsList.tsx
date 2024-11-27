@@ -7,7 +7,6 @@ import droneModelPrev2 from '@/assets/images/drone-model2-prev.webp';
 import droneModelPrev3 from '@/assets/images/drone-model3-prev.webp';
 import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
 import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
-import Button from '@/components/base/Button';
 import './ProductsList.scss';
 
 import {
@@ -19,11 +18,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Sidebar from '@/components/Sidebar';
-
 import ProductCard from '../../items/ProductCard';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProductsList = () => {
   const imgOptions = [
@@ -67,6 +64,52 @@ const ProductsList = () => {
       name: 'Acer Aspire Drone',
       oldPrice: 120,
       newPrice: 100,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '2',
@@ -83,6 +126,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 100,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '3',
@@ -99,6 +188,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 100,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '4',
@@ -110,6 +245,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '5',
@@ -126,6 +307,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '6',
@@ -142,6 +369,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '7',
@@ -158,6 +431,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '8',
@@ -174,6 +493,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
     {
       id: '9',
@@ -190,6 +555,52 @@ const ProductsList = () => {
       name: 'Acer Drone E15',
       oldPrice: 120,
       newPrice: 80,
+      availability: 'In Stock',
+      brand: 'Canada',
+      SKU: 123,
+      tags: ['camera', 'drone'],
+      collections: ['Drone', 'Home page', 'Staff Picks'],
+      intro:
+        'Capture the World from Above with SkyExplorer X20 - Your Eye in the Sky!',
+      overview: {
+        title: 'Overview:',
+        content:
+          "Discover the unmatched capabilities of the SkyExplorer X20 Drone, engineered for enthusiasts and professionals alike. Our latest model combines advanced technology with user-friendly features, making aerial photography and videography more accessible than ever. Whether you're capturing stunning landscapes, filming action-packed adventures, or simply exploring the skies, the SkyExplorer X20 is your perfect companion.",
+      },
+      keyFeatures: [
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+        {
+          title: 'Ultra-High-Definition 4K Camera',
+          content:
+            ' Experience breathtaking clarity and detail with our 4K HD camera, stabilized with a 3-axis gimbal for smooth, cinematic shots.',
+        },
+      ],
+      bonusItems: [
+        '1 x SkyExplorer X20 Drone',
+        '1 x Remote Controller',
+        '1 x High-Capacity Battery',
+      ],
+      otherInfo: [
+        {
+          title: 'Perfect for Everyone',
+          content:
+            "Whether you're a budding photographer, a seasoned drone pilot, or just looking for a new hobby, the SkyExplorer X20 offers a unique perspective on the world. Its intuitive controls and safety features make it ideal for beginners, while its advanced capabilities satisfy even the most demanding users.",
+        },
+      ],
     },
   ];
 
@@ -199,6 +610,13 @@ const ProductsList = () => {
   const [optionsHover, setOptionsHover] = useState<boolean[]>(
     Array(productList.length).fill(false),
   );
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (params: any, index: number) => {
+    navigate(params, { state: productList[index] });
+    console.log(productList[index]);
+  };
 
   const handleImgHover = (index: number, isHovering: boolean) => {
     if (!optionsHover[index]) {
@@ -226,7 +644,7 @@ const ProductsList = () => {
   };
 
   const handleSidebar = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen((prev: any) => !prev);
   };
 
   return (
@@ -268,9 +686,11 @@ const ProductsList = () => {
       </div>
       <div className="products-list__result">
         {productList.map((product, index) => (
-          <Link
+          <div
             key={product.id}
-            to={`/product/${product.name}`}
+            onClick={() =>
+              handleNavigate(`/products/drone/${product.name}`, index)
+            }
             className="products-list__result__link"
           >
             <ProductCard
@@ -288,9 +708,8 @@ const ProductsList = () => {
               handleOptionsHoverTrue={() => handleOptionsHover(index, true)}
               handleOptionsHoverFalse={() => handleOptionsHover(index, false)}
               formatCurrency={formatCurrency}
-              className="products-list__result__card"
             />
-          </Link>
+          </div>
         ))}
       </div>
     </div>

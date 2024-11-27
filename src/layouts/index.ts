@@ -23,3 +23,5 @@ export * from './product-detail-brown';
 export * from './product-detail-green-2';
 export * from './product-detail-brown-2';
 export * from './product-detail-brown-3';
+export * from './subscription';
+export * from './checkout';

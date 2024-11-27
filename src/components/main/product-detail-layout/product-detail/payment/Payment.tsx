@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { faHeart, faStar, faTape } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Carousel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Carousel } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom';
 
 import droneModelAfter from '@/assets/images/drone-model1-after.webp';
 import droneModelPrev from '@/assets/images/drone-model1-prev.webp';
@@ -11,7 +11,6 @@ import droneModelAfter2 from '@/assets/images/drone-model2-after.webp';
 import droneModelPrev2 from '@/assets/images/drone-model2-prev.webp';
 import droneModelPrev3 from '@/assets/images/drone-model3-prev.webp';
 import droneModelAfter4 from '@/assets/images/drone-model4-after.webp';
-import droneModelPrev4 from '@/assets/images/drone-model4-prev.webp';
 import paypal from '@/assets/images/paypal.svg';
 
 import './Payment.scss';
@@ -26,13 +25,17 @@ const Payment = () => {
     droneModelAfter4,
   ];
 
+  const location = useLocation();
+  const productDetail = location.state;
+  console.log(productDetail);
   const productInfo = [
     {
-      id: 'acer-aspire-drone',
+      id: '9',
+      discount: 33,
       rates: [true, true, true, false, false],
-      name: 'Acer Aspire Drone',
-      price: 120,
-      discount: 17,
+      name: 'Acer Drone E15',
+      oldPrice: 120,
+      newPrice: 80,
       availability: 'In Stock',
       brand: 'Canada',
       SKU: 123,
@@ -128,10 +131,10 @@ const Payment = () => {
         </Carousel>
       </div>
       <div className="product-detail__right">
-        {productInfo.map((info) => (
-          <div key={info.id} className="product-detail__right__container">
+        {productInfo?.map((info?: any) => (
+          <div key={info?.id} className="product-detail__right__container">
             <div className="product-detail__right__container__rates">
-              {info.rates.map((rate, index) =>
+              {info?.rates?.map((rate: any, index: number) =>
                 rate ? (
                   <FontAwesomeIcon
                     icon={faStar}
@@ -148,17 +151,17 @@ const Payment = () => {
               )}
             </div>
             <div className="product-detail__right__container__name">
-              <h2>{info.name}</h2>
+              <h2>{info?.name}</h2>
             </div>
             <div className="product-detail__right__container__price">
               <p>
                 <span>
                   $
                   {Math.ceil(
-                    (info.price * (100 - info.discount)) / 100,
+                    (info?.oldPrice * (100 - info?.discount)) / 100,
                   ).toFixed(2)}
                 </span>{' '}
-                <small>${info.price.toFixed(2)}</small>
+                <small>${info?.oldPrice?.toFixed(2)}</small>
               </p>
             </div>
             <hr></hr>
@@ -166,16 +169,16 @@ const Payment = () => {
               <span>
                 Availability:
                 <p className="product-detail__right__container__status__stock">
-                  {info.availability}
+                  {info?.availability}
                 </p>
               </span>
               <span className="product-detail__right__container__status__brand">
-                Brand: <p>{info.brand}</p>
+                Brand: <p>{info?.brand}</p>
               </span>
-              <p>SKU: {info.SKU}</p>
+              <p>SKU: {info?.SKU}</p>
               <span>
                 Tags:
-                {info.tags.map((tag, index) => (
+                {info?.tags.map((tag: any, index: number) => (
                   <p
                     key={index}
                     className="product-detail__right__container__status__tags"
@@ -186,7 +189,7 @@ const Payment = () => {
               </span>
               <span>
                 Collections:
-                {info.collections.map((collection, index) => (
+                {info?.collections.map((collection: any, index: number) => (
                   <p
                     key={index}
                     className="product-detail__right__container__status__tags"
@@ -228,17 +231,17 @@ const Payment = () => {
             </div>
             <div className="product-detail__right__intro">
               <h3>Product Details</h3>
-              <h4>{info.intro}</h4>
+              <h4>{info?.intro}</h4>
               <div className="product-detail__right__intro__overview">
                 <p>
-                  <span>{info.overview.title}</span> {info.overview.content}
+                  <span>{info?.overview.title}</span> {info?.overview.content}
                 </p>
               </div>
             </div>
             <div className="product-detail__right__intro__key">
               <span>Key Features:</span>
               <ul>
-                {info.keyFeatures.map((feature, index) => (
+                {info?.keyFeatures.map((feature: any, index: number) => (
                   <li key={index}>
                     <span>{feature.title}</span>: {feature.content}
                   </li>
@@ -248,13 +251,13 @@ const Payment = () => {
             <div className="product-detail__right__intro__prize">
               <span>What's in the Box:</span>
               <ul>
-                {info.bonusItems.map((item, index) => (
+                {info?.bonusItems.map((item: any, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
             <div className="product-detail__right__intro__others">
-              {info.otherInfo.map((item, index) => (
+              {info?.otherinfo?.map((item: any, index: number) => (
                 <p key={index}>
                   <span>{item.title}</span>: {item.content}
                 </p>

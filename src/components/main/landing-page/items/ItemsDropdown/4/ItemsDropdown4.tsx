@@ -1,33 +1,13 @@
-import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 import './ItemsDropdown4.scss';
 
 const DropdownList = [
-  { name: 'MAIN LAYOUT', linkTo: '/products/acer-aspire-drone' },
+  { name: 'PURCHASING DRONE', linkTo: '/collections/drone' },
   {
-    name: 'HORIZONTAL THUMBS',
-    linkTo: '/products/cam-mod-by-kryptonite-vapor',
+    name: 'HIRING DRONE CONCERT',
+    linkTo: 'hiring/subscription',
   },
-  { name: 'VERTICAL THUMBS', linkTo: '/products/driptip-kryptonite-2' },
-  { name: 'VERTICAL THUMBS - RIGHT', linkTo: '/products/driptip-kryptonite-1' },
-  { name: 'IMAGE ROLLOVER - VERTICAL', linkTo: '/products/driptip-kryptonite' },
-  {
-    name: 'HORIZONTAL - SLIDER',
-    linkTo: '/products/mod-cam-by-kryptonite-vapor',
-  },
-  {
-    name: 'HORIZONTAL - GRID',
-    linkTo: '/products/drink-de-energy-health-strength',
-  },
-  { name: 'PRE ORDER', linkTo: '/products/coil-master-kbag' },
-  { name: 'VIDEO THUMB', linkTo: '/products/cleansers-de-nano' },
-  {
-    name: 'TRUST BADGE',
-    linkTo: '/products/brewer-ce251-60-oz-12-cup-coffee-maker-1',
-  },
-  { name: 'DEAL COUNTER', linkTo: '/products/cam-mod-by-kryptonite-vapor-1' },
 ];
 
 const ItemsDropdown4 = () => {

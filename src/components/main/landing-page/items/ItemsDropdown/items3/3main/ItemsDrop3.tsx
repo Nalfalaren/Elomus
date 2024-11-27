@@ -7,6 +7,7 @@ import drone3 from '@/assets/images/drone-model3-prev.webp';
 import drone4 from '@/assets/images/drone-model4-prev.webp';
 
 import './ItemsDropdown3.scss';
+// eslint-disable-next-line import/order
 import { Link } from 'react-router-dom';
 
 const ItemsDrop3 = () => {
@@ -17,7 +18,7 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/products/acer-aspire-drone',
+            linkTo: `/products/drone/Acer%20Aspire%20Drone`,
         },
         {
             id: '2',
@@ -25,7 +26,7 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/products/acer-aspire-drone',
+            linkTo: `/products/drone/Acer%20Aspire%20Drone`,
         },
         {
             id: '3',
@@ -33,7 +34,7 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/products/acer-aspire-drone',
+            linkTo: `/products/drone/Acer%20Aspire%20Drone`,
         },
         {
             id: '4',
@@ -41,9 +42,10 @@ const ItemsDrop3 = () => {
             productName: 'Acer Aspire Drone',
             newPrice: 100.0,
             oldPrice: 120.0,
-            linkTo: '/products/acer-aspire-drone',
+            linkTo: `/products/drone/Acer%20Aspire%20Drone`,
         },
     ];
+    
     return (<div className='product-list'>
         {productsList.map((product) => (
             <Link to={product.linkTo} key={product.id}>
